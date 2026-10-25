@@ -426,6 +426,23 @@ class ManualChangelogTests(unittest.TestCase):
                 rewrite_spec(spec, "1.2")
                 self.assertTrue(spec.read_text().endswith(bumped.split("%changelog\n", 1)[1]))
 
+    def test_prefixes_main_package_epoch(self):
+        for preamble, evr in (
+            ("Epoch: 1\n", "1:1.1-1"),
+            ("Epoch:\t\t2 # bumped\n", "2:1.1-1"),
+            ("Epoch: %{base_epoch}\n", "1.1-1"),
+            ("%package sub\nEpoch: 3\n", "1.1-1"),
+        ):
+            with self.subTest(preamble=preamble), tempfile.TemporaryDirectory() as tmp:
+                spec = Path(tmp) / "test.spec"
+                spec.write_text(
+                    f"Version: 1.0\n{preamble}Release: 5%{{?dist}}\n%changelog\n"
+                    "* Fri Oct 02 2026 Packager <packager@example.org> - 1:1.0-5\n"
+                    "- Previous release\n"
+                )
+                rewrite_spec(spec, "1.1")
+                self.assertIn(f"> - {evr}\n- Update to 1.1\n\n* Fri", spec.read_text())
+
     def test_keeps_autochangelog_and_ignores_commented_macro(self):
         for body, manual in (
             ("%autochangelog\n", False),

@@ -18,7 +18,8 @@ When the version changes, prepend a dated entry to an existing manual
 `%changelog`, preserving the old history. Leave `%autochangelog` sections
 alone, and do not add entries on same-version relocks or repeated applies.
 Record the RPM spelling of the new version and the reset literal release
-without `%{?dist}`. If the release still depends on macros, record the known
+without `%{?dist}`, prefixed with the main package's literal `Epoch:` as
+`epoch:version-release` so rpmlint sees coherent history. If the release still depends on macros, record the known
 version alone: executing macros is outside this rewrite's scope, and leaving
 live macros in history would make later bumps change old entries. Use an
 English UTC date and the automation identity; a bump must not attribute its

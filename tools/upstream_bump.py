@@ -572,8 +572,12 @@ def update_changelog(text: str, version: str) -> str:
     # Never put live macros in history: a later bump would change old entries.
     # Macro-derived releases cannot be resolved without executing the spec;
     # record the known version alone in that case.
-    release = re.search(r"(?m)^Release:[ \t]*(\S+)", text[:section.start()])
-    evr = version
+    preamble = text[:section.start()]
+    release = re.search(r"(?m)^Release:[ \t]*(\S+)", preamble)
+    # rpmlint expects epoch:version-release when the main package sets Epoch:.
+    main = re.split(r"(?m)^%(?:package|description)\b", preamble, maxsplit=1)[0]
+    epoch = re.search(r"(?m)^Epoch:[ \t]*(\d+)[ \t]*(?:#.*)?$", main)
+    evr = f"{epoch.group(1)}:{version}" if epoch else version
     if release:
         literal = release.group(1).replace("%{?dist}", "")
         if literal and "%" not in literal:
