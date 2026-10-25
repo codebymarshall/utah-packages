@@ -347,20 +347,11 @@ packages = [
     "evolution-ews-langpacks",
     "f44-backgrounds-base",
     "f44-backgrounds-gnome",
-    "fedora-workstation-backgrounds",
-    "freeglut",
-    "fwupd-efi",
-    "gst-editing-services",
     "gst-thumbnailers",
     "gupnp-av",
-    "gupnp-dlna",
     "gvfs-afp",
     "gvfs-archive",
-    "hyperv-daemons",
-    "hyperv-daemons-license",
     "hypervfcopyd",
-    "hypervkvpd",
-    "hypervvssd",
     "initscripts-service",
     "intel-vaapi-driver",
     "ipset",
@@ -478,6 +469,21 @@ packages = [
 # Packages that left the backlog because a recipe was imported.
 # Each entry: package name and the commit that closed the gap.
 packages = [
+    # Long-tail batch (projectbluefin/utah-packages#500).
+    # Six source packages imported from Fedora rawhide dist-git, each now
+    # source-locked in config/upstream-sources.json.
+    { name = "fedora-workstation-backgrounds", pr = 500 },
+    { name = "freeglut", pr = 500 },
+    { name = "fwupd-efi", pr = 500 },
+    { name = "gst-editing-services", pr = 500 },
+    { name = "gupnp-dlna", pr = 500 },
+    { name = "hyperv-daemons", pr = 500 },
+    # hyperv-daemons-license, hypervkvpd and hypervvssd are subpackages built
+    # from hyperv-daemons.spec; the auditor resolves them via the parent
+    # recipe, so they close here explicitly (hypervfcopyd was already resolved).
+    { name = "hyperv-daemons-license", pr = 500 },
+    { name = "hypervkvpd", pr = 500 },
+    { name = "hypervvssd", pr = 500 },
     # Printing runtime providers for hplip/system-config-printer (projectbluefin/utah-packages#596, utah#390).
     { name = "python3-olefile", pr = 596 },
     { name = "python3-pillow", pr = 596 },
