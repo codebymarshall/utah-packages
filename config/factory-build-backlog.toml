@@ -648,9 +648,9 @@ packages = [
     { name = "printer-driver-brlaser", pr = 586 },
     { name = "ptouch-driver", pr = 586 },
     # Braille source family and its Word conversion runtime dependency (#480).
-    { name = "liblouisutdml" },
-    { name = "liblouisutdml-utils" },
-    { name = "antiword" },
+    { name = "liblouisutdml", pr = 616 },
+    { name = "liblouisutdml-utils", pr = 616 },
+    { name = "antiword", pr = 616 },
     { name = "sane-airscan", pr = 586 },
     { name = "sane-backends", pr = 586 },
     { name = "sane-backends-drivers-cameras", pr = 586 },
