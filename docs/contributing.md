@@ -46,8 +46,8 @@ Packit block, and the recipe-count tests match the inventory. Dispatch
 `.github/workflows/import-rawhide-package.yml` with the package name (the
 workflow runs the lock, the Packit-regen and the architecture-counts-refresh
 steps on `ubuntu-26.04`, and opens `import/rawhide-<name>`). The lock step fails the workflow, and no pull
-request opens, when `tools/bootstrap_upstream_sources.py --package <name> --merge`
-rejects the recipe — for example a `Source0` hosted on Fedora
+request opens, when `tools/bootstrap_upstream_sources.py --package <name>`
+(run without `--merge`, into an isolated candidate file) rejects the recipe — for example a `Source0` hosted on Fedora
 infrastructure, a `Source0` that is not a direct HTTP(S) URL, or upstream
 bytes that differ from the pin in `packages/<name>/sources`. To read the
 reason locally, run:
