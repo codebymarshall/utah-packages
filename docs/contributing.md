@@ -54,10 +54,12 @@ reason locally, run:
 
 ```bash
 python3 tools/bootstrap_upstream_sources.py --package <name> --merge \
-  --report reports/import-source-bootstrap.json
+  --report work/import-source-bootstrap.json
 ```
 
-The workflow does not upload that report. A rejected explicit selection
+The workflow does not upload that report. Keep it under the gitignored
+`work/` directory: `reports/import-source-bootstrap.json` is tracked and
+written by the import workflow, so a local diagnostic must not replace it. A rejected explicit selection
 returns nonzero and leaves the source lock untouched; read the report before
 continuing. The report and source lock must name different files, including
 when using symlinks or hard links. Keep `--merge` when adding a package: a
