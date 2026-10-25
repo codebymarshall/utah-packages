@@ -700,7 +700,7 @@ packages = [
     { name = "libpath_utils", pr = 597 },
     { name = "libref_array", pr = 597 },
     # Recipe coverage only; hosted build/publication/runtime proof remains in #474.
-    { name = "LibRaw" },
+    { name = "LibRaw", pr = 618 },
 ]
 
 [wontfix]
