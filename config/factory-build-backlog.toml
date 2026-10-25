@@ -468,23 +468,23 @@ packages = [
 # Packages that left the backlog because a recipe was imported.
 # Each entry: package name and the commit that closed the gap.
 packages = [
-    # Long-tail batch (projectbluefin/utah-packages#500).
+    # Long-tail batch (projectbluefin/utah-packages#607, part of #500).
     # Six source packages imported from Fedora rawhide dist-git, each now
     # source-locked in config/upstream-sources.json.
-    { name = "fedora-workstation-backgrounds", pr = 500 },
-    { name = "freeglut", pr = 500 },
-    { name = "fwupd-efi", pr = 500 },
-    { name = "gst-editing-services", pr = 500 },
-    { name = "gupnp-dlna", pr = 500 },
-    { name = "hyperv-daemons", pr = 500 },
+    { name = "fedora-workstation-backgrounds", pr = 607 },
+    { name = "freeglut", pr = 607 },
+    { name = "fwupd-efi", pr = 607 },
+    { name = "gst-editing-services", pr = 607 },
+    { name = "gupnp-dlna", pr = 607 },
+    { name = "hyperv-daemons", pr = 607 },
     # hyperv-daemons-license, hypervfcopyd, hypervkvpd and hypervvssd are
     # subpackages built from hyperv-daemons.spec. hypervfcopyd sits under
     # %ifarch i686 x86_64, which the auditor treats as undecidable, so all
     # four close here explicitly.
-    { name = "hyperv-daemons-license", pr = 500 },
-    { name = "hypervfcopyd", pr = 500 },
-    { name = "hypervkvpd", pr = 500 },
-    { name = "hypervvssd", pr = 500 },
+    { name = "hyperv-daemons-license", pr = 607 },
+    { name = "hypervfcopyd", pr = 607 },
+    { name = "hypervkvpd", pr = 607 },
+    { name = "hypervvssd", pr = 607 },
     # Printing runtime providers for hplip/system-config-printer (projectbluefin/utah-packages#596, utah#390).
     { name = "python3-olefile", pr = 596 },
     { name = "python3-pillow", pr = 596 },
