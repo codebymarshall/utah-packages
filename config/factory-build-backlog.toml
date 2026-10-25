@@ -477,8 +477,8 @@ packages = [
 # Each entry: package name and the commit that closed the gap.
 packages = [
     # Recipe coverage only; build/publication/runtime proof stays on #489.
-    { name = "python3-dateutil" },
-    { name = "python3-six" },
+    { name = "python3-dateutil", pr = 613 },
+    { name = "python3-six", pr = 613 },
     # Printing runtime providers for hplip/system-config-printer (projectbluefin/utah-packages#596, utah#390).
     { name = "python3-olefile", pr = 596 },
     { name = "python3-pillow", pr = 596 },
