@@ -11,8 +11,8 @@
       "total": 97
     },
     "fonts-i18n": {
-      "pending": 59,
-      "total": 59
+      "pending": 53,
+      "total": 53
     },
     "gnome-apps": {
       "already_recipe": 5,
@@ -745,11 +745,6 @@
     },
     {
       "area": "fonts-i18n",
-      "name": "adobe-source-code-pro-fonts",
-      "state": "pending"
-    },
-    {
-      "area": "fonts-i18n",
       "name": "anthy-unicode",
       "state": "pending"
     },
@@ -761,31 +756,6 @@
     {
       "area": "fonts-i18n",
       "name": "cldr-emoji-annotation-dtd",
-      "state": "pending"
-    },
-    {
-      "area": "fonts-i18n",
-      "name": "gdouros-symbola-fonts",
-      "state": "pending"
-    },
-    {
-      "area": "fonts-i18n",
-      "name": "google-droid-sans-fonts",
-      "state": "pending"
-    },
-    {
-      "area": "fonts-i18n",
-      "name": "google-noto-emoji-fonts",
-      "state": "pending"
-    },
-    {
-      "area": "fonts-i18n",
-      "name": "google-noto-sans-cjk-fonts",
-      "state": "pending"
-    },
-    {
-      "area": "fonts-i18n",
-      "name": "google-noto-serif-cjk-vf-fonts",
       "state": "pending"
     },
     {
@@ -1928,11 +1898,11 @@
   "states": {
     "already_recipe": 32,
     "manifest_wants": 1,
-    "pending": 341
+    "pending": 335
   },
   "totals": {
-    "backlog": 374,
+    "backlog": 368,
     "resolved": 171,
-    "wontfix": 6
+    "wontfix": 12
   }
 }
