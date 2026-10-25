@@ -4853,6 +4853,13 @@
       "url": "https://src.fedoraproject.org/repo/pkgs/rpms/libmpeg2/libmpeg2-0.5.1.tar.gz/sha512/3648a2b3d7e2056d5adb328acd2fb983a1fa9a05ccb6f9388cc686c819445421811f42e8439418a0491a13080977f074a0d8bf8fa6bc101ff245ddea65a46fbc/libmpeg2-0.5.1.tar.gz",
       "filename": "libmpeg2-0.5.1.tar.gz",
       "sha512": "3648a2b3d7e2056d5adb328acd2fb983a1fa9a05ccb6f9388cc686c819445421811f42e8439418a0491a13080977f074a0d8bf8fa6bc101ff245ddea65a46fbc"
+    },
+    {
+      "name": "xcb-util-cursor",
+      "version": "0.1.6",
+      "url": "https://xcb.freedesktop.org/dist/xcb-util-cursor-0.1.6.tar.xz",
+      "filename": "xcb-util-cursor-0.1.6.tar.xz",
+      "sha512": "5cdf2f942e3aad9662456cf6b5c2be2ff1837d73348046f6d8b72aeabf005c481a5f00ee169d9ccd18878697cb1744f0b274d0caa85955979c8e4f92d2cc3f72"
     }
   ]
 }

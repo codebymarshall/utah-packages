@@ -459,15 +459,10 @@ packages = [
     "uchardet",
     "udftools",
     "uresourced",
-    "uupd",
     "uvg266-libs",
     "v4l2loopback",
     "virtualbox-guest-additions",
-    "xcb-util-cursor",
-    "xdriinfo",
     "xfsprogs",
-    "xrandr",
-    "xset",
 
     "zinnia",
     "zinnia-tomoe-ja",
@@ -478,6 +473,8 @@ packages = [
 # Packages that left the backlog because a recipe was imported.
 # Each entry: package name and the commit that closed the gap.
 packages = [
+    # Cursor library import for #508; build/publication/runtime proof remains separate.
+    { name = "xcb-util-cursor" },
     # Printing runtime providers for hplip/system-config-printer (projectbluefin/utah-packages#596, utah#390).
     { name = "python3-olefile", pr = 596 },
     { name = "python3-pillow", pr = 596 },
@@ -709,6 +706,12 @@ packages = [
 # they are surfaced as ``totals.wontfix`` so the count partition
 # (areas + resolved + wontfix) still equals the audit's 551.
 packages = [
+    # Existing consumer waivers, not new exclusions: projectbluefin/utah#263.
+    # https://github.com/projectbluefin/utah/blob/e11a7b297264251704af25d8920d2a2bb58241c9/baselines/triage.toml
+    { name = "xdriinfo", reason = "Utah waives this X11 client tool because it ships a Wayland-only session (projectbluefin/utah#263; pinned triage above)." },
+    { name = "xrandr", reason = "Utah waives this X11 client tool because it ships a Wayland-only session (projectbluefin/utah#263; pinned triage above)." },
+    { name = "xset", reason = "Utah waives this X11 client tool because it ships a Wayland-only session (projectbluefin/utah#263; pinned triage above)." },
+    { name = "uupd", reason = "Utah installs a pinned upstream release; its triage waives the RPM difference (projectbluefin/utah#263; pinned triage above)." },
     { name = "gnome-shell-extension-apps-menu", reason = "Utah uses Git submodules for GNOME extensions (projectbluefin/utah#391); no factory RPM." },
     { name = "gnome-shell-extension-blur-my-shell", reason = "Utah uses Git submodules for GNOME extensions (projectbluefin/utah#391); no factory RPM." },
     { name = "gnome-shell-extension-common", reason = "Utah uses Git submodules for GNOME extensions (projectbluefin/utah#391); no factory RPM." },
