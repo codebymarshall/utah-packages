@@ -164,7 +164,6 @@ packages = [
     "kernel-tools",
     "kernel-tools-libs",
     "leptonica",
-    "libbsd",
     "libcaca",
     "libchromaprint",
     "libsss_autofs",
@@ -381,7 +380,6 @@ packages = [
     "libev",
     "libijs",
     "liblqr-1",
-    "libmd",
     "libmspack",
     "libnet",
     "libnfsidmap",
@@ -478,6 +476,10 @@ packages = [
 # Packages that left the backlog because a recipe was imported.
 # Each entry: package name and the commit that closed the gap.
 packages = [
+    # BSD compatibility library and its digest-library dependency (#487).
+    # Recipe import only; build/publication and Utah consumption remain separate proof.
+    { name = "libbsd" },
+    { name = "libmd" },
     # Printing runtime providers for hplip/system-config-printer (projectbluefin/utah-packages#596, utah#390).
     { name = "python3-olefile", pr = 596 },
     { name = "python3-pillow", pr = 596 },
