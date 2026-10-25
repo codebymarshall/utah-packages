@@ -41,7 +41,6 @@ packages = [
     "ImageMagick",
     "ImageMagick-libs",
     "LCEVCdec",
-    "LibRaw",
     "davs2-libs",
     "ffmpeg",
     "ffmpeg-libs",
@@ -700,6 +699,8 @@ packages = [
     { name = "libbasicobjects", pr = 597 },
     { name = "libpath_utils", pr = 597 },
     { name = "libref_array", pr = 597 },
+    # Recipe coverage only; hosted build/publication/runtime proof remains in #474.
+    { name = "LibRaw" },
 ]
 
 [wontfix]
