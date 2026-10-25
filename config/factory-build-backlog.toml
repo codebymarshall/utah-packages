@@ -701,7 +701,7 @@ packages = [
     { name = "libref_array", pr = 597 },
     # bison.spec produces bison plus bison-devel/runtime; recipe closure for #485,
     # not a claim of publication or runtime installation.
-    { name = "bison" },
+    { name = "bison", pr = 615 },
 ]
 
 [wontfix]
