@@ -221,7 +221,6 @@ packages = [
     "rpm-ostree-libs",
     "spice-vdagent",
     "spice-webdavd",
-    "sshpass",
     "sssd-client",
     "sssd-common",
     "sssd-kcm",
@@ -478,6 +477,7 @@ packages = [
 # Packages that left the backlog because a recipe was imported.
 # Each entry: package name and the commit that closed the gap.
 packages = [
+    { name = "sshpass" }, # Recipe import; publication/installability tracked in #490.
     # Printing runtime providers for hplip/system-config-printer (projectbluefin/utah-packages#596, utah#390).
     { name = "python3-olefile", pr = 596 },
     { name = "python3-pillow", pr = 596 },

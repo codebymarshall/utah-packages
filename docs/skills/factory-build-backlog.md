@@ -76,6 +76,15 @@ of an area name whose move is still owed (for example a recipe that landed
 before the name was catalogued), not an alternative way to close it, and the
 next PR that touches the name sweeps it into `[resolved]`.
 
+For partial source-family work, distinguish this recipe-import closing record
+from the parent issue's runtime acceptance. In #490, `sshpass` is its own
+source recipe, while `sssd-*` outputs belong to one `sssd` source family and
+must not be imported separately. Keep the batch issue open until all named
+outputs have publication and permitted-repository dependency evidence. A
+`[resolved]` entry alone proves neither publication nor installability.
+For `sshpass`, `%check` can exercise `-V` and `-h` without a password, SSH
+server, or network connection; that smoke test is not an authentication test.
+
 The `Import Rawhide package` workflow does **not** make this move: its pull
 request carries the recipe, lock, `.packit.yaml` and counts, but leaves the
 name in its area. Before merging one, add the `[resolved]` entry (with that
