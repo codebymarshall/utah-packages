@@ -351,7 +351,6 @@ packages = [
     "gupnp-av",
     "gvfs-afp",
     "gvfs-archive",
-    "hypervfcopyd",
     "initscripts-service",
     "intel-vaapi-driver",
     "ipset",
@@ -478,10 +477,12 @@ packages = [
     { name = "gst-editing-services", pr = 500 },
     { name = "gupnp-dlna", pr = 500 },
     { name = "hyperv-daemons", pr = 500 },
-    # hyperv-daemons-license, hypervkvpd and hypervvssd are subpackages built
-    # from hyperv-daemons.spec; the auditor resolves them via the parent
-    # recipe, so they close here explicitly (hypervfcopyd was already resolved).
+    # hyperv-daemons-license, hypervfcopyd, hypervkvpd and hypervvssd are
+    # subpackages built from hyperv-daemons.spec. hypervfcopyd sits under
+    # %ifarch i686 x86_64, which the auditor treats as undecidable, so all
+    # four close here explicitly.
     { name = "hyperv-daemons-license", pr = 500 },
+    { name = "hypervfcopyd", pr = 500 },
     { name = "hypervkvpd", pr = 500 },
     { name = "hypervvssd", pr = 500 },
     # Printing runtime providers for hplip/system-config-printer (projectbluefin/utah-packages#596, utah#390).

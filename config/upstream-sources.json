@@ -4860,7 +4860,7 @@
       "url": "https://downloads.sourceforge.net/freeglut/freeglut-3.8.0.tar.gz",
       "filename": "freeglut-3.8.0.tar.gz",
       "sha512": "2726ff978f11e17680fa01aa21c263f5154e9f0185021ec58e89ae006a5d093e062e68c66c709307a709e44823ee7b1f265ae450dd03cae616a2acefdeba7748",
-      "feed": "https://gitlab.freedesktop.org/freeglut/freeglut/-/releases/"
+      "feed": "https://release-monitoring.org/project/846"
     },
     {
       "name": "gupnp-dlna",
@@ -4876,7 +4876,7 @@
       "url": "https://gstreamer.freedesktop.org/src/gst-editing-services/gst-editing-services-1.28.8.tar.xz",
       "filename": "gst-editing-services-1.28.8.tar.xz",
       "sha512": "1cb33e0fd6d2f16dcc8594bc5e1198752dbb6127fa2368aaa4deb0d8abb144d8f6f4b878994e0fbd35790905b9300947c45b68d582189599adace3e132dfca72",
-      "feed": "https://download.gnome.org/sources/gstreamer1/"
+      "feed": "https://release-monitoring.org/project/230920"
     },
     {
       "name": "fwupd-efi",
