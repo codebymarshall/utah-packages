@@ -478,8 +478,8 @@ packages = [
 packages = [
     # BSD compatibility library and its digest-library dependency (#487).
     # Recipe import only; build/publication and Utah consumption remain separate proof.
-    { name = "libbsd" },
-    { name = "libmd" },
+    { name = "libbsd", pr = 614 },
+    { name = "libmd", pr = 614 },
     # Printing runtime providers for hplip/system-config-printer (projectbluefin/utah-packages#596, utah#390).
     { name = "python3-olefile", pr = 596 },
     { name = "python3-pillow", pr = 596 },
