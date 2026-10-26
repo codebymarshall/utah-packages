@@ -54,6 +54,13 @@ Order is significant: the strongest signal wins. Reordering the
 
 ## Closing a backlog gap
 
+For a partial batch PR, use `Refs #<issue>` in the PR description. Reserve
+GitHub closing keywords for a PR that satisfies the entire batch issue's
+close condition, including required build and runtime evidence or linked
+blocking decisions for every named output. Before pushing a review fix,
+check the entire PR description for closing keywords: an automatically added
+footer can contradict an earlier partial-progress statement.
+
 Two edits — never one, never none:
 
 - Remove the entry from `[areas.<area>].packages`.
