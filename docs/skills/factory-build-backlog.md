@@ -170,3 +170,13 @@ backlog with the import.
   it guards is undecidable too.
 
 After a recipe PR lands, regenerate `reports/factory-build-backlog.json`; the inventory-driven gate deliberately rejects a snapshot made before that import. Refresh it together with recipe and Packit inventory changes when preparing concurrent PRs.
+
+### Reconciling published batches
+
+A failed aggregate rebuild can still publish successful packages and retain older
+RPMs from its seed repository. Reconcile each binary against the published
+repodata and digest, rather than treating the run conclusion or a newer failed
+rebuild as evidence that it is absent. Keep publication evidence separate from
+current build health and consumer validation. An approved consumer waiver also
+applies to a session subpackage whose source would reintroduce excluded shell
+extensions; link that decision in its `[wontfix]` record.

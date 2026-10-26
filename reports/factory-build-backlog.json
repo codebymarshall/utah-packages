@@ -15,9 +15,9 @@
       "total": 40
     },
     "gnome-apps": {
-      "already_recipe": 5,
-      "pending": 7,
-      "total": 12
+      "already_recipe": 4,
+      "pending": 6,
+      "total": 10
     },
     "long-tail": {
       "already_recipe": 12,
@@ -935,16 +935,6 @@
     },
     {
       "area": "gnome-apps",
-      "name": "gnome-classic-session",
-      "state": "pending"
-    },
-    {
-      "area": "gnome-apps",
-      "name": "gnome-rounded-blur",
-      "state": "already_recipe"
-    },
-    {
-      "area": "gnome-apps",
       "name": "imath",
       "state": "pending"
     },
@@ -1831,13 +1821,13 @@
   ],
   "issue": "projectbluefin/utah-packages#308",
   "states": {
-    "already_recipe": 32,
+    "already_recipe": 31,
     "manifest_wants": 1,
-    "pending": 322
+    "pending": 321
   },
   "totals": {
-    "backlog": 355,
-    "resolved": 183,
-    "wontfix": 13
+    "backlog": 353,
+    "resolved": 184,
+    "wontfix": 14
   }
 }
