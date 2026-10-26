@@ -464,8 +464,8 @@ packages = [
 # Each entry: package name and the commit that closed the gap.
 packages = [
     # Disc-reading recipes; publication and runtime proof remain tracked in #475.
-    { name = "libudfread", issue = 475 },
-    { name = "libbluray", issue = 475 },
+    { name = "libudfread", pr = 658 },
+    { name = "libbluray", pr = 658 },
     # Printing runtime providers for hplip/system-config-printer (projectbluefin/utah-packages#596, utah#390).
     { name = "python3-olefile", pr = 596 },
     { name = "python3-pillow", pr = 596 },
