@@ -191,5 +191,6 @@ are behind the disabled `gitdate` condition and are not release downloads.
 For runtime acceptance, install the built library using only Hummingbird
 plus the factory and exercise `XResQueryExtension` against a running X11
 server. Loading `libXRes.so.1` alone checks linkage, not server interaction.
-Keep the audited name in its area until the issue's build and runtime proof
-is available; `already_recipe` records the import without claiming completion.
+This import PR moves `libXres` from its area to `[resolved]`. That entry
+records the recipe import only; it does not claim the batch issue's build and
+runtime acceptance, which stays tracked on the issue.
