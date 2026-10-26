@@ -135,6 +135,24 @@ libcollection, libbasicobjects, libpath_utils and libref_array into
 `libini_config` through `Obsoletes:`), the retired binary names still leave the
 backlog with the import.
 
+### Compression measurements on Btrfs
+
+The `compsize` source produces the binary of the same name. Its upstream
+snapshot uses the full commit in the archive URL and extracted directory,
+but the imported manifest uses the seven-character commit in the filename;
+keep the lock's `filename` aligned with that manifest. The carried include
+patch supports newer `btrfs-progs` headers; `btrfs-progs-devel` is a build
+dependency, not a reason to import a second Btrfs recipe.
+
+Runtime acceptance needs a Btrfs filesystem: install using only Hummingbird
+and the factory, write a compressible file with compression enabled, then run
+`compsize <file>` and check that its report includes the selected compression
+type and disk usage. Running it on the runner's ordinary non-Btrfs workspace
+only tests the unsupported-filesystem error. A recipe or successful build
+alone must not be presented as a working compression measurement; keep the
+batch open until publication, dependency solving and that payload probe are
+recorded.
+
 ## Diagnosing drift
 
 - `--check` compares the whole live report with the committed snapshot —
@@ -170,3 +188,9 @@ backlog with the import.
   it guards is undecidable too.
 
 After a recipe PR lands, regenerate `reports/factory-build-backlog.json`; the inventory-driven gate deliberately rejects a snapshot made before that import. Refresh it together with recipe and Packit inventory changes when preparing concurrent PRs.
+
+When rebasing concurrent recipe imports, resolve snapshot conflicts by running
+`python3 tools/factory_build_backlog.py` against the combined recipe and catalog
+state, rather than choosing either report wholesale. Regenerate Packit and
+architecture counts too, then require `just check` to confirm the combined
+inventory before continuing the rebase.

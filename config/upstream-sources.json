@@ -4944,6 +4944,16 @@
       "fallback_urls": [
         "https://src.fedoraproject.org/repo/pkgs/rpms/urw-base35-fonts/urw-base35-fonts-20200910.tar.gz/sha512/71fb27baadf5abc4ff624cdede02038681acd5fffdc728a5b2e7808713b80cb2f2174f90a1862e69d390c4434c49d5167ab095100032fa3ba80b586eb8ae51d1/urw-base35-fonts-20200910.tar.gz"
       ]
+    },
+    {
+      "name": "compsize",
+      "version": "1.5^git20250123.d79eacf",
+      "url": "https://github.com/kilobyte/compsize/archive/d79eacf77abe3b799387bb8a4e07a18f1f1031e8/compsize-d79eacf.tar.gz",
+      "filename": "compsize-d79eacf.tar.gz",
+      "sha512": "d6059a77feea45b9bb145cdd5edb4622e5ac261fe2e1ebdc2ad3bbfe36b663f689b6f458f1eae3e88523a9277e8cde0d8ec00bd02a1fafb6360f0d5e68dccede",
+      "fallback_urls": [
+        "https://src.fedoraproject.org/repo/pkgs/rpms/compsize/compsize-d79eacf.tar.gz/sha512/d6059a77feea45b9bb145cdd5edb4622e5ac261fe2e1ebdc2ad3bbfe36b663f689b6f458f1eae3e88523a9277e8cde0d8ec00bd02a1fafb6360f0d5e68dccede/compsize-d79eacf.tar.gz"
+      ]
     }
   ]
 }
