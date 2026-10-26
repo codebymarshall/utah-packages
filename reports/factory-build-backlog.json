@@ -42,8 +42,8 @@
     },
     "vpn": {
       "already_recipe": 3,
-      "pending": 14,
-      "total": 17
+      "pending": 10,
+      "total": 13
     }
   },
   "audit_digest_bluefin": "sha256:1e37db65e78f7f394e16608aa8449bd6be43eb691ae9f98b619044ffba23c64e",
@@ -1755,11 +1755,6 @@
     },
     {
       "area": "vpn",
-      "name": "libyubikey",
-      "state": "pending"
-    },
-    {
-      "area": "vpn",
       "name": "openpace",
       "state": "pending"
     },
@@ -1805,22 +1800,7 @@
     },
     {
       "area": "vpn",
-      "name": "pkcs11-provider",
-      "state": "pending"
-    },
-    {
-      "area": "vpn",
       "name": "python3-yubikey-manager",
-      "state": "pending"
-    },
-    {
-      "area": "vpn",
-      "name": "ykclient",
-      "state": "pending"
-    },
-    {
-      "area": "vpn",
-      "name": "ykpers",
       "state": "pending"
     },
     {
@@ -1833,11 +1813,11 @@
   "states": {
     "already_recipe": 32,
     "manifest_wants": 1,
-    "pending": 322
+    "pending": 318
   },
   "totals": {
-    "backlog": 355,
-    "resolved": 183,
+    "backlog": 351,
+    "resolved": 187,
     "wontfix": 13
   }
 }
