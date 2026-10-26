@@ -123,6 +123,13 @@ PR. This closes the recipe backlog record only: publication does not prove
 runtime dependency resolution or hardware operation, so leave the consumer
 validation task open until those checks have evidence.
 
+When a PR resolves only part of a batch issue, use `Refs #<issue>` in its
+description. Reserve `Closes #<issue>` for a batch whose named outputs and
+acceptance requirements are all resolved or explicitly blocked by linked
+decisions, as required by that issue. Check the entire description for closing
+keywords before pushing: a trailing `Closes` still auto-closes the issue even
+when the summary describes partial progress.
+
 ### Locking sources for a hand import
 
 `bootstrap_upstream_sources.py` accepts `http://` `Source0` URLs that
