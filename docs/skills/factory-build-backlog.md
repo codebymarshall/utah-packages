@@ -93,6 +93,13 @@ name to a closing record preserves the digest. The baseline was verified
 against the pinned gist's `nowhere-551.txt`; changing it requires a new audit. The auditor
 itself fails when the catalog totals do not reconcile with the report.
 
+For a partial batch PR, use `Refs #<issue>` throughout the PR description.
+Check the final rendered body, including generated footers, for closing keywords
+such as `Closes`, `Fixes` or `Resolves`: they automatically close the batch
+issue on merge even when the summary says work remains. Use a closing keyword
+only when every named output meets the issue's acceptance criteria or has an
+explicitly linked blocking decision.
+
 ### Locking sources for a hand import
 
 `bootstrap_upstream_sources.py` accepts `http://` `Source0` URLs that
