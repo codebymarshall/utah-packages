@@ -465,7 +465,7 @@ packages = [
 # Each entry: package name and the commit that closed the gap.
 packages = [
     # Flex source import; publication and consumer validation remain tracked in #486.
-    { name = "flex" },
+    { name = "flex", pr = 654 },
     # Printing runtime providers for hplip/system-config-printer (projectbluefin/utah-packages#596, utah#390).
     { name = "python3-olefile", pr = 596 },
     { name = "python3-pillow", pr = 596 },
