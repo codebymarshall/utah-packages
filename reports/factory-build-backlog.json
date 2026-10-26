@@ -41,9 +41,8 @@
       "total": 4
     },
     "vpn": {
-      "already_recipe": 3,
       "pending": 14,
-      "total": 17
+      "total": 14
     }
   },
   "audit_digest_bluefin": "sha256:1e37db65e78f7f394e16608aa8449bd6be43eb691ae9f98b619044ffba23c64e",
@@ -1720,21 +1719,6 @@
     },
     {
       "area": "vpn",
-      "name": "pcsc-lite",
-      "state": "already_recipe"
-    },
-    {
-      "area": "vpn",
-      "name": "pcsc-lite-ccid",
-      "state": "already_recipe"
-    },
-    {
-      "area": "vpn",
-      "name": "pcsc-lite-libs",
-      "state": "already_recipe"
-    },
-    {
-      "area": "vpn",
       "name": "pkcs11-provider",
       "state": "pending"
     },
@@ -1761,13 +1745,13 @@
   ],
   "issue": "projectbluefin/utah-packages#308",
   "states": {
-    "already_recipe": 33,
+    "already_recipe": 30,
     "manifest_wants": 1,
     "pending": 307
   },
   "totals": {
-    "backlog": 341,
-    "resolved": 186,
+    "backlog": 338,
+    "resolved": 189,
     "wontfix": 24
   }
 }

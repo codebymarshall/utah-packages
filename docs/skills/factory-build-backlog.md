@@ -112,6 +112,17 @@ and touchscreen tools. A successful package build does not establish touch
 input or calibration behavior: exercise those tools with a real input device
 in the consumer image before claiming hardware parity.
 
+### Reconciling recipes imported before the catalog
+
+For an existing source recipe, check the published OCI repodata for each
+audited binary before moving its closing record. `pcsc-lite-libs`, for
+example, is an unconditional subpackage of `pcsc-lite`; it does not need a
+second recipe. Record the original import PR and commit in `[resolved]`,
+and cite the observed image digest and binary versions in the reconciliation
+PR. This closes the recipe backlog record only: publication does not prove
+runtime dependency resolution or hardware operation, so leave the consumer
+validation task open until those checks have evidence.
+
 ### Locking sources for a hand import
 
 `bootstrap_upstream_sources.py` accepts `http://` `Source0` URLs that
