@@ -170,3 +170,19 @@ backlog with the import.
   it guards is undecidable too.
 
 After a recipe PR lands, regenerate `reports/factory-build-backlog.json`; the inventory-driven gate deliberately rejects a snapshot made before that import. Refresh it together with recipe and Packit inventory changes when preparing concurrent PRs.
+
+### X11 resource library imports
+
+The audited `libXres` binary is the main output of source recipe `libXres`;
+its SONAME uses different capitalization (`libXRes.so.1`). The same recipe
+emits `libXres-devel`, with the `xres.pc` pkg-config module. Do not import
+another recipe for the SONAME or the development output. The release archive
+comes from X.Org's `pub/individual/lib` directory; its `sources` SHA-512 must
+match the upstream download. Snapshot-only `Source1` and `Source2` entries
+are behind the disabled `gitdate` condition and are not release downloads.
+
+For runtime acceptance, install the built library using only Hummingbird
+plus the factory and exercise `XResQueryExtension` against a running X11
+server. Loading `libXRes.so.1` alone checks linkage, not server interaction.
+Keep the audited name in its area until the issue's build and runtime proof
+is available; `already_recipe` records the import without claiming completion.
