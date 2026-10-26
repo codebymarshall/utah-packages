@@ -93,6 +93,23 @@ name to a closing record preserves the digest. The baseline was verified
 against the pinned gist's `nowhere-551.txt`; changing it requires a new audit. The auditor
 itself fails when the catalog totals do not reconcile with the report.
 
+### Font parity decisions do not waive input methods
+
+Before importing a font from the `fonts-i18n` area, check the
+[Utah maintainer decision](https://github.com/projectbluefin/utah/issues/393#issuecomment-5920428811)
+rejecting bulk font parity. Move a font requested only for that parity to
+`[wontfix]` with the decision URL; a deliberate individual addition needs
+its own accepted proposal. This includes all audited binary names in a font
+family, not just the source-package name (for example, JetBrains Mono's
+regular, all-fonts and non-ligature outputs).
+
+That decision explicitly distinguishes IBus input-method engines from fonts.
+Do not use it to waive engines, language data, dictionaries, or their required
+libraries merely because they share the `fonts-i18n` area. Leave those names
+pending until their own recipe, dependency and publication evidence is ready.
+A mixed batch can therefore be reconciled in a partial PR: name every remaining
+output and keep the tracking issue open.
+
 ### Locking sources for a hand import
 
 `bootstrap_upstream_sources.py` accepts `http://` `Source0` URLs that
@@ -170,3 +187,8 @@ backlog with the import.
   it guards is undecidable too.
 
 After a recipe PR lands, regenerate `reports/factory-build-backlog.json`; the inventory-driven gate deliberately rejects a snapshot made before that import. Refresh it together with recipe and Packit inventory changes when preparing concurrent PRs.
+
+When rebasing concurrent catalog reconciliations, retain both sets of closing
+records and regenerate the report from the merged catalog. Do not resolve the
+generated JSON by choosing either branch: its totals and entries must include
+all catalog moves now present on the base branch.
