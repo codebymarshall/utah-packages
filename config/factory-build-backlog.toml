@@ -457,6 +457,7 @@ packages = [
 # GNOME batch #483 publication: ghcr.io/projectbluefin/utah-packages@sha256:7a18f83ef345e1c4f101e2ec00a2c8dffd7e5ef679089bf9d90238a58d99a593
 # Run: https://github.com/projectbluefin/utah-packages/actions/runs/40151594832
 # Published binaries can survive newer failed rebuilds; this is not a runtime validation claim.
+# Latest rebuilds of gnome-tour, gnome-browser-connector and gnome-remote-desktop failed in run 40151594832; their earlier RPMs remain published.
 # Packages that left the backlog because a recipe was imported.
 # Each entry: package name and the commit that closed the gap.
 packages = [
