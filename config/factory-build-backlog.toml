@@ -390,7 +390,6 @@ packages = [
     "memstrack",
     "mkpasswd",
     "mod_http2",
-    "mtools",
     "neon",
     "net-tools",
     "nm-connection-editor",
@@ -465,6 +464,7 @@ packages = [
 # Packages that left the backlog because a recipe was imported.
 # Each entry: package name and the commit that closed the gap.
 packages = [
+    { name = "mtools" },
     # Printing runtime providers for hplip/system-config-printer (projectbluefin/utah-packages#596, utah#390).
     { name = "python3-olefile", pr = 596 },
     { name = "python3-pillow", pr = 596 },
