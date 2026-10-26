@@ -105,10 +105,13 @@ regular, all-fonts and non-ligature outputs).
 
 That decision explicitly distinguishes IBus input-method engines from fonts.
 Do not use it to waive engines, language data, dictionaries, or their required
-libraries merely because they share the `fonts-i18n` area. Leave those names
-pending until their own recipe, dependency and publication evidence is ready.
+libraries merely because they share the `fonts-i18n` area. Those names are not
+accepted by that decision either: they need their own accepted proposal before
+implementation, and stay pending until that proposal plus recipe, dependency
+and publication evidence exist.
 A mixed batch can therefore be reconciled in a partial PR: name every remaining
-output and keep the tracking issue open.
+output and keep the tracking issue open. Use `Refs #<issue>` in the PR
+description and remove any automatic closing keywords for that batch issue.
 
 ### Locking sources for a hand import
 
