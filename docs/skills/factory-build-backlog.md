@@ -135,6 +135,18 @@ libcollection, libbasicobjects, libpath_utils and libref_array into
 `libini_config` through `Obsoletes:`), the retired binary names still leave the
 backlog with the import.
 
+### Password-quality source family
+
+`passwdqc` is the source recipe for `passwdqc`, `passwdqc-utils`, and
+`pam_passwdqc`; do not import the PAM module or utilities separately.
+The same build supplies `libpasswdqc`, which both payload subpackages require
+at the exact same version and release. Its upstream tarball and detached
+signature are separate SHA-512 entries in `sources`; verify both against
+Openwall, while the primary source lock identifies the tarball. Carrying this
+recipe does not enable the module in the consumer's PAM configuration.
+A runtime check should exercise `pwqcheck` with weak and strong input without
+changing a system password, then inspect the module payload separately.
+
 ## Diagnosing drift
 
 - `--check` compares the whole live report with the committed snapshot —
@@ -169,4 +181,4 @@ backlog with the import.
   %bcond_with X %endif`) the bcond is left unknown, so any `%if %{with X}`
   it guards is undecidable too.
 
-After a recipe PR lands, regenerate `reports/factory-build-backlog.json`; the inventory-driven gate deliberately rejects a snapshot made before that import. Refresh it together with recipe and Packit inventory changes when preparing concurrent PRs.
+After a recipe PR lands, regenerate `reports/factory-build-backlog.json`; the inventory-driven gate deliberately rejects a snapshot made before that import. Refresh it together with recipe and Packit inventory changes when preparing concurrent PRs. When rebasing concurrent recipe imports, resolve conflicts in this generated report by rerunning `python3 tools/factory_build_backlog.py` against the combined catalog and inventory; choosing either side would discard the other import's totals or entries.
