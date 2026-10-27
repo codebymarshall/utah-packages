@@ -308,11 +308,9 @@ packages = [
     "pam_afs_session",
     "paps",
     "perl-Unicode-Normalize",
-    "portaudio",
     "prefixdevname",
     "python3-perf",
     "python3-pskc",
-    "python3-pyaudio",
     "qadwaitadecorations-qt5",
     "qrencode-libs",
     "qt5-qtdeclarative",
@@ -728,6 +726,10 @@ packages = [
     # standalone SVT VP9 encoder (library, CLI, GStreamer plug-in).
     { name = "libultrahdr", pr = 626 },
     { name = "svt-vp9-libs", pr = 626 },
+    # PyAudio (Python bindings for audio capture/playback) and the PortAudio
+    # library it links against (#506); both long-tail names.
+    { name = "portaudio" },
+    { name = "python3-pyaudio" },
 ]
 
 [wontfix]

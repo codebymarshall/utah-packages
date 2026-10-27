@@ -21,8 +21,8 @@
     "long-tail": {
       "already_recipe": 3,
       "manifest_wants": 1,
-      "pending": 93,
-      "total": 97
+      "pending": 91,
+      "total": 95
     },
     "power": {
       "total": 0
@@ -1026,11 +1026,6 @@
     },
     {
       "area": "long-tail",
-      "name": "portaudio",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
       "name": "prefixdevname",
       "state": "pending"
     },
@@ -1042,11 +1037,6 @@
     {
       "area": "long-tail",
       "name": "python3-pskc",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
-      "name": "python3-pyaudio",
       "state": "pending"
     },
     {
@@ -1259,11 +1249,11 @@
   "states": {
     "already_recipe": 17,
     "manifest_wants": 1,
-    "pending": 223
+    "pending": 221
   },
   "totals": {
-    "backlog": 241,
-    "resolved": 276,
+    "backlog": 239,
+    "resolved": 278,
     "wontfix": 34
   }
 }
