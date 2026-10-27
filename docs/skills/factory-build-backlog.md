@@ -174,7 +174,8 @@ After a recipe PR lands, regenerate `reports/factory-build-backlog.json`; the in
 When concurrent disposition PRs conflict during rebase, retain each distinct
 `[resolved]` and `[wontfix]` record in the catalog, then regenerate the report
 with `python3 tools/factory_build_backlog.py`. Do not choose one side of the
-generated JSON: it must reflect both sets of catalog changes.
+generated JSON: it must reflect both sets of catalog changes. Verify the result
+with `python3 tools/factory_build_backlog.py --check` before continuing the rebase.
 
 ### Reconciling published batches
 
