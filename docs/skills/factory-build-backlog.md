@@ -59,7 +59,11 @@ GitHub closing keywords for a PR that satisfies the entire batch issue's
 close condition, including required build and runtime evidence or linked
 blocking decisions for every named output. Before pushing a review fix,
 check the entire PR description for closing keywords: an automatically added
-footer can contradict an earlier partial-progress statement.
+footer can contradict an earlier partial-progress statement. After editing the body,
+read it back with `gh pr view <pr> --json body --jq .body` and verify the
+saved description, including any generated footer. A branch push alone
+does not correct the PR description. Once the PR number is known, fill in
+the recipe record's `pr` field so reviewers can trace the partial import.
 
 Two edits — never one, never none:
 
@@ -74,6 +78,8 @@ Two edits — never one, never none:
     exist yet at PR-open time, and do not let a rebase or squash-merge
     invalidate it. The `pr` field links the entry to its closing PR for
     cross-referencing.
+    Once the import PR has a number, populate `pr` before requesting review;
+    `--check` validates names and report drift, not this provenance field.
   - `[wontfix].packages` (`{ name = "<n>", reason = "..." }`) — Utah decided
     not to carry it, with a link to the decision issue. `reason` is also
     informational and not validated. Catalog comments should describe the
@@ -117,6 +123,14 @@ substitution fails even when all counts remain unchanged; moving an existing
 name to a closing record preserves the digest. The baseline was verified
 against the pinned gist's `nowhere-551.txt`; changing it requires a new audit. The auditor
 itself fails when the catalog totals do not reconcile with the report.
+
+### Smart-card Python bindings
+
+The `pyscard` source recipe provides `python3-pyscard`; do not import a
+second recipe for the binary name. It uses `pcsc-lite-devel` at build time
+and `pcsc-lite` at runtime, and is a dependency of the YubiKey manager in
+#479. The catalog move records the recipe import, not a successful hosted
+build, publication, or runtime dependency closure.
 
 ### Font parity decisions do not waive input methods
 
@@ -196,6 +210,13 @@ when the summary describes partial progress.
 
 ### Locking sources for a hand import
 
+For Linux-only library imports, inspect optional Windows cross-build bconds
+before locking the build root. `libdeflate` enables MinGW by default in
+Rawhide; disable its `mingw` bcond locally to keep the native library, tools
+and upstream CTest suite without adding Windows cross-toolchain dependencies.
+Its `mingw_utils` bcond only controls Windows tools, so disabling that alone
+does not remove the cross-build. Keep the imported provenance unchanged.
+
 For GNU recipes such as `bison`, preserve the detached signature in `sources`,
 its dist-git keyring, and the recipe's `%{gpgverify}` invocation. Lock the
 upstream release archive as the primary source and compare both archive and
@@ -240,6 +261,15 @@ release tree plus only `LICENSE` and `README.md` (compare with the original
 archive). Lock that archive by SHA-512, update `sources`, and set `%setup -n`
 to its commit-based directory; do not reuse the original archive's digest.
 This source-tree comparison is not a package build or runtime closure test.
+
+The `liblouisutdml` recipe builds a PDF manual with `texinfo-tex`, whose
+Fedora TeX Live dependency chain needs ICU 77 in the build root. Like
+`liblouis`, it opts in to that build-only dependency; its configure script
+links liblouis and libxml2, not ICU directly. Do not remove the manual or the
+upstream test suite to avoid the dependency. A successful build is still
+needed: inspect every built RPM's requirements for ICU 77 and resolve the
+runtime transaction using only Hummingbird and the factory. The opt-in does
+not prove the outputs are safe or published.
 
 A Python wheel's runtime closure is not in its `Requires`. `python-pillow`
 links `libraqm.so.0` (hence `libraqm`, imported with it) and its
@@ -321,6 +351,16 @@ Keep their default test suites enabled. A `[resolved]` entry records recipe
 coverage, not successful publication or a working import in the consumer;
 keep those outstanding proofs on the implementation issue until a pinned
 factory build and permitted-repository runtime check establish them.
+For `python3-pexpect`, import `python-pexpect` together with its build and
+runtime dependency `python-ptyprocess`; the graph can order the recipes from
+the explicit `BuildRequires`. The Rawhide 4.9.0 recipe points at an upstream
+`4.9.0` archive that no longer exists; upstream's tag is `4.9`. The 4.9 tag
+archive and Fedora's pinned 4.9.0 archive have identical file contents but
+not identical compressed bytes. Lock the upstream tag's own SHA-512, adjust
+`Source0` and `%autosetup` to its filename and directory, and preserve the
+Rawhide patches and test configuration. A successful source-tree comparison
+is not a package build or runtime test.
+
 ### Audio fingerprinting library
 
 The `chromaprint` source recipe produces `libchromaprint` and uses
@@ -411,6 +451,17 @@ tool reads only `name`); set them from the publication run's repodata when
 reconciling a published batch. Record any known newer failed rebuilds by package
 name and run in the catalog comments so publication evidence does not hide
 current build health.
+
+Read both from one image: `python3 tools/package_index.py --image
+projectbluefin/utah-packages:latest --output <file>` writes the manifest
+digest, the publishing `run` and the source `revision` under `image`, and every
+binary with its source package and epoch/version/release under `packages`.
+Check that `revision` is on the target branch before citing it. The primary
+metadata checksum is in `repository/repodata/repomd.xml` inside the image's
+first layer (`fetch_image` in the same tool returns it). An import PR that
+left its name `already_recipe` pending evidence (`tslib`, #643) moves to
+`[resolved]` in a later reconciliation PR once that image carries the binary;
+cite the original import PR and merge commit rather than the reconciliation.
 ### X11 resource library imports
 
 The audited `libXres` binary is the main output of source recipe `libXres`;
@@ -435,3 +486,24 @@ For `pam_yubico`, the Fedora source recipe requires `ykclient-devel`,
 `libyubikey-devel`, and `ykpers-devel`; all three source families must precede
 it in the build graph. A recipe and verified source do not prove authentication
 works: verify the hosted RPM, dependency transaction, and configured hardware.
+
+### NILFS utilities signature sources
+
+For `nilfs-utils`, the release archive and detached signature are separate
+`Source` entries. Verify both against `sources` and the bundled signing key;
+the source pipeline stages the signature from the digest-addressed lookaside.
+The catalog records the recipe import, not proof of installation or publication.
+
+## Firewall connection monitor acceptance
+
+`iptstate` is a standalone source and binary, not an `iptables` subpackage.
+Its recipe requires `iptables` at runtime plus automatically detected ncurses
+and libnetfilter_conntrack libraries. Check virtual provides as well as binary
+names when locating the `iptables` supplier. A metadata match alone is not a
+successful solver transaction.
+
+After a hosted build, resolve installation against only Hummingbird and the
+factory, then run `iptstate --single` with access to the kernel connection
+tracking table (CAP_NET_ADMIN in the tested network namespace). Record the
+namespace and result. `--help` only tests program startup; it does not exercise
+connection tracking. A permissions error is not a successful runtime probe.
