@@ -57,11 +57,19 @@ infrastructure, a `Source0` that is not a direct HTTP(S) URL, or upstream
 bytes that differ from the pin in `packages/<name>/sources`. The failed lock
 step stops before artifact upload. To investigate, rerun bootstrap in the
 pinned image with `--package <name> --output <candidate-path> --report
-<report-path>` and read that report. For an accepted manual import, use
-`--merge` to retain the other packages in the source lock. For rejected
-recipes, lock the upstream release by hand with Fedora in `fallback_urls`
-(or as a `generate` entry, above), then regenerate `.packit.yaml` and the
-architecture counts as the workflow does. See
+<report-path>` and read that report. Keep the report under the gitignored
+`work/` directory: `reports/import-source-bootstrap.json` is tracked and
+written by the import workflow, so a local diagnostic must not replace it. A
+rejected explicit selection returns nonzero and leaves the source lock
+untouched; read the report before continuing. The report and the source lock
+must name different files, including when using symlinks or hard links. For an
+accepted manual import, use `--merge` to retain the other packages in the
+source lock: a successful run without it replaces the catalog with only the
+selected package. For rejected recipes, lock the upstream release by hand with
+Fedora in `fallback_urls` (or as a `generate` entry, above), then regenerate
+`.packit.yaml` and the architecture counts as the workflow does. When importing
+by hand on a workstation without `rpmspec`, lock the source in the pinned
+`quay.io/packit/packit` image as the workflow does. See
 [`repeated-mistakes.md` section 23](skills/repeated-mistakes.md#23-an-import-pull-request-is-a-recipe-not-a-package).
 
 If the imported name (or any `%package` subpackage the recipe builds) is in
