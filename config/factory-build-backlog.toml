@@ -728,8 +728,8 @@ packages = [
     { name = "svt-vp9-libs", pr = 626 },
     # PyAudio (Python bindings for audio capture/playback) and the PortAudio
     # library it links against (#506); both long-tail names.
-    { name = "portaudio" },
-    { name = "python3-pyaudio" },
+    { name = "portaudio", pr = 748 },
+    { name = "python3-pyaudio", pr = 748 },
 ]
 
 [wontfix]
