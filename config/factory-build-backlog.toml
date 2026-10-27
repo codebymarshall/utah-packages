@@ -41,7 +41,6 @@ packages = [
     "ImageMagick",
     "ImageMagick-libs",
     "LCEVCdec",
-    "LibRaw",
     "davs2-libs",
     "ffmpeg",
     "ffmpeg-libs",
@@ -90,20 +89,13 @@ consumer_issue = "projectbluefin/utah#389"
 packages = [
     "NetworkManager-vpnc",
     "NetworkManager-vpnc-gnome",
-    "libyubikey",
     "openpace",
     "opensc",
     "opensc-libs",
     "pam-u2f",
     "pam_yubico",
     "pamu2fcfg",
-    "pcsc-lite",
-    "pcsc-lite-ccid",
-    "pcsc-lite-libs",
-    "pkcs11-provider",
     "python3-yubikey-manager",
-    "ykclient",
-    "ykpers",
     "yubikey-manager",
 ]
 
@@ -111,8 +103,6 @@ packages = [
 # projectbluefin/utah#390 - 32 names
 consumer_issue = "projectbluefin/utah#390"
 packages = [
-    "liblouisutdml",
-    "liblouisutdml-utils",
 ]
 
 [areas.gnome-apps]
@@ -145,7 +135,6 @@ packages = [
     "adcli",
     "adcli-selinux",
     "bcache-tools",
-    "bison",
     "cryfs",
     "davfs2",
     "distribution-gpg-keys",
@@ -153,7 +142,6 @@ packages = [
     "fedora-release-identity-silverblue",
     "fedora-release-ostree-desktop",
     "fedora-release-silverblue",
-    "flex",
     "fuse-encfs",
     "generic-logos",
     "hfsplus-tools",
@@ -164,7 +152,6 @@ packages = [
     "kernel-tools",
     "kernel-tools-libs",
     "leptonica",
-    "libbsd",
     "libcaca",
     "libchromaprint",
     "libsss_autofs",
@@ -175,7 +162,6 @@ packages = [
     "lsb_release",
     "nilfs-utils",
     "ntfs-3g-system-compression",
-    "nvtop",
     "oddjob",
     "oddjob-mkhomedir",
     "open-vm-tools",
@@ -184,7 +170,6 @@ packages = [
     "python3-boto3",
     "python3-botocore",
     "python3-click",
-    "python3-dateutil",
     "python3-dns",
     "python3-email-validator",
     "python3-enchant",
@@ -211,7 +196,6 @@ packages = [
     "python3-s3transfer",
     "python3-secretstorage",
     "python3-shtab",
-    "python3-six",
     "qemu-guest-agent",
     "qemu-user-static-aarch64",
     "rclone",
@@ -221,7 +205,6 @@ packages = [
     "rpm-ostree-libs",
     "spice-vdagent",
     "spice-webdavd",
-    "sshpass",
     "sssd-client",
     "sssd-common",
     "sssd-kcm",
@@ -248,15 +231,9 @@ packages = [
     "adobe-mappings-cmap",
     "adobe-mappings-cmap-deprecated",
     "adobe-mappings-pdf",
-    "adobe-source-code-pro-fonts",
     "anthy-unicode",
     "cldr-emoji-annotation",
     "cldr-emoji-annotation-dtd",
-    "gdouros-symbola-fonts",
-    "google-droid-sans-fonts",
-    "google-noto-emoji-fonts",
-    "google-noto-sans-cjk-fonts",
-    "google-noto-serif-cjk-vf-fonts",
     "ibus-anthy",
     "ibus-anthy-python",
     "ibus-chewing",
@@ -264,32 +241,16 @@ packages = [
     "ibus-libpinyin",
     "ibus-m17n",
     "ibus-typing-booster",
-    "jetbrains-mono-fonts",
-    "jetbrains-mono-fonts-all",
-    "jetbrains-mono-nl-fonts",
-    "jomolhari-fonts",
-    "julietaula-montserrat-fonts",
     "kasumi-common",
     "kasumi-unicode",
     "langtable",
     "libchewing",
-    "liberation-mono-fonts",
-    "liberation-sans-fonts",
-    "liberation-serif-fonts",
     "libhangul",
     "libpinyin",
     "libpinyin-data",
     "m17n-db",
     "m17n-lib",
-    "madan-fonts",
-    "nerd-fonts",
-    "open-sans-fonts",
-    "opendyslexic-fonts",
-    "paktype-naskh-basic-fonts",
     "python3-langtable",
-    "rit-meera-new-fonts",
-    "rit-rachana-fonts",
-    "sil-padauk-fonts",
     "unicode-ucd",
 ]
 
@@ -318,7 +279,6 @@ packages = [
     "NetworkManager-ssh-selinux",
     "OpenCL-ICD-Loader",
     "PackageKit-glib",
-    "antiword",
     "appstream-data",
     "b43-fwcutter",
     "b43-openfwwf",
@@ -332,20 +292,10 @@ packages = [
     "evolution-ews-langpacks",
     "f44-backgrounds-base",
     "f44-backgrounds-gnome",
-    "fedora-workstation-backgrounds",
-    "freeglut",
-    "fwupd-efi",
-    "gst-editing-services",
     "gst-thumbnailers",
     "gupnp-av",
-    "gupnp-dlna",
     "gvfs-afp",
     "gvfs-archive",
-    "hyperv-daemons",
-    "hyperv-daemons-license",
-    "hypervfcopyd",
-    "hypervkvpd",
-    "hypervvssd",
     "initscripts-service",
     "intel-vaapi-driver",
     "ipset",
@@ -359,17 +309,13 @@ packages = [
     "kpartx",
     "kvazaar-libs",
     "kyotocabinet-libs",
-    "libXres",
     "libdeflate",
-    "libdhash",
     "libell",
     "libev",
     "libijs",
     "liblqr-1",
-    "libmd",
     "libmspack",
     "libnet",
-    "libnfsidmap",
     "libntlm",
     "libpaper",
     "libpasswdqc",
@@ -397,10 +343,7 @@ packages = [
     "openexr-libs",
     "oversteer-udev",
     "pam_afs_session",
-    "pam_passwdqc",
     "paps",
-    "passwdqc",
-    "passwdqc-utils",
     "perl-Unicode-Normalize",
     "plymouth",
     "plymouth-core-libs",
@@ -463,6 +406,43 @@ packages = [
 # Packages that left the backlog because a recipe was imported.
 # Each entry: package name and the commit that closed the gap.
 packages = [
+    # Flex source import; publication and consumer validation remain tracked in #486.
+    { name = "flex", pr = 654 },
+    # Existing GPU monitor recipe; publication/runtime proof remains in #488.
+    { name = "nvtop", commit = "e19a229", pr = 410 },
+    # Long-tail batch (projectbluefin/utah-packages#607, part of #500).
+    # Six source packages imported from Fedora rawhide dist-git, each now
+    # source-locked in config/upstream-sources.json.
+    { name = "fedora-workstation-backgrounds", pr = 607 },
+    { name = "freeglut", pr = 607 },
+    { name = "fwupd-efi", pr = 607 },
+    { name = "gst-editing-services", pr = 607 },
+    { name = "gupnp-dlna", pr = 607 },
+    { name = "hyperv-daemons", pr = 607 },
+    # hyperv-daemons-license, hypervfcopyd, hypervkvpd and hypervvssd are
+    # subpackages built from hyperv-daemons.spec. hypervfcopyd sits under
+    # %ifarch i686 x86_64, which the auditor treats as undecidable, so all
+    # four close here explicitly.
+    { name = "hyperv-daemons-license", pr = 607 },
+    { name = "hypervfcopyd", pr = 607 },
+    { name = "hypervkvpd", pr = 607 },
+    { name = "hypervvssd", pr = 607 },
+    # Recipe coverage only; build/publication/runtime proof stays on #489.
+    { name = "python3-dateutil", pr = 613 },
+    { name = "python3-six", pr = 613 },
+    # BSD compatibility library and its digest-library dependency (#487).
+    # Recipe import only; build/publication and Utah consumption remain separate proof.
+    { name = "libbsd", pr = 614 },
+    { name = "libmd", pr = 614 },
+    { name = "sshpass", pr = 611 }, # Recipe import; publication/installability tracked in #490.
+    # Password-quality source family: passwdqc builds all three (projectbluefin/utah-packages#644, #505).
+    { name = "pam_passwdqc", pr = 644 },
+    { name = "passwdqc", pr = 644 },
+    { name = "passwdqc-utils", pr = 644 },
+    # Smart-card recipes imported in #364; publication verified for #478.
+    { name = "pcsc-lite", commit = "a09ec58", pr = 364 },
+    { name = "pcsc-lite-libs", commit = "a09ec58", pr = 364 },
+    { name = "pcsc-lite-ccid", commit = "a09ec58", pr = 364 },
     # Printing runtime providers for hplip/system-config-printer (projectbluefin/utah-packages#596, utah#390).
     { name = "python3-olefile", pr = 596 },
     { name = "python3-pillow", pr = 596 },
@@ -637,6 +617,10 @@ packages = [
     { name = "mpage", pr = 586 },
     { name = "printer-driver-brlaser", pr = 586 },
     { name = "ptouch-driver", pr = 586 },
+    # Braille source family and its Word conversion runtime dependency (#480).
+    { name = "liblouisutdml", pr = 616 },
+    { name = "liblouisutdml-utils", pr = 616 },
+    { name = "antiword", pr = 616 },
     { name = "sane-airscan", pr = 586 },
     { name = "sane-backends", pr = 586 },
     { name = "sane-backends-drivers-cameras", pr = 586 },
@@ -684,6 +668,9 @@ packages = [
     { name = "quota-nls", pr = 597 },
     { name = "libcollection", pr = 597 },
     { name = "libini_config", pr = 597 },
+    { name = "libdhash", pr = 597 },
+    # nfs-utils subpackage imported in #524; publication verified for #502.
+    { name = "libnfsidmap", pr = 524 },
     { name = "libbasicobjects", pr = 597 },
     { name = "libpath_utils", pr = 597 },
     { name = "libref_array", pr = 597 },
@@ -699,6 +686,18 @@ packages = [
     { name = "urw-base35-p052-fonts", pr = 631 },
     { name = "urw-base35-standard-symbols-ps-fonts", pr = 631 },
     { name = "urw-base35-z003-fonts", pr = 631 },
+    { name = "libXres", pr = 646 },
+    # VPN / smart-card PKCS#11 provider and Yubico C/personalization stack (projectbluefin/utah-packages#479, utah#389).
+    # libyubikey is ykpers's build and runtime dependency (libyubikey.so.0).
+    { name = "libyubikey", pr = 647 },
+    { name = "pkcs11-provider", pr = 647 },
+    { name = "ykclient", pr = 647 },
+    { name = "ykpers", pr = 647 },
+    # bison.spec produces bison plus bison-devel/runtime; recipe closure for #485,
+    # not a claim of publication or runtime installation.
+    { name = "bison", pr = 615 },
+    # Recipe coverage only; hosted build/publication/runtime proof remains in #474.
+    { name = "LibRaw", pr = 618 },
 ]
 
 [wontfix]
@@ -708,11 +707,33 @@ packages = [
 # they are surfaced as ``totals.wontfix`` so the count partition
 # (areas + resolved + wontfix) still equals the audit's 551.
 packages = [
+    { name = "adobe-source-code-pro-fonts", reason = "Bulk font parity rejected; individual additions need a separate proposal (https://github.com/projectbluefin/utah/issues/393#issuecomment-5920428811)." },
+    { name = "gdouros-symbola-fonts", reason = "Bulk font parity rejected; individual additions need a separate proposal (https://github.com/projectbluefin/utah/issues/393#issuecomment-5920428811)." },
+    { name = "google-droid-sans-fonts", reason = "Bulk font parity rejected; individual additions need a separate proposal (https://github.com/projectbluefin/utah/issues/393#issuecomment-5920428811)." },
+    { name = "google-noto-emoji-fonts", reason = "Bulk font parity rejected; individual additions need a separate proposal (https://github.com/projectbluefin/utah/issues/393#issuecomment-5920428811)." },
+    { name = "google-noto-sans-cjk-fonts", reason = "Bulk font parity rejected; individual additions need a separate proposal (https://github.com/projectbluefin/utah/issues/393#issuecomment-5920428811)." },
+    { name = "google-noto-serif-cjk-vf-fonts", reason = "Bulk font parity rejected; individual additions need a separate proposal (https://github.com/projectbluefin/utah/issues/393#issuecomment-5920428811)." },
+    { name = "jetbrains-mono-fonts", reason = "Bulk desktop font parity rejected by Utah: https://github.com/projectbluefin/utah/issues/393#issuecomment-5920428811; no individual addition accepted." },
+    { name = "jetbrains-mono-fonts-all", reason = "Bulk desktop font parity rejected by Utah: https://github.com/projectbluefin/utah/issues/393#issuecomment-5920428811; no individual addition accepted." },
+    { name = "jetbrains-mono-nl-fonts", reason = "Bulk desktop font parity rejected by Utah: https://github.com/projectbluefin/utah/issues/393#issuecomment-5920428811; no individual addition accepted." },
+    { name = "jomolhari-fonts", reason = "Bulk desktop font parity rejected by Utah: https://github.com/projectbluefin/utah/issues/393#issuecomment-5920428811; no individual addition accepted." },
+    { name = "julietaula-montserrat-fonts", reason = "Bulk desktop font parity rejected by Utah: https://github.com/projectbluefin/utah/issues/393#issuecomment-5920428811; no individual addition accepted." },
     { name = "gnome-shell-extension-apps-menu", reason = "Utah uses Git submodules for GNOME extensions (projectbluefin/utah#391); no factory RPM." },
     { name = "gnome-shell-extension-blur-my-shell", reason = "Utah uses Git submodules for GNOME extensions (projectbluefin/utah#391); no factory RPM." },
     { name = "gnome-shell-extension-common", reason = "Utah uses Git submodules for GNOME extensions (projectbluefin/utah#391); no factory RPM." },
     { name = "gnome-shell-extension-launch-new-instance", reason = "Utah uses Git submodules for GNOME extensions (projectbluefin/utah#391); no factory RPM." },
     { name = "gnome-shell-extension-places-menu", reason = "Utah uses Git submodules for GNOME extensions (projectbluefin/utah#391); no factory RPM." },
     { name = "gnome-shell-extension-window-list", reason = "Utah uses Git submodules for GNOME extensions (projectbluefin/utah#391); no factory RPM." },
+    { name = "liberation-mono-fonts", reason = "Bulk desktop font parity rejected by Utah: https://github.com/projectbluefin/utah/issues/393#issuecomment-5920428811; no individual addition accepted. In-repo consumer libcupsfilters Recommends it (resolved from Fedora)." },
+    { name = "liberation-sans-fonts", reason = "Bulk desktop font parity rejected by Utah: https://github.com/projectbluefin/utah/issues/393#issuecomment-5920428811; no individual addition accepted. In-repo consumer totem BuildRequires it (resolved from Fedora)." },
+    { name = "liberation-serif-fonts", reason = "Bulk desktop font parity rejected by Utah: https://github.com/projectbluefin/utah/issues/393#issuecomment-5920428811; no individual addition accepted." },
+    { name = "madan-fonts", reason = "Bulk desktop font parity rejected by Utah: https://github.com/projectbluefin/utah/issues/393#issuecomment-5920428811; no individual addition accepted." },
+    { name = "nerd-fonts", reason = "Bulk desktop font parity rejected by Utah: https://github.com/projectbluefin/utah/issues/393#issuecomment-5920428811; no individual addition accepted." },
+    { name = "open-sans-fonts", reason = "Bulk desktop font parity rejected by Utah: https://github.com/projectbluefin/utah/issues/393#issuecomment-5920428811; no individual addition accepted." },
+    { name = "opendyslexic-fonts", reason = "Bulk desktop font parity rejected by Utah: https://github.com/projectbluefin/utah/issues/393#issuecomment-5920428811; no individual addition accepted." },
+    { name = "paktype-naskh-basic-fonts", reason = "Bulk desktop font parity rejected by Utah: https://github.com/projectbluefin/utah/issues/393#issuecomment-5920428811; no individual addition accepted." },
+    { name = "rit-meera-new-fonts", reason = "Bulk desktop font parity rejected by Utah: https://github.com/projectbluefin/utah/issues/393#issuecomment-5920428811; no individual addition accepted." },
+    { name = "rit-rachana-fonts", reason = "Bulk desktop font parity rejected by Utah: https://github.com/projectbluefin/utah/issues/393#issuecomment-5920428811; no individual addition accepted." },
+    { name = "sil-padauk-fonts", reason = "Bulk desktop font parity rejected by Utah: https://github.com/projectbluefin/utah/issues/393#issuecomment-5920428811; no individual addition accepted." },
     { name = "vazirmatn-vf-fonts", reason = "Bulk desktop font parity rejected by Utah: https://github.com/projectbluefin/utah/issues/393#issuecomment-5920428811; no individual addition accepted." },
 ]
