@@ -2,13 +2,13 @@
   "areas": {
     "codecs-media": {
       "already_recipe": 10,
-      "pending": 25,
-      "total": 35
+      "pending": 23,
+      "total": 33
     },
     "dev-tools": {
       "already_recipe": 1,
-      "pending": 87,
-      "total": 88
+      "pending": 83,
+      "total": 84
     },
     "fonts-i18n": {
       "pending": 24,
@@ -20,10 +20,10 @@
       "total": 10
     },
     "long-tail": {
-      "already_recipe": 12,
+      "already_recipe": 11,
       "manifest_wants": 1,
-      "pending": 111,
-      "total": 124
+      "pending": 107,
+      "total": 119
     },
     "power": {
       "total": 0
@@ -39,8 +39,8 @@
       "total": 4
     },
     "vpn": {
-      "pending": 10,
-      "total": 10
+      "pending": 9,
+      "total": 9
     }
   },
   "audit_digest_bluefin": "sha256:1e37db65e78f7f394e16608aa8449bd6be43eb691ae9f98b619044ffba23c64e",
@@ -93,11 +93,6 @@
     {
       "area": "codecs-media",
       "name": "gstreamer1-plugins-good-qt6",
-      "state": "pending"
-    },
-    {
-      "area": "codecs-media",
-      "name": "libavc1394",
       "state": "pending"
     },
     {
@@ -163,11 +158,6 @@
     {
       "area": "codecs-media",
       "name": "libplacebo",
-      "state": "pending"
-    },
-    {
-      "area": "codecs-media",
-      "name": "libraw1394",
       "state": "pending"
     },
     {
@@ -357,11 +347,6 @@
     },
     {
       "area": "dev-tools",
-      "name": "nilfs-utils",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
       "name": "ntfs-3g-system-compression",
       "state": "pending"
     },
@@ -487,16 +472,6 @@
     },
     {
       "area": "dev-tools",
-      "name": "python3-pexpect",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
-      "name": "python3-ptyprocess",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
       "name": "python3-pygit2",
       "state": "pending"
     },
@@ -568,11 +543,6 @@
     {
       "area": "dev-tools",
       "name": "rpm-ostree-libs",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
-      "name": "spice-vdagent",
       "state": "pending"
     },
     {
@@ -972,11 +942,6 @@
     },
     {
       "area": "long-tail",
-      "name": "iptstate",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
       "name": "jbig2dec-libs",
       "state": "pending"
     },
@@ -1013,11 +978,6 @@
     {
       "area": "long-tail",
       "name": "kyotocabinet-libs",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
-      "name": "libdeflate",
       "state": "pending"
     },
     {
@@ -1252,11 +1212,6 @@
     },
     {
       "area": "long-tail",
-      "name": "python3-pyscard",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
       "name": "qadwaitadecorations-qt5",
       "state": "pending"
     },
@@ -1312,13 +1267,8 @@
     },
     {
       "area": "long-tail",
-      "name": "simdutf",
-      "state": "already_recipe"
-    },
-    {
-      "area": "long-tail",
       "name": "slang",
-      "state": "pending"
+      "state": "already_recipe"
     },
     {
       "area": "long-tail",
@@ -1364,11 +1314,6 @@
       "area": "long-tail",
       "name": "tesseract-tessdata-doc",
       "state": "pending"
-    },
-    {
-      "area": "long-tail",
-      "name": "tslib",
-      "state": "already_recipe"
     },
     {
       "area": "long-tail",
@@ -1507,11 +1452,6 @@
     },
     {
       "area": "vpn",
-      "name": "pam_yubico",
-      "state": "pending"
-    },
-    {
-      "area": "vpn",
       "name": "pamu2fcfg",
       "state": "pending"
     },
@@ -1528,13 +1468,13 @@
   ],
   "issue": "projectbluefin/utah-packages#308",
   "states": {
-    "already_recipe": 27,
+    "already_recipe": 26,
     "manifest_wants": 1,
-    "pending": 267
+    "pending": 256
   },
   "totals": {
-    "backlog": 295,
-    "resolved": 226,
+    "backlog": 283,
+    "resolved": 238,
     "wontfix": 30
   }
 }

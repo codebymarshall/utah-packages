@@ -9,6 +9,26 @@
       "sha512": "73d9612abe689f290b333e89506449bfc3c9b1f2c2c5a9302bef01b87d14ac37f612c9979f07e7c409b3e9fd7a89f384caaf5892c0b27b700fee015de7a704a4"
     },
     {
+      "name": "spice-protocol",
+      "version": "0.14.5",
+      "url": "https://www.spice-space.org/download/releases/spice-protocol-0.14.5.tar.xz",
+      "filename": "spice-protocol-0.14.5.tar.xz",
+      "sha512": "45bec8b427f3ae8df62e946eb21d3d31deed5e404d58cb9cd143669a2abb94d9ceb8add4f28b483a9c4215a8edba25be9308b6d3b63ad1ddc21653e0ab068dbc",
+      "fallback_urls": [
+        "https://src.fedoraproject.org/repo/pkgs/rpms/spice-protocol/spice-protocol-0.14.5.tar.xz/sha512/45bec8b427f3ae8df62e946eb21d3d31deed5e404d58cb9cd143669a2abb94d9ceb8add4f28b483a9c4215a8edba25be9308b6d3b63ad1ddc21653e0ab068dbc/spice-protocol-0.14.5.tar.xz"
+      ]
+    },
+    {
+      "name": "spice-vdagent",
+      "version": "0.23.0",
+      "url": "https://spice-space.org/download/releases/spice-vdagent-0.23.0.tar.bz2",
+      "filename": "spice-vdagent-0.23.0.tar.bz2",
+      "sha512": "ab7e6ad34d5fa8ff7aa56f26307bf20f08a3b265713a37a08588d59f224e521f602a4f43084a95f7fa32a6aa67d09f5126a6c5a01412346b8044fea6d91dad30",
+      "fallback_urls": [
+        "https://src.fedoraproject.org/repo/pkgs/rpms/spice-vdagent/spice-vdagent-0.23.0.tar.bz2/sha512/ab7e6ad34d5fa8ff7aa56f26307bf20f08a3b265713a37a08588d59f224e521f602a4f43084a95f7fa32a6aa67d09f5126a6c5a01412346b8044fea6d91dad30/spice-vdagent-0.23.0.tar.bz2"
+      ]
+    },
+    {
       "name": "sshpass",
       "version": "1.09",
       "url": "https://downloads.sourceforge.net/sshpass/sshpass-1.09.tar.gz",
@@ -4967,6 +4987,20 @@
       "sha512": "fcfa58b03877ac3ac00a4f85b5fea4fecb2a010244451aa95013637a0aa21529f3dcfe25c0a07c72da46da1fa12bc0c16b6c641c40c6ab2133e5b5cbb5a71e4b"
     },
     {
+      "name": "python-ptyprocess",
+      "version": "0.7.0",
+      "url": "https://files.pythonhosted.org/packages/source/p/ptyprocess/ptyprocess-0.7.0.tar.gz",
+      "filename": "ptyprocess-0.7.0.tar.gz",
+      "sha512": "791d8f2e79900627215ce80ce67ee9c79173dbc08297c6219d5058f9b80c5e323b93049e6836a70c4073f43548d22e3cf310f2e9948ef12f96bcaa15b0ddb2f3"
+    },
+    {
+      "name": "python-pexpect",
+      "version": "4.9.0",
+      "url": "https://github.com/pexpect/pexpect/archive/refs/tags/4.9.tar.gz",
+      "filename": "4.9.tar.gz",
+      "sha512": "222aa3a2aba174f1f9c9e5bbf71aa59fbc1c1830fce6691ecb01ec4f0613b1f2141da489a6bd7bfd226f46d98d52a16e1f5a5b7345bcf6557110bfd52cd5f31e"
+    },
+    {
       "name": "python-dateutil",
       "version": "2.9.0.post0",
       "url": "https://files.pythonhosted.org/packages/source/p/python-dateutil/python-dateutil-2.9.0.post0.tar.gz",
@@ -5029,7 +5063,8 @@
       "version": "2.12.0",
       "url": "https://github.com/liblouis/liblouisutdml/releases/download/v2.12.0/liblouisutdml-2.12.0.tar.gz",
       "filename": "liblouisutdml-2.12.0.tar.gz",
-      "sha512": "f4ec1b8c3e8dbb5012f63bf85bd7ba47897c60896f3329daa7a89709002c0fdfb178034ad11024c9cee447afe556542401ed4e97be991b822c46fdbfbcc8ad32"
+      "sha512": "f4ec1b8c3e8dbb5012f63bf85bd7ba47897c60896f3329daa7a89709002c0fdfb178034ad11024c9cee447afe556542401ed4e97be991b822c46fdbfbcc8ad32",
+      "buildroot_icu77": true
     },
     {
       "name": "bison",
@@ -5185,6 +5220,74 @@
       "sha512": "53df39c207cadd742b4d4f78fd14159a6e4f45c97c9a7b97a39778fab4fdb5b0c087ebba04d27c28b8078681b82c3e903a4394f0d381cdadf23d2fd24956261f",
       "fallback_urls": [
         "https://src.fedoraproject.org/repo/pkgs/rpms/libudfread/libudfread-1.2.0.tar.bz2/sha512/53df39c207cadd742b4d4f78fd14159a6e4f45c97c9a7b97a39778fab4fdb5b0c087ebba04d27c28b8078681b82c3e903a4394f0d381cdadf23d2fd24956261f/libudfread-1.2.0.tar.bz2"
+      ]
+    },
+    {
+      "name": "libdeflate",
+      "version": "1.26",
+      "url": "https://github.com/ebiggers/libdeflate/archive/v1.26/libdeflate-1.26.tar.gz",
+      "filename": "libdeflate-1.26.tar.gz",
+      "sha512": "06605eabce8635b82e03863c87b515696d08b8a1fc36b746b44b660989613d2ebd6ca1bb13dd0f88244846894dbf5a15169dd443c34dcda64e960fdbd08a8d3b"
+    },
+    {
+      "name": "iptstate",
+      "version": "2.3.0",
+      "url": "https://github.com/jaymzh/iptstate/archive/refs/tags/v2.3.0.tar.gz",
+      "filename": "v2.3.0.tar.gz",
+      "sha512": "355f48f45965ed7bf79a59249c20505c96ec51a06711cf9df02b5a32dcf4bfd5e90d2aa97c08ee9b19ae738583b4d16094050a469bece295910926253eb6acc7",
+      "fallback_urls": [
+        "https://src.fedoraproject.org/repo/pkgs/rpms/iptstate/v2.3.0.tar.gz/sha512/355f48f45965ed7bf79a59249c20505c96ec51a06711cf9df02b5a32dcf4bfd5e90d2aa97c08ee9b19ae738583b4d16094050a469bece295910926253eb6acc7/v2.3.0.tar.gz"
+      ]
+    },
+    {
+      "name": "nilfs-utils",
+      "version": "2.2.11",
+      "url": "https://nilfs.sourceforge.io/download/nilfs-utils-2.2.11.tar.bz2",
+      "filename": "nilfs-utils-2.2.11.tar.bz2",
+      "sha512": "8c238f961f429c12674695d2481202c8fac4582d04e838ce7244647b8a9997e38b4dafa280314acb57ae40137711c7678de6aaf65708c110028df97c1c76089e",
+      "fallback_urls": [
+        "https://src.fedoraproject.org/repo/pkgs/rpms/nilfs-utils/nilfs-utils-2.2.11.tar.bz2/sha512/8c238f961f429c12674695d2481202c8fac4582d04e838ce7244647b8a9997e38b4dafa280314acb57ae40137711c7678de6aaf65708c110028df97c1c76089e/nilfs-utils-2.2.11.tar.bz2"
+      ]
+    },
+    {
+      "name": "pyscard",
+      "version": "2.2.2",
+      "url": "https://github.com/LudovicRousseau/pyscard/archive/2.2.2/pyscard-2.2.2.tar.gz",
+      "filename": "pyscard-2.2.2.tar.gz",
+      "sha512": "2f5f4bbbdc65c4116ea04a01241c5c714cf62335a65591eb60a400499792749dd2c3408624be374d46885636cdef573db58d72b207512375318069cad3abb187"
+    },
+    {
+      "name": "pam_yubico",
+      "version": "2.27",
+      "url": "https://developers.yubico.com/yubico-pam/Releases/pam_yubico-2.27.tar.gz",
+      "filename": "pam_yubico-2.27.tar.gz",
+      "sha512": "8b6e4edc8bd6d24f0f512abfc6b43359e0ea2a5a60aeb855898f51904ddfd1978bd6845ac9a0af063814301c742b2f7dc42ff0a8ca59e4d7ead8994dfdce0ba6"
+    },
+    {
+      "name": "slang",
+      "version": "2.3.3",
+      "url": "https://www.jedsoft.org/releases/slang/slang-2.3.3.tar.bz2",
+      "filename": "slang-2.3.3.tar.bz2",
+      "sha512": "f882f09e3fcd53427de0f233c9fc3ab15497f2323007be9a084696c8cf810ffe2726cd003149e757df26198b390b9f8c1ff411dc6473513457bd0f94722f8490"
+    },
+    {
+      "name": "libraw1394",
+      "version": "2.1.2",
+      "url": "https://www.kernel.org/pub/linux/libs/ieee1394/libraw1394-2.1.2.tar.xz",
+      "filename": "libraw1394-2.1.2.tar.xz",
+      "sha512": "1ef38961b747c4ebb18d823a4c38d5bf019f8bd0ac55547838d153b1899b91ae0ff56f5b6732e309d6975b55725d1ce989917ffcf605cf64f7d33624f54f0567",
+      "fallback_urls": [
+        "https://src.fedoraproject.org/repo/pkgs/rpms/libraw1394/libraw1394-2.1.2.tar.xz/md5/118060584c04f1aa5e29c4d22c1c235a/libraw1394-2.1.2.tar.xz"
+      ]
+    },
+    {
+      "name": "libavc1394",
+      "version": "0.5.4",
+      "url": "https://downloads.sourceforge.net/project/libavc1394/libavc1394/libavc1394-0.5.4.tar.gz",
+      "filename": "libavc1394-0.5.4.tar.gz",
+      "sha512": "ef07631cd2de9b79dec9d81247d705be318101e8f8a1fe007b946ffab3dfe7b97f392144614d867ef6b2315b6c0e82d53e915f07855d4e21401645293e18842a",
+      "fallback_urls": [
+        "https://src.fedoraproject.org/repo/pkgs/rpms/libavc1394/libavc1394-0.5.4.tar.gz/md5/caf0db059d8b8d35d6f08e6c0e1c7dfe/libavc1394-0.5.4.tar.gz"
       ]
     },
     {
