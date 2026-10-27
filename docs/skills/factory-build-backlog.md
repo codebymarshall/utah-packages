@@ -182,6 +182,9 @@ backlog with the import.
   regenerate the snapshot from the merged inventory. Do not choose one side's
   generated totals: that can discard resolutions or recipe imports from the
   other branch. Stage the regenerated report before continuing the rebase.
+  If the catalog conflict is two independent additions to `[resolved]`, keep
+  both sets of records; neither supersedes the other. Preserve unrelated skill
+  sections added on `main` when the reconciliation guidance conflicts too.
 - A `pending` count that grows means a name was added to the catalog
   without a recipe; re-run `tools/factory_build_backlog.py` and inspect
   `reports/factory-build-backlog.json`.
