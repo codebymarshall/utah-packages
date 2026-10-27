@@ -177,6 +177,11 @@ backlog with the import.
 - `--check` compares the whole live report with the committed snapshot —
   totals, states, the per-area rollup and every entry — so a name moving
   between areas fails the gate even though the counts are unchanged.
+- When a rebase conflicts in `reports/factory-build-backlog.json`, resolve the
+  catalog changes first, then run `python3 tools/factory_build_backlog.py` to
+  regenerate the snapshot from the merged inventory. Do not choose one side's
+  generated totals: that can discard resolutions or recipe imports from the
+  other branch. Stage the regenerated report before continuing the rebase.
 - A `pending` count that grows means a name was added to the catalog
   without a recipe; re-run `tools/factory_build_backlog.py` and inspect
   `reports/factory-build-backlog.json`.
