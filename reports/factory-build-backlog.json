@@ -2,17 +2,17 @@
   "areas": {
     "codecs-media": {
       "already_recipe": 10,
-      "pending": 28,
-      "total": 38
+      "pending": 27,
+      "total": 37
     },
     "dev-tools": {
       "already_recipe": 1,
-      "pending": 95,
-      "total": 96
+      "pending": 90,
+      "total": 91
     },
     "fonts-i18n": {
-      "pending": 46,
-      "total": 46
+      "pending": 29,
+      "total": 29
     },
     "gnome-apps": {
       "already_recipe": 5,
@@ -20,17 +20,16 @@
       "total": 12
     },
     "long-tail": {
-      "already_recipe": 12,
+      "already_recipe": 13,
       "manifest_wants": 1,
-      "pending": 131,
-      "total": 144
+      "pending": 115,
+      "total": 129
     },
     "power": {
       "total": 0
     },
     "printing-scanning": {
-      "pending": 2,
-      "total": 2
+      "total": 0
     },
     "ujust-deps": {
       "pending": 1,
@@ -66,11 +65,6 @@
     {
       "area": "codecs-media",
       "name": "LCEVCdec",
-      "state": "pending"
-    },
-    {
-      "area": "codecs-media",
-      "name": "LibRaw",
       "state": "pending"
     },
     {
@@ -260,11 +254,6 @@
     },
     {
       "area": "dev-tools",
-      "name": "bison",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
       "name": "cryfs",
       "state": "pending"
     },
@@ -355,11 +344,6 @@
     },
     {
       "area": "dev-tools",
-      "name": "libbsd",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
       "name": "libcaca",
       "state": "pending"
     },
@@ -446,11 +430,6 @@
     {
       "area": "dev-tools",
       "name": "python3-click",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
-      "name": "python3-dateutil",
       "state": "pending"
     },
     {
@@ -585,11 +564,6 @@
     },
     {
       "area": "dev-tools",
-      "name": "python3-six",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
       "name": "qemu-guest-agent",
       "state": "pending"
     },
@@ -631,11 +605,6 @@
     {
       "area": "dev-tools",
       "name": "spice-webdavd",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
-      "name": "sshpass",
       "state": "pending"
     },
     {
@@ -740,11 +709,6 @@
     },
     {
       "area": "fonts-i18n",
-      "name": "adobe-source-code-pro-fonts",
-      "state": "pending"
-    },
-    {
-      "area": "fonts-i18n",
       "name": "anthy-unicode",
       "state": "pending"
     },
@@ -756,31 +720,6 @@
     {
       "area": "fonts-i18n",
       "name": "cldr-emoji-annotation-dtd",
-      "state": "pending"
-    },
-    {
-      "area": "fonts-i18n",
-      "name": "gdouros-symbola-fonts",
-      "state": "pending"
-    },
-    {
-      "area": "fonts-i18n",
-      "name": "google-droid-sans-fonts",
-      "state": "pending"
-    },
-    {
-      "area": "fonts-i18n",
-      "name": "google-noto-emoji-fonts",
-      "state": "pending"
-    },
-    {
-      "area": "fonts-i18n",
-      "name": "google-noto-sans-cjk-fonts",
-      "state": "pending"
-    },
-    {
-      "area": "fonts-i18n",
-      "name": "google-noto-serif-cjk-vf-fonts",
       "state": "pending"
     },
     {
@@ -865,21 +804,6 @@
     },
     {
       "area": "fonts-i18n",
-      "name": "liberation-mono-fonts",
-      "state": "pending"
-    },
-    {
-      "area": "fonts-i18n",
-      "name": "liberation-sans-fonts",
-      "state": "pending"
-    },
-    {
-      "area": "fonts-i18n",
-      "name": "liberation-serif-fonts",
-      "state": "pending"
-    },
-    {
-      "area": "fonts-i18n",
       "name": "libhangul",
       "state": "pending"
     },
@@ -905,47 +829,7 @@
     },
     {
       "area": "fonts-i18n",
-      "name": "madan-fonts",
-      "state": "pending"
-    },
-    {
-      "area": "fonts-i18n",
-      "name": "nerd-fonts",
-      "state": "pending"
-    },
-    {
-      "area": "fonts-i18n",
-      "name": "open-sans-fonts",
-      "state": "pending"
-    },
-    {
-      "area": "fonts-i18n",
-      "name": "opendyslexic-fonts",
-      "state": "pending"
-    },
-    {
-      "area": "fonts-i18n",
-      "name": "paktype-naskh-basic-fonts",
-      "state": "pending"
-    },
-    {
-      "area": "fonts-i18n",
       "name": "python3-langtable",
-      "state": "pending"
-    },
-    {
-      "area": "fonts-i18n",
-      "name": "rit-meera-new-fonts",
-      "state": "pending"
-    },
-    {
-      "area": "fonts-i18n",
-      "name": "rit-rachana-fonts",
-      "state": "pending"
-    },
-    {
-      "area": "fonts-i18n",
-      "name": "sil-padauk-fonts",
       "state": "pending"
     },
     {
@@ -1045,11 +929,6 @@
     },
     {
       "area": "long-tail",
-      "name": "antiword",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
       "name": "appstream-data",
       "state": "pending"
     },
@@ -1115,26 +994,6 @@
     },
     {
       "area": "long-tail",
-      "name": "fedora-workstation-backgrounds",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
-      "name": "freeglut",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
-      "name": "fwupd-efi",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
-      "name": "gst-editing-services",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
       "name": "gst-thumbnailers",
       "state": "pending"
     },
@@ -1145,42 +1004,12 @@
     },
     {
       "area": "long-tail",
-      "name": "gupnp-dlna",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
       "name": "gvfs-afp",
       "state": "pending"
     },
     {
       "area": "long-tail",
       "name": "gvfs-archive",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
-      "name": "hyperv-daemons",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
-      "name": "hyperv-daemons-license",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
-      "name": "hypervfcopyd",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
-      "name": "hypervkvpd",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
-      "name": "hypervvssd",
       "state": "pending"
     },
     {
@@ -1281,11 +1110,6 @@
     {
       "area": "long-tail",
       "name": "liblqr-1",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
-      "name": "libmd",
       "state": "pending"
     },
     {
@@ -1440,22 +1264,7 @@
     },
     {
       "area": "long-tail",
-      "name": "pam_passwdqc",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
       "name": "paps",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
-      "name": "passwdqc",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
-      "name": "passwdqc-utils",
       "state": "pending"
     },
     {
@@ -1646,7 +1455,7 @@
     {
       "area": "long-tail",
       "name": "tslib",
-      "state": "pending"
+      "state": "already_recipe"
     },
     {
       "area": "long-tail",
@@ -1731,16 +1540,6 @@
     {
       "area": "long-tail",
       "name": "zix",
-      "state": "pending"
-    },
-    {
-      "area": "printing-scanning",
-      "name": "liblouisutdml",
-      "state": "pending"
-    },
-    {
-      "area": "printing-scanning",
-      "name": "liblouisutdml-utils",
       "state": "pending"
     },
     {
@@ -1856,13 +1655,13 @@
   ],
   "issue": "projectbluefin/utah-packages#308",
   "states": {
-    "already_recipe": 31,
+    "already_recipe": 32,
     "manifest_wants": 1,
-    "pending": 328
+    "pending": 287
   },
   "totals": {
-    "backlog": 360,
-    "resolved": 184,
-    "wontfix": 7
+    "backlog": 320,
+    "resolved": 207,
+    "wontfix": 24
   }
 }
