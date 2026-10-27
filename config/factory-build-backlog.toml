@@ -341,14 +341,6 @@ packages = [
     "pam_afs_session",
     "paps",
     "perl-Unicode-Normalize",
-    "plymouth",
-    "plymouth-core-libs",
-    "plymouth-graphics-libs",
-    "plymouth-plugin-label",
-    "plymouth-plugin-two-step",
-    "plymouth-scripts",
-    "plymouth-system-theme",
-    "plymouth-theme-spinner",
     "portaudio",
     "prefixdevname",
     "python3-perf",
@@ -406,6 +398,15 @@ packages = [
 # Packages that left the backlog because a recipe was imported.
 # Each entry: package name and the commit that closed the gap.
 packages = [
+    # Published boot-screen outputs; recipe #312, source lock #320; runtime proof stays on #505.
+    { name = "plymouth", commit = "9565b33477aa10c8af48774fff2598f028a3241a", pr = 320, published_run = 40416793064, published_nevra = "plymouth-0:26.134.222-1.hum1.bfin.x86_64" },
+    { name = "plymouth-core-libs", commit = "9565b33477aa10c8af48774fff2598f028a3241a", pr = 320, published_run = 40416793064, published_nevra = "plymouth-core-libs-0:26.134.222-1.hum1.bfin.x86_64" },
+    { name = "plymouth-graphics-libs", commit = "9565b33477aa10c8af48774fff2598f028a3241a", pr = 320, published_run = 40416793064, published_nevra = "plymouth-graphics-libs-0:26.134.222-1.hum1.bfin.x86_64" },
+    { name = "plymouth-plugin-label", commit = "9565b33477aa10c8af48774fff2598f028a3241a", pr = 320, published_run = 40416793064, published_nevra = "plymouth-plugin-label-0:26.134.222-1.hum1.bfin.x86_64" },
+    { name = "plymouth-plugin-two-step", commit = "9565b33477aa10c8af48774fff2598f028a3241a", pr = 320, published_run = 40416793064, published_nevra = "plymouth-plugin-two-step-0:26.134.222-1.hum1.bfin.x86_64" },
+    { name = "plymouth-scripts", commit = "9565b33477aa10c8af48774fff2598f028a3241a", pr = 320, published_run = 40416793064, published_nevra = "plymouth-scripts-0:26.134.222-1.hum1.bfin.x86_64" },
+    { name = "plymouth-system-theme", commit = "9565b33477aa10c8af48774fff2598f028a3241a", pr = 320, published_run = 40416793064, published_nevra = "plymouth-system-theme-0:26.134.222-1.hum1.bfin.x86_64" },
+    { name = "plymouth-theme-spinner", commit = "9565b33477aa10c8af48774fff2598f028a3241a", pr = 320, published_run = 40416793064, published_nevra = "plymouth-theme-spinner-0:26.134.222-1.hum1.bfin.x86_64" },
     { name = "gnome-rounded-blur", commit = "f8589ccd95a48a1f26826c8764330c9f7811a09d", pr = 440, published_run = 40151594832, published_nevra = "gnome-rounded-blur-0:1.0.1^20260809gitf3bfcc7-1.hum1.bfin.x86_64" },
     # Disc-reading recipes; publication and runtime proof remain tracked in #475.
     { name = "libudfread", pr = 658 },

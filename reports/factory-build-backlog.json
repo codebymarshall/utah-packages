@@ -20,10 +20,10 @@
       "total": 10
     },
     "long-tail": {
-      "already_recipe": 12,
+      "already_recipe": 4,
       "manifest_wants": 1,
       "pending": 113,
-      "total": 126
+      "total": 118
     },
     "power": {
       "total": 0
@@ -1207,46 +1207,6 @@
     },
     {
       "area": "long-tail",
-      "name": "plymouth",
-      "state": "already_recipe"
-    },
-    {
-      "area": "long-tail",
-      "name": "plymouth-core-libs",
-      "state": "already_recipe"
-    },
-    {
-      "area": "long-tail",
-      "name": "plymouth-graphics-libs",
-      "state": "already_recipe"
-    },
-    {
-      "area": "long-tail",
-      "name": "plymouth-plugin-label",
-      "state": "already_recipe"
-    },
-    {
-      "area": "long-tail",
-      "name": "plymouth-plugin-two-step",
-      "state": "already_recipe"
-    },
-    {
-      "area": "long-tail",
-      "name": "plymouth-scripts",
-      "state": "already_recipe"
-    },
-    {
-      "area": "long-tail",
-      "name": "plymouth-system-theme",
-      "state": "already_recipe"
-    },
-    {
-      "area": "long-tail",
-      "name": "plymouth-theme-spinner",
-      "state": "already_recipe"
-    },
-    {
-      "area": "long-tail",
       "name": "portaudio",
       "state": "pending"
     },
@@ -1548,13 +1508,13 @@
   ],
   "issue": "projectbluefin/utah-packages#308",
   "states": {
-    "already_recipe": 27,
+    "already_recipe": 19,
     "manifest_wants": 1,
     "pending": 271
   },
   "totals": {
-    "backlog": 299,
-    "resolved": 222,
+    "backlog": 291,
+    "resolved": 230,
     "wontfix": 30
   }
 }
