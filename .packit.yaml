@@ -4,6 +4,12 @@ actions:
   create-archive:
     - bash -c 'python3 "$(git rev-parse --show-toplevel)/tools/packit_source0.py"'
 packages:
+  LibRaw:
+    specfile_path: LibRaw.spec
+    upstream_package_name: LibRaw
+    downstream_package_name: LibRaw
+    paths:
+      - packages/LibRaw
   ModemManager:
     specfile_path: ModemManager.spec
     upstream_package_name: ModemManager
@@ -94,6 +100,12 @@ packages:
     downstream_package_name: alsa-utils
     paths:
       - packages/alsa-utils
+  antiword:
+    specfile_path: antiword.spec
+    upstream_package_name: antiword
+    downstream_package_name: antiword
+    paths:
+      - packages/antiword
   appstream:
     specfile_path: appstream.spec
     upstream_package_name: appstream
@@ -1306,6 +1318,12 @@ packages:
     downstream_package_name: libbs2b
     paths:
       - packages/libbs2b
+  libbsd:
+    specfile_path: libbsd.spec
+    upstream_package_name: libbsd
+    downstream_package_name: libbsd
+    paths:
+      - packages/libbsd
   libburn:
     specfile_path: libburn.spec
     upstream_package_name: libburn
@@ -1618,6 +1636,12 @@ packages:
     downstream_package_name: liblouis
     paths:
       - packages/liblouis
+  liblouisutdml:
+    specfile_path: liblouisutdml.spec
+    upstream_package_name: liblouisutdml
+    downstream_package_name: liblouisutdml
+    paths:
+      - packages/liblouisutdml
   libmanette:
     specfile_path: libmanette.spec
     upstream_package_name: libmanette
@@ -1630,6 +1654,12 @@ packages:
     downstream_package_name: libmbim
     paths:
       - packages/libmbim
+  libmd:
+    specfile_path: libmd.spec
+    upstream_package_name: libmd
+    downstream_package_name: libmd
+    paths:
+      - packages/libmd
   libmediainfo:
     specfile_path: libmediainfo.spec
     upstream_package_name: libmediainfo
@@ -2356,6 +2386,12 @@ packages:
     downstream_package_name: passim
     paths:
       - packages/passim
+  passwdqc:
+    specfile_path: passwdqc.spec
+    upstream_package_name: passwdqc
+    downstream_package_name: passwdqc
+    paths:
+      - packages/passwdqc
   pcaudiolib:
     specfile_path: pcaudiolib.spec
     upstream_package_name: pcaudiolib
@@ -2530,6 +2566,12 @@ packages:
     downstream_package_name: python-dasbus
     paths:
       - packages/python-dasbus
+  python-dateutil:
+    specfile_path: python-dateutil.spec
+    upstream_package_name: python-dateutil
+    downstream_package_name: python-dateutil
+    paths:
+      - packages/python-dateutil
   python-dbus-next:
     specfile_path: python-dbus-next.spec
     upstream_package_name: python-dbus-next
@@ -2614,6 +2656,12 @@ packages:
     downstream_package_name: python-pyudev
     paths:
       - packages/python-pyudev
+  python-six:
+    specfile_path: python-six.spec
+    upstream_package_name: python-six
+    downstream_package_name: python-six
+    paths:
+      - packages/python-six
   python-typing-inspection:
     specfile_path: python-typing-inspection.spec
     upstream_package_name: python-typing-inspection
@@ -2824,6 +2872,12 @@ packages:
     downstream_package_name: srt
     paths:
       - packages/srt
+  sshpass:
+    specfile_path: sshpass.spec
+    upstream_package_name: sshpass
+    downstream_package_name: sshpass
+    paths:
+      - packages/sshpass
   sso-mib:
     specfile_path: sso-mib.spec
     upstream_package_name: sso-mib
@@ -2938,6 +2992,12 @@ packages:
     downstream_package_name: tree-pkg
     paths:
       - packages/tree-pkg
+  tslib:
+    specfile_path: tslib.spec
+    upstream_package_name: tslib
+    downstream_package_name: tslib
+    paths:
+      - packages/tslib
   tuned:
     specfile_path: tuned.spec
     upstream_package_name: tuned
