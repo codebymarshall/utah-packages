@@ -417,3 +417,17 @@ runtime acceptance, which stays tracked on the issue.
 When rebasing a recipe PR, resolve conflicts in this generated report by rerunning
 `python3 tools/factory_build_backlog.py` against the combined inventory, then
 verify with `--check`; choosing either side can discard another import’s state.
+
+## Firewall connection monitor acceptance
+
+`iptstate` is a standalone source and binary, not an `iptables` subpackage.
+Its recipe requires `iptables` at runtime plus automatically detected ncurses
+and libnetfilter_conntrack libraries. Check virtual provides as well as binary
+names when locating the `iptables` supplier. A metadata match alone is not a
+successful solver transaction.
+
+After a hosted build, resolve installation against only Hummingbird and the
+factory, then run `iptstate --single` with access to the kernel connection
+tracking table (CAP_NET_ADMIN in the tested network namespace). Record the
+namespace and result. `--help` only tests program startup; it does not exercise
+connection tracking. A permissions error is not a successful runtime probe.
