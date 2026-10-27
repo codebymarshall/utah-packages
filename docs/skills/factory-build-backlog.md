@@ -343,6 +343,18 @@ Both recipes carry detached signatures in `sources` and a checked-in signing
 key. Preserve their `%{gpgverify}` checks and SHA-512 signature pins when
 locking the release tarballs from `libbsd.freedesktop.org`.
 
+### WebDAV filesystem runtime closure
+
+`davfs2` uses the `neon` HTTP/WebDAV library; its default build in turn links
+`libntlm` for authentication. Check both libraries in the current factory and
+Hummingbird metadata before importing the filesystem helper. When neither
+repository supplies them, import all three sources together and let the
+BuildRequires graph order `libntlm` before `neon` before `davfs2`. Retain
+`davfs2`'s detached upstream signature and bundled verification keyring;
+verify the signature download against its own `sources` digest as well as
+checking the main archive. Recipe-level closing records do not establish
+publication, runtime dependency resolution, or a working WebDAV mount.
+
 ## Diagnosing drift
 
 - `--check` compares the whole live report with the committed snapshot —
