@@ -196,6 +196,12 @@ packages:
     downstream_package_name: cdparanoia
     paths:
       - packages/cdparanoia
+  chromaprint:
+    specfile_path: chromaprint.spec
+    upstream_package_name: chromaprint
+    downstream_package_name: chromaprint
+    paths:
+      - packages/chromaprint
   cifs-utils:
     specfile_path: cifs-utils.spec
     upstream_package_name: cifs-utils
@@ -262,6 +268,12 @@ packages:
     downstream_package_name: cups-pk-helper
     paths:
       - packages/cups-pk-helper
+  davfs2:
+    specfile_path: davfs2.spec
+    upstream_package_name: davfs2
+    downstream_package_name: davfs2
+    paths:
+      - packages/davfs2
   dconf:
     specfile_path: dconf.spec
     upstream_package_name: dconf
@@ -1150,6 +1162,12 @@ packages:
     downstream_package_name: ipp-usb
     paths:
       - packages/ipp-usb
+  iptstate:
+    specfile_path: iptstate.spec
+    upstream_package_name: iptstate
+    downstream_package_name: iptstate
+    paths:
+      - packages/iptstate
   iputils:
     specfile_path: iputils.spec
     upstream_package_name: iputils
@@ -1354,6 +1372,12 @@ packages:
     downstream_package_name: libatasmart
     paths:
       - packages/libatasmart
+  libavc1394:
+    specfile_path: libavc1394.spec
+    upstream_package_name: libavc1394
+    downstream_package_name: libavc1394
+    paths:
+      - packages/libavc1394
   libayatana-appindicator:
     specfile_path: libayatana-appindicator.spec
     upstream_package_name: libayatana-appindicator
@@ -1474,6 +1498,12 @@ packages:
     downstream_package_name: libdecor
     paths:
       - packages/libdecor
+  libdeflate:
+    specfile_path: libdeflate.spec
+    upstream_package_name: libdeflate
+    downstream_package_name: libdeflate
+    paths:
+      - packages/libdeflate
   libdisplay-info:
     specfile_path: libdisplay-info.spec
     upstream_package_name: libdisplay-info
@@ -1786,6 +1816,12 @@ packages:
     downstream_package_name: libnotify
     paths:
       - packages/libnotify
+  libntlm:
+    specfile_path: libntlm.spec
+    upstream_package_name: libntlm
+    downstream_package_name: libntlm
+    paths:
+      - packages/libntlm
   libnvme:
     specfile_path: libnvme.spec
     upstream_package_name: libnvme
@@ -1882,6 +1918,12 @@ packages:
     downstream_package_name: libratbag
     paths:
       - packages/libratbag
+  libraw1394:
+    specfile_path: libraw1394.spec
+    upstream_package_name: libraw1394
+    downstream_package_name: libraw1394
+    paths:
+      - packages/libraw1394
   librist:
     specfile_path: librist.spec
     upstream_package_name: librist
@@ -2314,6 +2356,12 @@ packages:
     downstream_package_name: nautilus-python
     paths:
       - packages/nautilus-python
+  neon:
+    specfile_path: neon.spec
+    upstream_package_name: neon
+    downstream_package_name: neon
+    paths:
+      - packages/neon
   net-snmp:
     specfile_path: net-snmp.spec
     upstream_package_name: net-snmp
@@ -2326,6 +2374,12 @@ packages:
     downstream_package_name: nfs-utils
     paths:
       - packages/nfs-utils
+  nilfs-utils:
+    specfile_path: nilfs-utils.spec
+    upstream_package_name: nilfs-utils
+    downstream_package_name: nilfs-utils
+    paths:
+      - packages/nilfs-utils
   noopenh264:
     specfile_path: noopenh264.spec
     upstream_package_name: noopenh264
@@ -2440,6 +2494,12 @@ packages:
     downstream_package_name: osinfo-db-tools
     paths:
       - packages/osinfo-db-tools
+  pam_yubico:
+    specfile_path: pam_yubico.spec
+    upstream_package_name: pam_yubico
+    downstream_package_name: pam_yubico
+    paths:
+      - packages/pam_yubico
   pango:
     specfile_path: pango.spec
     upstream_package_name: pango
@@ -2632,6 +2692,12 @@ packages:
     downstream_package_name: pycairo
     paths:
       - packages/pycairo
+  pyscard:
+    specfile_path: pyscard.spec
+    upstream_package_name: pyscard
+    downstream_package_name: pyscard
+    paths:
+      - packages/pyscard
   python-annotated-types:
     specfile_path: python-annotated-types.spec
     upstream_package_name: python-annotated-types
@@ -2710,6 +2776,12 @@ packages:
     downstream_package_name: python-pam
     paths:
       - packages/python-pam
+  python-pexpect:
+    specfile_path: python-pexpect.spec
+    upstream_package_name: python-pexpect
+    downstream_package_name: python-pexpect
+    paths:
+      - packages/python-pexpect
   python-pillow:
     specfile_path: python-pillow.spec
     upstream_package_name: python-pillow
@@ -2722,6 +2794,12 @@ packages:
     downstream_package_name: python-psutil
     paths:
       - packages/python-psutil
+  python-ptyprocess:
+    specfile_path: python-ptyprocess.spec
+    upstream_package_name: python-ptyprocess
+    downstream_package_name: python-ptyprocess
+    paths:
+      - packages/python-ptyprocess
   python-pydantic:
     specfile_path: python-pydantic.spec
     upstream_package_name: python-pydantic
@@ -2884,6 +2962,12 @@ packages:
     downstream_package_name: simdutf
     paths:
       - packages/simdutf
+  slang:
+    specfile_path: slang.spec
+    upstream_package_name: slang
+    downstream_package_name: slang
+    paths:
+      - packages/slang
   smartmontools:
     specfile_path: smartmontools.spec
     upstream_package_name: smartmontools
@@ -2938,6 +3022,18 @@ packages:
     downstream_package_name: speex
     paths:
       - packages/speex
+  spice-protocol:
+    specfile_path: spice-protocol.spec
+    upstream_package_name: spice-protocol
+    downstream_package_name: spice-protocol
+    paths:
+      - packages/spice-protocol
+  spice-vdagent:
+    specfile_path: spice-vdagent.spec
+    upstream_package_name: spice-vdagent
+    downstream_package_name: spice-vdagent
+    paths:
+      - packages/spice-vdagent
   spirv-tools:
     specfile_path: spirv-tools.spec
     upstream_package_name: spirv-tools
