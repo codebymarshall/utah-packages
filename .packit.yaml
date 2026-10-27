@@ -1150,6 +1150,12 @@ packages:
     downstream_package_name: ipp-usb
     paths:
       - packages/ipp-usb
+  iptstate:
+    specfile_path: iptstate.spec
+    upstream_package_name: iptstate
+    downstream_package_name: iptstate
+    paths:
+      - packages/iptstate
   iputils:
     specfile_path: iputils.spec
     upstream_package_name: iputils
@@ -1480,6 +1486,12 @@ packages:
     downstream_package_name: libdecor
     paths:
       - packages/libdecor
+  libdeflate:
+    specfile_path: libdeflate.spec
+    upstream_package_name: libdeflate
+    downstream_package_name: libdeflate
+    paths:
+      - packages/libdeflate
   libdisplay-info:
     specfile_path: libdisplay-info.spec
     upstream_package_name: libdisplay-info
@@ -2338,6 +2350,12 @@ packages:
     downstream_package_name: nfs-utils
     paths:
       - packages/nfs-utils
+  nilfs-utils:
+    specfile_path: nilfs-utils.spec
+    upstream_package_name: nilfs-utils
+    downstream_package_name: nilfs-utils
+    paths:
+      - packages/nilfs-utils
   noopenh264:
     specfile_path: noopenh264.spec
     upstream_package_name: noopenh264
@@ -2452,6 +2470,12 @@ packages:
     downstream_package_name: osinfo-db-tools
     paths:
       - packages/osinfo-db-tools
+  pam_yubico:
+    specfile_path: pam_yubico.spec
+    upstream_package_name: pam_yubico
+    downstream_package_name: pam_yubico
+    paths:
+      - packages/pam_yubico
   pango:
     specfile_path: pango.spec
     upstream_package_name: pango
@@ -2644,6 +2668,12 @@ packages:
     downstream_package_name: pycairo
     paths:
       - packages/pycairo
+  pyscard:
+    specfile_path: pyscard.spec
+    upstream_package_name: pyscard
+    downstream_package_name: pyscard
+    paths:
+      - packages/pyscard
   python-annotated-types:
     specfile_path: python-annotated-types.spec
     upstream_package_name: python-annotated-types
@@ -2908,6 +2938,12 @@ packages:
     downstream_package_name: simdutf
     paths:
       - packages/simdutf
+  slang:
+    specfile_path: slang.spec
+    upstream_package_name: slang
+    downstream_package_name: slang
+    paths:
+      - packages/slang
   smartmontools:
     specfile_path: smartmontools.spec
     upstream_package_name: smartmontools

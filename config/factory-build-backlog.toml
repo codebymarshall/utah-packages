@@ -89,7 +89,6 @@ packages = [
     "opensc",
     "opensc-libs",
     "pam-u2f",
-    "pam_yubico",
     "pamu2fcfg",
     "python3-yubikey-manager",
     "yubikey-manager",
@@ -153,7 +152,6 @@ packages = [
     "libsss_nss_idmap",
     "libsss_sudo",
     "lsb_release",
-    "nilfs-utils",
     "ntfs-3g-system-compression",
     "oddjob",
     "oddjob-mkhomedir",
@@ -291,7 +289,6 @@ packages = [
     "intel-vaapi-driver",
     "ipset",
     "ipset-libs",
-    "iptstate",
     "jbig2dec-libs",
     "kf6-filesystem",
     "kf6-karchive",
@@ -300,7 +297,6 @@ packages = [
     "kpartx",
     "kvazaar-libs",
     "kyotocabinet-libs",
-    "libdeflate",
     "libell",
     "libev",
     "libijs",
@@ -349,7 +345,6 @@ packages = [
     "python3-perf",
     "python3-pskc",
     "python3-pyaudio",
-    "python3-pyscard",
     "qadwaitadecorations-qt5",
     "qpdf-libs",
     "qrencode-libs",
@@ -399,6 +394,18 @@ packages = [
 # Packages that left the backlog because a recipe was imported.
 # Each entry: package name and the commit that closed the gap.
 packages = [
+    # FireWire recipe coverage; hosted builds and runtime proof remain outstanding.
+    { name = "libavc1394", pr = 681 },
+    { name = "libraw1394", pr = 681 },
+    { name = "pam_yubico", pr = 706 },
+    # Smart-card Python binding; hosted build and runtime proof remain in #506.
+    { name = "python3-pyscard", pr = 704 },
+    # NILFS filesystem utilities imported for issue #488; publication still requires validation.
+    { name = "nilfs-utils", pr = 702 },
+    # Recipe imported; hosted build, publication and runtime proof remain in #501.
+    { name = "iptstate", pr = 697 },
+    # Recipe coverage; publication and runtime proof remain tracked in #502.
+    { name = "libdeflate", pr = 695 },
     { name = "gnome-rounded-blur", commit = "f8589ccd95a48a1f26826c8764330c9f7811a09d", pr = 440, published_run = 40151594832, published_nevra = "gnome-rounded-blur-0:1.0.1^20260809gitf3bfcc7-1.hum1.bfin.x86_64" },
     # Disc-reading recipes; publication and runtime proof remain tracked in #475.
     { name = "libudfread", pr = 658 },
@@ -707,9 +714,6 @@ packages = [
     # observed in the image's repodata. Runtime proof for the batch remains in #507.
     { name = "simdutf", commit = "ded82d6174382a397a2d7ddc066daeabe2e31232", pr = 413, published_run = 40481255792, published_nevra = "simdutf-0:9.0.0-1.hum1.bfin.x86_64" },
     { name = "tslib", commit = "e3b500e58e5dbed8948ea41ad926acf454b5b44b", pr = 643, published_run = 40481255792, published_nevra = "tslib-0:1.24-3.hum1.bfin.x86_64" },
-    # FireWire recipe coverage; hosted builds and runtime proof remain outstanding.
-    { name = "libavc1394", pr = 681 },
-    { name = "libraw1394", pr = 681 },
 ]
 
 [wontfix]
