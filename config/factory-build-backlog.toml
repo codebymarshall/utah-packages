@@ -47,7 +47,6 @@ packages = [
     "ffmpegthumbnailer",
     "ffmpegthumbnailer-libs",
     "gstreamer1-plugins-good-qt6",
-    "libavc1394",
     "libavcodec",
     "libavdevice",
     "libavfilter",
@@ -61,8 +60,7 @@ packages = [
     "libklvanc",
     "libopenjph",
     "libplacebo",
-    "libraw1394",
-    "libshaderc",
+
     "libswresample",
     "libswscale",
     "libultrahdr",
@@ -91,7 +89,6 @@ packages = [
     "opensc",
     "opensc-libs",
     "pam-u2f",
-    "pam_yubico",
     "pamu2fcfg",
     "python3-yubikey-manager",
     "yubikey-manager",
@@ -132,7 +129,6 @@ packages = [
     "adcli-selinux",
     "bcache-tools",
     "cryfs",
-    "davfs2",
     "distribution-gpg-keys",
     "fedora-release-common",
     "fedora-release-identity-silverblue",
@@ -141,7 +137,6 @@ packages = [
     "fuse-encfs",
     "generic-logos",
     "hfsplus-tools",
-    "ifuse",
     "iwd",
     "kernel-devel-matched",
     "kernel-modules-extra",
@@ -155,7 +150,6 @@ packages = [
     "libsss_nss_idmap",
     "libsss_sudo",
     "lsb_release",
-    "nilfs-utils",
     "ntfs-3g-system-compression",
     "oddjob",
     "oddjob-mkhomedir",
@@ -181,8 +175,6 @@ packages = [
     "python3-keyring",
     "python3-keyring+completion",
     "python3-more-itertools",
-    "python3-pexpect",
-    "python3-ptyprocess",
     "python3-pygit2",
     "python3-pysocks",
     "python3-pyxdg",
@@ -198,7 +190,6 @@ packages = [
     "restic",
     "rpm-ostree",
     "rpm-ostree-libs",
-    "spice-vdagent",
     "spice-webdavd",
     "sssd-client",
     "sssd-common",
@@ -238,14 +229,12 @@ packages = [
     "ibus-typing-booster",
     "kasumi-common",
     "kasumi-unicode",
-    "langtable",
     "libchewing",
     "libhangul",
     "libpinyin",
     "libpinyin-data",
     "m17n-db",
     "m17n-lib",
-    "python3-langtable",
     "unicode-ucd",
 ]
 
@@ -295,7 +284,6 @@ packages = [
     "intel-vaapi-driver",
     "ipset",
     "ipset-libs",
-    "iptstate",
     "jbig2dec-libs",
     "kf6-filesystem",
     "kf6-karchive",
@@ -304,14 +292,12 @@ packages = [
     "kpartx",
     "kvazaar-libs",
     "kyotocabinet-libs",
-    "libdeflate",
     "libell",
     "libev",
     "libijs",
     "liblqr-1",
     "libmspack",
     "libnet",
-    "libntlm",
     "libpaper",
     "libpasswdqc",
     "libpfm",
@@ -329,8 +315,7 @@ packages = [
     "memstrack",
     "mkpasswd",
     "mod_http2",
-    "mtools",
-    "neon",
+
     "net-tools",
     "nm-connection-editor",
     "nss-altfiles",
@@ -340,20 +325,11 @@ packages = [
     "pam_afs_session",
     "paps",
     "perl-Unicode-Normalize",
-    "plymouth",
-    "plymouth-core-libs",
-    "plymouth-graphics-libs",
-    "plymouth-plugin-label",
-    "plymouth-plugin-two-step",
-    "plymouth-scripts",
-    "plymouth-system-theme",
-    "plymouth-theme-spinner",
     "portaudio",
     "prefixdevname",
     "python3-perf",
     "python3-pskc",
     "python3-pyaudio",
-    "python3-pyscard",
     "qadwaitadecorations-qt5",
     "qpdf-libs",
     "qrencode-libs",
@@ -365,7 +341,6 @@ packages = [
     "qt5-qtxmlpatterns",
     "serd",
     "shim-ia32",
-    "simdutf",
     "slang",
     "slirp4netns",
     "solaar-udev",
@@ -376,21 +351,14 @@ packages = [
     "tesseract-langpack-eng",
     "tesseract-libs",
     "tesseract-tessdata-doc",
-    "tslib",
     "uavs3d-libs",
     "ublue-os-akmods-addons",
-    "uchardet",
     "udftools",
     "uresourced",
-    "uupd",
     "uvg266-libs",
     "v4l2loopback",
     "virtualbox-guest-additions",
-    "xcb-util-cursor",
-    "xdriinfo",
     "xfsprogs",
-    "xrandr",
-    "xset",
 
     "zinnia",
     "zinnia-tomoe-ja",
@@ -405,10 +373,43 @@ packages = [
 # Packages that left the backlog because a recipe was imported.
 # Each entry: package name and the commit that closed the gap.
 packages = [
+    # Language data recipe; build/publication and consumer proof remain tracked in #494.
+    { name = "langtable", pr = 700 },
+    { name = "python3-langtable", pr = 700 },
+    # Recipe import only; build, publication and runtime proof remain on #508.
+    { name = "uchardet", pr = 729 },
+    # Published boot-screen outputs; recipe #312, source lock #320; runtime proof stays on #505.
+    { name = "plymouth", commit = "9565b33477aa10c8af48774fff2598f028a3241a", pr = 320, published_run = 40416793064, published_nevra = "plymouth-0:26.134.222-1.hum1.bfin.x86_64" },
+    { name = "plymouth-core-libs", commit = "9565b33477aa10c8af48774fff2598f028a3241a", pr = 320, published_run = 40416793064, published_nevra = "plymouth-core-libs-0:26.134.222-1.hum1.bfin.x86_64" },
+    { name = "plymouth-graphics-libs", commit = "9565b33477aa10c8af48774fff2598f028a3241a", pr = 320, published_run = 40416793064, published_nevra = "plymouth-graphics-libs-0:26.134.222-1.hum1.bfin.x86_64" },
+    { name = "plymouth-plugin-label", commit = "9565b33477aa10c8af48774fff2598f028a3241a", pr = 320, published_run = 40416793064, published_nevra = "plymouth-plugin-label-0:26.134.222-1.hum1.bfin.x86_64" },
+    { name = "plymouth-plugin-two-step", commit = "9565b33477aa10c8af48774fff2598f028a3241a", pr = 320, published_run = 40416793064, published_nevra = "plymouth-plugin-two-step-0:26.134.222-1.hum1.bfin.x86_64" },
+    { name = "plymouth-scripts", commit = "9565b33477aa10c8af48774fff2598f028a3241a", pr = 320, published_run = 40416793064, published_nevra = "plymouth-scripts-0:26.134.222-1.hum1.bfin.x86_64" },
+    { name = "plymouth-system-theme", commit = "9565b33477aa10c8af48774fff2598f028a3241a", pr = 320, published_run = 40416793064, published_nevra = "plymouth-system-theme-0:26.134.222-1.hum1.bfin.x86_64" },
+    { name = "plymouth-theme-spinner", commit = "9565b33477aa10c8af48774fff2598f028a3241a", pr = 320, published_run = 40416793064, published_nevra = "plymouth-theme-spinner-0:26.134.222-1.hum1.bfin.x86_64" },
+    { name = "davfs2", pr = 696 },
+    { name = "neon", pr = 696 },
+    { name = "libntlm", pr = 696 },
+    # FireWire recipe coverage; hosted builds and runtime proof remain outstanding.
+    { name = "libavc1394", pr = 681 },
+    { name = "libraw1394", pr = 681 },
+    { name = "pam_yubico", pr = 706 },
+    # Smart-card Python binding; hosted build and runtime proof remain in #506.
+    { name = "python3-pyscard", pr = 704 },
+    # NILFS filesystem utilities imported for issue #488; publication still requires validation.
+    { name = "nilfs-utils", pr = 702 },
+    # Recipe imported; hosted build, publication and runtime proof remain in #501.
+    { name = "iptstate", pr = 697 },
+    # Recipe coverage; publication and runtime proof remain tracked in #502.
+    { name = "libdeflate", pr = 695 },
     { name = "gnome-rounded-blur", commit = "f8589ccd95a48a1f26826c8764330c9f7811a09d", pr = 440, published_run = 40151594832, published_nevra = "gnome-rounded-blur-0:1.0.1^20260809gitf3bfcc7-1.hum1.bfin.x86_64" },
     # Disc-reading recipes; publication and runtime proof remain tracked in #475.
     { name = "libudfread", pr = 658 },
     { name = "libbluray", pr = 658 },
+    # Shader compiler recipe; hosted build and runtime proof remain tracked in #475.
+    { name = "libshaderc" },
+    # ifuse source import; publication and consumer validation remain tracked in #486.
+    { name = "ifuse", pr = 703 },
     # Flex source import; publication and consumer validation remain tracked in #486.
     { name = "flex", pr = 654 },
     # Existing GPU monitor recipe; publication/runtime proof remains in #488.
@@ -431,6 +432,8 @@ packages = [
     { name = "hypervkvpd", pr = 607 },
     { name = "hypervvssd", pr = 607 },
     # Recipe coverage only; build/publication/runtime proof stays on #489.
+    { name = "python3-pexpect", pr = 684 },
+    { name = "python3-ptyprocess", pr = 684 },
     { name = "python3-dateutil", pr = 613 },
     { name = "python3-six", pr = 613 },
     # Chromaprint recipe coverage only; publication and runtime proof remain in #487.
@@ -439,6 +442,7 @@ packages = [
     # Recipe import only; build/publication and Utah consumption remain separate proof.
     { name = "libbsd", pr = 614 },
     { name = "libmd", pr = 614 },
+    { name = "spice-vdagent", pr = 679 }, # Recipe import; publication/installability tracked in #490.
     { name = "sshpass", pr = 611 }, # Recipe import; publication/installability tracked in #490.
     # Password-quality source family: passwdqc builds all three (projectbluefin/utah-packages#644, #505).
     { name = "pam_passwdqc", pr = 644 },
@@ -448,11 +452,14 @@ packages = [
     { name = "pcsc-lite", commit = "a09ec58", pr = 364 },
     { name = "pcsc-lite-libs", commit = "a09ec58", pr = 364 },
     { name = "pcsc-lite-ccid", commit = "a09ec58", pr = 364 },
+    { name = "mtools" },
+    # Cursor library import for #508; build/publication/runtime proof remains separate.
+    { name = "xcb-util-cursor", pr = 620 },
     # Printing runtime providers for hplip/system-config-printer (projectbluefin/utah-packages#596, utah#390).
     { name = "python3-olefile", pr = 596 },
     { name = "python3-pillow", pr = 596 },
     { name = "usbutils", pr = 596 },
-    { name = "net-snmp-libs", pr = 596 },
+    { name = "net-snmp-libs", pr = 596, published_run = 40511180133, published_nevra = "net-snmp-libs-1:5.9.5.2-10.hum1.bfin.x86_64" },
     { name = "python3-cups", pr = 596 },
     { name = "libraqm", pr = 596 },
     # VPN stack + oath-toolkit/libuser/usermode closure (projectbluefin/utah-packages#585).
@@ -529,7 +536,7 @@ packages = [
     { name = "faad2-libs", pr = 526 },
     { name = "gstreamer1-plugin-dav1d", pr = 526 },
     { name = "gstreamer1-plugins-ugly-free", pr = 526 },
-    { name = "openal-soft", pr = 526 },
+    { name = "openal-soft", pr = 526, published_run = 40511180133, published_nevra = "openal-soft-0:1.24.2-1.hum1.bfin.x86_64" },
     { name = "soundtouch", pr = 526 },
     # Thumbnailers + Disks wave (landing PR #523). libspelling ships as a
     # standalone recipe; papers/gst-thumbnailers deferred to #527.
@@ -595,8 +602,8 @@ packages = [
     { name = "glow", pr = 650 },
     # Runtime dependencies of the GNOME apps imported for Utah (PR #573).
     { name = "libvncserver", pr = 573 },
-    { name = "mod_dnssd", pr = 573 },
-    { name = "mozilla-filesystem", pr = 573 },
+    { name = "mod_dnssd", pr = 573, published_run = 40511180133, published_nevra = "mod_dnssd-0:0.6-37.hum1.bfin.x86_64" },
+    { name = "mozilla-filesystem", pr = 573, published_run = 40511180133, published_nevra = "mozilla-filesystem-0:1.9-39.hum1.bfin.x86_64" },
     { name = "redhat-menus", pr = 573 },
     # sso-mib-libs is a %package subpackage of sso-mib.spec (PR #574).
     { name = "sso-mib-libs", pr = 574 },
@@ -644,7 +651,7 @@ packages = [
     { name = "f2fs-tools", pr = 587 },
     { name = "gamemode", pr = 587 },
     { name = "hdparm", pr = 587 },
-    { name = "lshw", pr = 587 },
+    { name = "lshw", pr = 587, published_run = 40511180133, published_nevra = "lshw-0:B.02.20-13.hum1.bfin.x86_64" },
     { name = "lsof", pr = 587 },
     { name = "man-pages", pr = 587 },
     { name = "mtr", pr = 587 },
@@ -679,18 +686,22 @@ packages = [
     { name = "libbasicobjects", pr = 597 },
     { name = "libpath_utils", pr = 597 },
     { name = "libref_array", pr = 597 },
-    { name = "urw-base35-bookman-fonts", pr = 631 },
-    { name = "urw-base35-c059-fonts", pr = 631 },
-    { name = "urw-base35-d050000l-fonts", pr = 631 },
-    { name = "urw-base35-fonts", pr = 631 },
-    { name = "urw-base35-fonts-common", pr = 631 },
-    { name = "urw-base35-gothic-fonts", pr = 631 },
-    { name = "urw-base35-nimbus-mono-ps-fonts", pr = 631 },
-    { name = "urw-base35-nimbus-roman-fonts", pr = 631 },
-    { name = "urw-base35-nimbus-sans-fonts", pr = 631 },
-    { name = "urw-base35-p052-fonts", pr = 631 },
-    { name = "urw-base35-standard-symbols-ps-fonts", pr = 631 },
-    { name = "urw-base35-z003-fonts", pr = 631 },
+    # urw-base35-fonts (#631): built by job 121701868428 of run 40346690119 (that
+    # aggregate run failed on other packages); published by run 40481255792 in
+    # ghcr.io/projectbluefin/utah-packages@sha256:710195827218db354cd1d0033d68db8b96efec97f1aaf3f45f8973479c6e7215.
+    # vazirmatn-vf-fonts from the same batch (#496) is [wontfix] under utah#393.
+    { name = "urw-base35-bookman-fonts", pr = 631, published_run = 40481255792, published_nevra = "urw-base35-bookman-fonts-0:20200910-29.hum1.bfin.noarch" },
+    { name = "urw-base35-c059-fonts", pr = 631, published_run = 40481255792, published_nevra = "urw-base35-c059-fonts-0:20200910-29.hum1.bfin.noarch" },
+    { name = "urw-base35-d050000l-fonts", pr = 631, published_run = 40481255792, published_nevra = "urw-base35-d050000l-fonts-0:20200910-29.hum1.bfin.noarch" },
+    { name = "urw-base35-fonts", pr = 631, published_run = 40481255792, published_nevra = "urw-base35-fonts-0:20200910-29.hum1.bfin.noarch" },
+    { name = "urw-base35-fonts-common", pr = 631, published_run = 40481255792, published_nevra = "urw-base35-fonts-common-0:20200910-29.hum1.bfin.noarch" },
+    { name = "urw-base35-gothic-fonts", pr = 631, published_run = 40481255792, published_nevra = "urw-base35-gothic-fonts-0:20200910-29.hum1.bfin.noarch" },
+    { name = "urw-base35-nimbus-mono-ps-fonts", pr = 631, published_run = 40481255792, published_nevra = "urw-base35-nimbus-mono-ps-fonts-0:20200910-29.hum1.bfin.noarch" },
+    { name = "urw-base35-nimbus-roman-fonts", pr = 631, published_run = 40481255792, published_nevra = "urw-base35-nimbus-roman-fonts-0:20200910-29.hum1.bfin.noarch" },
+    { name = "urw-base35-nimbus-sans-fonts", pr = 631, published_run = 40481255792, published_nevra = "urw-base35-nimbus-sans-fonts-0:20200910-29.hum1.bfin.noarch" },
+    { name = "urw-base35-p052-fonts", pr = 631, published_run = 40481255792, published_nevra = "urw-base35-p052-fonts-0:20200910-29.hum1.bfin.noarch" },
+    { name = "urw-base35-standard-symbols-ps-fonts", pr = 631, published_run = 40481255792, published_nevra = "urw-base35-standard-symbols-ps-fonts-0:20200910-29.hum1.bfin.noarch" },
+    { name = "urw-base35-z003-fonts", pr = 631, published_run = 40481255792, published_nevra = "urw-base35-z003-fonts-0:20200910-29.hum1.bfin.noarch" },
     { name = "libXres", pr = 646 },
     # VPN / smart-card PKCS#11 provider and Yubico C/personalization stack (projectbluefin/utah-packages#479, utah#389).
     # libyubikey is ykpers's build and runtime dependency (libyubikey.so.0).
@@ -703,6 +714,10 @@ packages = [
     { name = "bison", pr = 615 },
     # Recipe coverage only; hosted build/publication/runtime proof remains in #474.
     { name = "LibRaw", pr = 618 },
+    # Recipes imported before this reconciliation (#413, #643); publication is
+    # observed in the image's repodata. Runtime proof for the batch remains in #507.
+    { name = "simdutf", commit = "ded82d6174382a397a2d7ddc066daeabe2e31232", pr = 413, published_run = 40481255792, published_nevra = "simdutf-0:9.0.0-1.hum1.bfin.x86_64" },
+    { name = "tslib", commit = "e3b500e58e5dbed8948ea41ad926acf454b5b44b", pr = 643, published_run = 40481255792, published_nevra = "tslib-0:1.24-3.hum1.bfin.x86_64" },
 ]
 
 [wontfix]
@@ -711,6 +726,12 @@ packages = [
 # ``states``; they are surfaced as ``totals.wontfix`` so the count partition
 # (areas + resolved + wontfix) still equals the audit's 551.
 packages = [
+    # Existing consumer waivers, not new exclusions: projectbluefin/utah#263.
+    # https://github.com/projectbluefin/utah/blob/e11a7b297264251704af25d8920d2a2bb58241c9/baselines/triage.toml
+    { name = "xdriinfo", reason = "Utah waives this X11 client tool because it ships a Wayland-only session (projectbluefin/utah#263; pinned triage above)." },
+    { name = "xrandr", reason = "Utah waives this X11 client tool because it ships a Wayland-only session (projectbluefin/utah#263; pinned triage above)." },
+    { name = "xset", reason = "Utah waives this X11 client tool because it ships a Wayland-only session (projectbluefin/utah#263; pinned triage above)." },
+    { name = "uupd", reason = "Utah installs a pinned upstream release; its triage waives the RPM difference (projectbluefin/utah#263; pinned triage above)." },
     { name = "adobe-source-code-pro-fonts", reason = "Bulk font parity rejected; individual additions need a separate proposal (https://github.com/projectbluefin/utah/issues/393#issuecomment-5920428811)." },
     { name = "gdouros-symbola-fonts", reason = "Bulk font parity rejected; individual additions need a separate proposal (https://github.com/projectbluefin/utah/issues/393#issuecomment-5920428811)." },
     { name = "google-droid-sans-fonts", reason = "Bulk font parity rejected; individual additions need a separate proposal (https://github.com/projectbluefin/utah/issues/393#issuecomment-5920428811)." },
