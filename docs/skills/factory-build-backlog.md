@@ -59,7 +59,11 @@ GitHub closing keywords for a PR that satisfies the entire batch issue's
 close condition, including required build and runtime evidence or linked
 blocking decisions for every named output. Before pushing a review fix,
 check the entire PR description for closing keywords: an automatically added
-footer can contradict an earlier partial-progress statement.
+footer can contradict an earlier partial-progress statement. After editing the body,
+read it back with `gh pr view <pr> --json body --jq .body` and verify the
+saved description, including any generated footer; local prose alone does not establish
+that the live PR will keep the batch open. A branch push alone does not correct the PR description.
+Once the PR number is known, fill in the recipe record's `pr` field so reviewers can trace the partial import.
 
 Two edits — never one, never none:
 
@@ -68,14 +72,32 @@ Two edits — never one, never none:
   - `[resolved].packages` (`{ name = "<n>", commit = "<sha>", pr = <n>, published_run = <run-id>, published_nevra = "<n>-<e>:<v>-<r>.<arch>" }`) —
     a recipe was imported. `commit` and `pr` are both informational; the
     closing record is the import PR (the one this two-edit move ships in)
-    and `tools/factory_build_backlog.py:356-357` only reads `entry["name"]`.
+    and `_catalog_totals` in `tools/factory_build_backlog.py` only reads
+    `entry["name"]` from the resolved records.
     Do not pre-fill `commit` with a SHA from a future commit that does not
     exist yet at PR-open time, and do not let a rebase or squash-merge
     invalidate it. The `pr` field links the entry to its closing PR for
     cross-referencing.
+    Once the import PR has a number, populate `pr` before requesting review;
+    `--check` validates names and report drift, not this provenance field.
   - `[wontfix].packages` (`{ name = "<n>", reason = "..." }`) — Utah decided
     not to carry it, with a link to the decision issue. `reason` is also
-    informational and not validated.
+    informational and not validated. Catalog comments should describe the
+    structure rather than current list occupancy, since decisions accumulate.
+
+The catalog's `[resolved]` record closes **recipe-import accounting**, not a
+batch issue's build, publication, dependency-resolution, or runtime acceptance.
+For a partial source-family PR, keep the batch issue open and list the remaining
+outputs and missing evidence explicitly.
+
+Before importing an audit name, read Utah's current `baselines/triage.toml` and
+pin the decision's commit when reconciling an existing `waived` entry into
+`[wontfix]`. The audit can include deliberately absent X11 client utilities
+(`xrandr`, `xset`, `xdriinfo`) or an updater installed directly from a pinned
+release (`uupd`); their absence is not permission to reverse those decisions.
+Do not extend a client-tool waiver to an X11 library such as `xcb-util-cursor`:
+Wayland sessions still run applications through Xwayland. Check each exact
+binary name, not a shared prefix.
 
 `[resolved]` is the only closing record. A recipe import PR makes this
 two-edit move in the same PR; `already_recipe` is the auditor's observation
@@ -99,6 +121,22 @@ evidence; use `Refs`, not an auto-closing keyword, in a partial PR's
 description. A `[resolved]` entry alone proves neither publication nor
 installability.
 
+### Import records and runtime acceptance
+
+A `[resolved]` entry records the recipe import; it does not establish that
+the output is published or usable. For a bounded batch issue, keep the issue
+open when importing only one source family, and name the remaining outputs
+in the PR. Record the upstream recipe commit and source digest separately
+from the hosted build run, binary NEVRA, factory image digest, and runtime
+exercise. Missing build or runtime evidence must remain explicit rather than
+being inferred from a green inventory check.
+
+Use the consumer issue named by the batch assignment when the area's
+`consumer_issue` is stale. Check the consumer's triage for each binary:
+`planned` records intent, while `untriaged` is not a waiver. For existing
+outputs, inspect current published repodata by binary name and its source
+RPM before importing a second recipe.
+
 The `Import Rawhide package` workflow does **not** make this move: its pull
 request carries the recipe, lock, `.packit.yaml` and counts, but leaves the
 name in its area. Before merging one, add the `[resolved]` entry (with that
@@ -115,6 +153,14 @@ substitution fails even when all counts remain unchanged; moving an existing
 name to a closing record preserves the digest. The baseline was verified
 against the pinned gist's `nowhere-551.txt`; changing it requires a new audit. The auditor
 itself fails when the catalog totals do not reconcile with the report.
+
+### Smart-card Python bindings
+
+The `pyscard` source recipe provides `python3-pyscard`; do not import a
+second recipe for the binary name. It uses `pcsc-lite-devel` at build time
+and `pcsc-lite` at runtime, and is a dependency of the YubiKey manager in
+#479. The catalog move records the recipe import, not a successful hosted
+build, publication, or runtime dependency closure.
 
 ### Font parity decisions do not waive input methods
 
@@ -164,6 +210,16 @@ same source again. This closes the recipe catalog record only: keep the
 tracking issue open when publication, runtime dependency resolution, or a
 representative command has not been verified. A reconciliation PR must state
 those remaining checks explicitly; `[resolved]` is not installability proof.
+
+### Virtual machine guest integration
+
+`spice-vdagent` BuildRequires `spice-protocol` headers. Import the protocol
+source alongside the agent when neither build root nor factory supplies it;
+the graph can then place the headers before the agent from the package-name
+BuildRequires. The protocol recipe disables its Windows cross-build by default;
+that does not remove Linux headers. A successful build alone does not prove
+clipboard or display integration: test those in a SPICE guest after publication.
+
 ### Touchscreen library imports
 
 `tslib` builds its SDL2 test utilities with `SDL2-devel`. The factory
@@ -193,6 +249,13 @@ keywords before pushing: a trailing `Closes` still auto-closes the issue even
 when the summary describes partial progress.
 
 ### Locking sources for a hand import
+
+For Linux-only library imports, inspect optional Windows cross-build bconds
+before locking the build root. `libdeflate` enables MinGW by default in
+Rawhide; disable its `mingw` bcond locally to keep the native library, tools
+and upstream CTest suite without adding Windows cross-toolchain dependencies.
+Its `mingw_utils` bcond only controls Windows tools, so disabling that alone
+does not remove the cross-build. Keep the imported provenance unchanged.
 
 For GNU recipes such as `bison`, preserve the detached signature in `sources`,
 its dist-git keyring, and the recipe's `%{gpgverify}` invocation. Lock the
@@ -238,6 +301,15 @@ release tree plus only `LICENSE` and `README.md` (compare with the original
 archive). Lock that archive by SHA-512, update `sources`, and set `%setup -n`
 to its commit-based directory; do not reuse the original archive's digest.
 This source-tree comparison is not a package build or runtime closure test.
+
+The `liblouisutdml` recipe builds a PDF manual with `texinfo-tex`, whose
+Fedora TeX Live dependency chain needs ICU 77 in the build root. Like
+`liblouis`, it opts in to that build-only dependency; its configure script
+links liblouis and libxml2, not ICU directly. Do not remove the manual or the
+upstream test suite to avoid the dependency. A successful build is still
+needed: inspect every built RPM's requirements for ICU 77 and resolve the
+runtime transaction using only Hummingbird and the factory. The opt-in does
+not prove the outputs are safe or published.
 
 A Python wheel's runtime closure is not in its `Requires`. `python-pillow`
 links `libraqm.so.0` (hence `libraqm`, imported with it) and its
@@ -319,6 +391,27 @@ Keep their default test suites enabled. A `[resolved]` entry records recipe
 coverage, not successful publication or a working import in the consumer;
 keep those outstanding proofs on the implementation issue until a pinned
 factory build and permitted-repository runtime check establish them.
+For `python3-pexpect`, import `python-pexpect` together with its build and
+runtime dependency `python-ptyprocess`; the graph can order the recipes from
+the explicit `BuildRequires`. The Rawhide 4.9.0 recipe points at an upstream
+`4.9.0` archive that no longer exists; upstream's tag is `4.9`. The 4.9 tag
+archive and Fedora's pinned 4.9.0 archive have identical file contents but
+not identical compressed bytes. Lock the upstream tag's own SHA-512, adjust
+`Source0` and `%autosetup` to its filename and directory, and preserve the
+Rawhide patches and test configuration. A successful source-tree comparison
+is not a package build or runtime test.
+
+### Audio fingerprinting library
+
+The `chromaprint` source recipe produces `libchromaprint` and uses
+`fftw-devel`; check Hummingbird's repodata before adding an FFTW recipe.
+The default tools subpackage also BuildRequires `ffmpeg-free-devel`. The
+factory's ffmpeg disables its chromaprint integration to break the reverse
+edge; importing this recipe does not enable that integration or prove either
+package builds. Keep the existing cycle break until a separately validated
+build plan addresses it. Verify published binary dependencies and exercise
+fingerprinting before claiming runtime closure.
+
 ### BSD compatibility library closure
 
 Import `libbsd` with `libmd`: the former BuildRequires `libmd-devel`, its
@@ -329,6 +422,24 @@ orders these from the existing BuildRequires; no manual stage is needed.
 Both recipes carry detached signatures in `sources` and a checked-in signing
 key. Preserve their `%{gpgverify}` checks and SHA-512 signature pins when
 locking the release tarballs from `libbsd.freedesktop.org`.
+
+### ifuse dependencies and device test
+
+The `ifuse` recipe builds against the existing `libimobiledevice`,
+`libimobiledevice-glue`, and `libplist` recipes and needs `usbmuxd` at
+runtime. An imported recipe alone does not prove a device can be mounted;
+verify the published package and its runtime dependencies on a real device.
+### WebDAV filesystem runtime closure
+
+`davfs2` uses the `neon` HTTP/WebDAV library; its default build in turn links
+`libntlm` for authentication. Check both libraries in the current factory and
+Hummingbird metadata before importing the filesystem helper. When neither
+repository supplies them, import all three sources together and let the
+BuildRequires graph order `libntlm` before `neon` before `davfs2`. Retain
+`davfs2`'s detached upstream signature and bundled verification keyring;
+verify the signature download against its own `sources` digest as well as
+checking the main archive. Recipe-level closing records do not establish
+publication, runtime dependency resolution, or a working WebDAV mount.
 
 ## Diagnosing drift
 
@@ -398,6 +509,17 @@ tool reads only `name`); set them from the publication run's repodata when
 reconciling a published batch. Record any known newer failed rebuilds by package
 name and run in the catalog comments so publication evidence does not hide
 current build health.
+
+Read both from one image: `python3 tools/package_index.py --image
+projectbluefin/utah-packages:latest --output <file>` writes the manifest
+digest, the publishing `run` and the source `revision` under `image`, and every
+binary with its source package and epoch/version/release under `packages`.
+Check that `revision` is on the target branch before citing it. The primary
+metadata checksum is in `repository/repodata/repomd.xml` inside the image's
+first layer (`fetch_image` in the same tool returns it). An import PR that
+left its name `already_recipe` pending evidence (`tslib`, #643) moves to
+`[resolved]` in a later reconciliation PR once that image carries the binary;
+cite the original import PR and merge commit rather than the reconciliation.
 ### X11 resource library imports
 
 The audited `libXres` binary is the main output of source recipe `libXres`;
@@ -428,3 +550,53 @@ locked in `packages/parallel/sources` and fetched through the lookaside path
 with the tarball; its signing key and patch come from the pinned dist-git
 recipe. A recipe import leaves the prompt in `already_recipe` until
 hosted builds and installation evidence establish the runtime result.
+## Boot-screen output reconciliation
+
+Plymouth's boot animation, core and graphics libraries, label and two-step
+plugins, scripts, default-theme selector and spinner theme all come from
+`packages/plymouth/plymouth.spec`. Reconcile those binary names together;
+do not import a recipe per plugin. The `plymouth-system-theme` package is a
+selector: the spinner theme supplies its versioned `plymouth(system-theme)`
+requirement. Check both binary names in published primary metadata even when
+the selector has no installed payload.
+
+A catalog closing record can cite the existing merged recipe/source-lock PR
+when reconciling a later audit. Record the observed image digest, publication
+run and all requested binary identities in the reconciliation PR. This closes
+recipe accounting only: a metadata listing does not prove the theme's dependency
+transaction or graphical boot behavior. Keep those acceptance items open in the
+batch issue and hand them to Utah's consumer tracking.
+For `pam_yubico`, the Fedora source recipe requires `ykclient-devel`,
+`libyubikey-devel`, and `ykpers-devel`; all three source families must precede
+it in the build graph. A recipe and verified source do not prove authentication
+works: verify the hosted RPM, dependency transaction, and configured hardware.
+
+### S-Lang library imports
+
+The `slang` source produces the audited `slang` library and a separate
+`slang-slsh` interpreter. Its Fedora recipe enables Oniguruma conditionally
+on the target's `%{?fedora}` macro; check the actual pinned buildroot and
+resulting RPM dependencies rather than assuming the conditional is on or off.
+The upstream test suite covers terminal capabilities, syntax parsing, and
+UTF-8 support; run it on every recipe bump.
+
+### NILFS utilities signature sources
+
+For `nilfs-utils`, the release archive and detached signature are separate
+`Source` entries. Verify both against `sources` and the bundled signing key;
+the source pipeline stages the signature from the digest-addressed lookaside.
+The catalog records the recipe import, not proof of installation or publication.
+
+## Firewall connection monitor acceptance
+
+`iptstate` is a standalone source and binary, not an `iptables` subpackage.
+Its recipe requires `iptables` at runtime plus automatically detected ncurses
+and libnetfilter_conntrack libraries. Check virtual provides as well as binary
+names when locating the `iptables` supplier. A metadata match alone is not a
+successful solver transaction.
+
+After a hosted build, resolve installation against only Hummingbird and the
+factory, then run `iptstate --single` with access to the kernel connection
+tracking table (CAP_NET_ADMIN in the tested network namespace). Record the
+namespace and result. `--help` only tests program startup; it does not exercise
+connection tracking. A permissions error is not a successful runtime probe.
