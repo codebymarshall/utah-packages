@@ -20,9 +20,9 @@
       "total": 10
     },
     "long-tail": {
-      "already_recipe": 12,
+      "already_recipe": 13,
       "manifest_wants": 1,
-      "pending": 113,
+      "pending": 112,
       "total": 126
     },
     "power": {
@@ -893,7 +893,7 @@
     {
       "area": "long-tail",
       "name": "bash-color-prompt",
-      "state": "pending"
+      "state": "already_recipe"
     },
     {
       "area": "long-tail",
@@ -1548,9 +1548,9 @@
   ],
   "issue": "projectbluefin/utah-packages#308",
   "states": {
-    "already_recipe": 27,
+    "already_recipe": 28,
     "manifest_wants": 1,
-    "pending": 271
+    "pending": 270
   },
   "totals": {
     "backlog": 299,
