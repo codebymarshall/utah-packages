@@ -2,13 +2,13 @@
   "areas": {
     "codecs-media": {
       "already_recipe": 10,
-      "pending": 24,
-      "total": 34
+      "pending": 22,
+      "total": 32
     },
     "dev-tools": {
       "already_recipe": 1,
-      "pending": 86,
-      "total": 87
+      "pending": 82,
+      "total": 83
     },
     "fonts-i18n": {
       "pending": 24,
@@ -20,10 +20,10 @@
       "total": 10
     },
     "long-tail": {
-      "already_recipe": 10,
+      "already_recipe": 11,
       "manifest_wants": 1,
-      "pending": 113,
-      "total": 124
+      "pending": 107,
+      "total": 119
     },
     "power": {
       "total": 0
@@ -39,8 +39,8 @@
       "total": 4
     },
     "vpn": {
-      "pending": 10,
-      "total": 10
+      "pending": 9,
+      "total": 9
     }
   },
   "audit_digest_bluefin": "sha256:1e37db65e78f7f394e16608aa8449bd6be43eb691ae9f98b619044ffba23c64e",
@@ -93,11 +93,6 @@
     {
       "area": "codecs-media",
       "name": "gstreamer1-plugins-good-qt6",
-      "state": "pending"
-    },
-    {
-      "area": "codecs-media",
-      "name": "libavc1394",
       "state": "pending"
     },
     {
@@ -163,11 +158,6 @@
     {
       "area": "codecs-media",
       "name": "libplacebo",
-      "state": "pending"
-    },
-    {
-      "area": "codecs-media",
-      "name": "libraw1394",
       "state": "pending"
     },
     {
@@ -242,11 +232,6 @@
     },
     {
       "area": "dev-tools",
-      "name": "davfs2",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
       "name": "distribution-gpg-keys",
       "state": "pending"
     },
@@ -283,11 +268,6 @@
     {
       "area": "dev-tools",
       "name": "hfsplus-tools",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
-      "name": "ifuse",
       "state": "pending"
     },
     {
@@ -353,11 +333,6 @@
     {
       "area": "dev-tools",
       "name": "lsb_release",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
-      "name": "nilfs-utils",
       "state": "pending"
     },
     {
@@ -558,11 +533,6 @@
     {
       "area": "dev-tools",
       "name": "rpm-ostree-libs",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
-      "name": "spice-vdagent",
       "state": "pending"
     },
     {
@@ -962,11 +932,6 @@
     },
     {
       "area": "long-tail",
-      "name": "iptstate",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
       "name": "jbig2dec-libs",
       "state": "pending"
     },
@@ -1007,11 +972,6 @@
     },
     {
       "area": "long-tail",
-      "name": "libdeflate",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
       "name": "libell",
       "state": "pending"
     },
@@ -1038,11 +998,6 @@
     {
       "area": "long-tail",
       "name": "libnet",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
-      "name": "libntlm",
       "state": "pending"
     },
     {
@@ -1133,11 +1088,6 @@
     {
       "area": "long-tail",
       "name": "mtools",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
-      "name": "neon",
       "state": "pending"
     },
     {
@@ -1252,11 +1202,6 @@
     },
     {
       "area": "long-tail",
-      "name": "python3-pyscard",
-      "state": "pending"
-    },
-    {
-      "area": "long-tail",
       "name": "qadwaitadecorations-qt5",
       "state": "pending"
     },
@@ -1313,7 +1258,7 @@
     {
       "area": "long-tail",
       "name": "slang",
-      "state": "pending"
+      "state": "already_recipe"
     },
     {
       "area": "long-tail",
@@ -1497,11 +1442,6 @@
     },
     {
       "area": "vpn",
-      "name": "pam_yubico",
-      "state": "pending"
-    },
-    {
-      "area": "vpn",
       "name": "pamu2fcfg",
       "state": "pending"
     },
@@ -1518,13 +1458,13 @@
   ],
   "issue": "projectbluefin/utah-packages#308",
   "states": {
-    "already_recipe": 25,
+    "already_recipe": 26,
     "manifest_wants": 1,
-    "pending": 267
+    "pending": 254
   },
   "totals": {
-    "backlog": 293,
-    "resolved": 228,
+    "backlog": 281,
+    "resolved": 240,
     "wontfix": 30
   }
 }
