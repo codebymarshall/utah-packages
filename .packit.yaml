@@ -2350,6 +2350,12 @@ packages:
     downstream_package_name: passim
     paths:
       - packages/passim
+  passwdqc:
+    specfile_path: passwdqc.spec
+    upstream_package_name: passwdqc
+    downstream_package_name: passwdqc
+    paths:
+      - packages/passwdqc
   pcaudiolib:
     specfile_path: pcaudiolib.spec
     upstream_package_name: pcaudiolib
@@ -2932,6 +2938,12 @@ packages:
     downstream_package_name: tree-pkg
     paths:
       - packages/tree-pkg
+  tslib:
+    specfile_path: tslib.spec
+    upstream_package_name: tslib
+    downstream_package_name: tslib
+    paths:
+      - packages/tslib
   tuned:
     specfile_path: tuned.spec
     upstream_package_name: tuned
