@@ -239,14 +239,12 @@ packages = [
     "ibus-typing-booster",
     "kasumi-common",
     "kasumi-unicode",
-    "langtable",
     "libchewing",
     "libhangul",
     "libpinyin",
     "libpinyin-data",
     "m17n-db",
     "m17n-lib",
-    "python3-langtable",
     "unicode-ucd",
 ]
 
@@ -406,6 +404,9 @@ packages = [
 # Packages that left the backlog because a recipe was imported.
 # Each entry: package name and the commit that closed the gap.
 packages = [
+    # Language data recipe; build/publication and consumer proof remain tracked in #494.
+    { name = "langtable" },
+    { name = "python3-langtable" },
     { name = "gnome-rounded-blur", commit = "f8589ccd95a48a1f26826c8764330c9f7811a09d", pr = 440, published_run = 40151594832, published_nevra = "gnome-rounded-blur-0:1.0.1^20260809gitf3bfcc7-1.hum1.bfin.x86_64" },
     # Disc-reading recipes; publication and runtime proof remain tracked in #475.
     { name = "libudfread", pr = 658 },

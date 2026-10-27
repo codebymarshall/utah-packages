@@ -5179,6 +5179,13 @@
       "fallback_urls": [
         "https://src.fedoraproject.org/repo/pkgs/rpms/libudfread/libudfread-1.2.0.tar.bz2/sha512/53df39c207cadd742b4d4f78fd14159a6e4f45c97c9a7b97a39778fab4fdb5b0c087ebba04d27c28b8078681b82c3e903a4394f0d381cdadf23d2fd24956261f/libudfread-1.2.0.tar.bz2"
       ]
+    },
+    {
+      "name": "langtable",
+      "version": "0.0.71",
+      "url": "https://github.com/mike-fabian/langtable/releases/download/0.0.71/langtable-0.0.71.tar.gz",
+      "filename": "langtable-0.0.71.tar.gz",
+      "sha512": "882ff885deedc1ca495494842a96494848348cc46db999612c364fd3d6dc88d59d066ed7111fb5d93462be97ac71139e649d7b2ee4f478a4e4f34b733b75774a"
     }
   ]
 }
