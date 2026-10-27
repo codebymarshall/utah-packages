@@ -68,14 +68,16 @@ Two edits — never one, never none:
   - `[resolved].packages` (`{ name = "<n>", commit = "<sha>", pr = <n>, published_run = <run-id>, published_nevra = "<n>-<e>:<v>-<r>.<arch>" }`) —
     a recipe was imported. `commit` and `pr` are both informational; the
     closing record is the import PR (the one this two-edit move ships in)
-    and `tools/factory_build_backlog.py:356-357` only reads `entry["name"]`.
+    and `_catalog_totals` in `tools/factory_build_backlog.py` only reads
+    `entry["name"]` from the resolved records.
     Do not pre-fill `commit` with a SHA from a future commit that does not
     exist yet at PR-open time, and do not let a rebase or squash-merge
     invalidate it. The `pr` field links the entry to its closing PR for
     cross-referencing.
   - `[wontfix].packages` (`{ name = "<n>", reason = "..." }`) — Utah decided
     not to carry it, with a link to the decision issue. `reason` is also
-    informational and not validated.
+    informational and not validated. Catalog comments should describe the
+    structure rather than current list occupancy, since decisions accumulate.
 
 `[resolved]` is the only closing record. A recipe import PR makes this
 two-edit move in the same PR; `already_recipe` is the auditor's observation
@@ -328,6 +330,27 @@ Keep their default test suites enabled. A `[resolved]` entry records recipe
 coverage, not successful publication or a working import in the consumer;
 keep those outstanding proofs on the implementation issue until a pinned
 factory build and permitted-repository runtime check establish them.
+For `python3-pexpect`, import `python-pexpect` together with its build and
+runtime dependency `python-ptyprocess`; the graph can order the recipes from
+the explicit `BuildRequires`. The Rawhide 4.9.0 recipe points at an upstream
+`4.9.0` archive that no longer exists; upstream's tag is `4.9`. The 4.9 tag
+archive and Fedora's pinned 4.9.0 archive have identical file contents but
+not identical compressed bytes. Lock the upstream tag's own SHA-512, adjust
+`Source0` and `%autosetup` to its filename and directory, and preserve the
+Rawhide patches and test configuration. A successful source-tree comparison
+is not a package build or runtime test.
+
+### Audio fingerprinting library
+
+The `chromaprint` source recipe produces `libchromaprint` and uses
+`fftw-devel`; check Hummingbird's repodata before adding an FFTW recipe.
+The default tools subpackage also BuildRequires `ffmpeg-free-devel`. The
+factory's ffmpeg disables its chromaprint integration to break the reverse
+edge; importing this recipe does not enable that integration or prove either
+package builds. Keep the existing cycle break until a separately validated
+build plan addresses it. Verify published binary dependencies and exercise
+fingerprinting before claiming runtime closure.
+
 ### BSD compatibility library closure
 
 Import `libbsd` with `libmd`: the former BuildRequires `libmd-devel`, its
@@ -407,6 +430,17 @@ tool reads only `name`); set them from the publication run's repodata when
 reconciling a published batch. Record any known newer failed rebuilds by package
 name and run in the catalog comments so publication evidence does not hide
 current build health.
+
+Read both from one image: `python3 tools/package_index.py --image
+projectbluefin/utah-packages:latest --output <file>` writes the manifest
+digest, the publishing `run` and the source `revision` under `image`, and every
+binary with its source package and epoch/version/release under `packages`.
+Check that `revision` is on the target branch before citing it. The primary
+metadata checksum is in `repository/repodata/repomd.xml` inside the image's
+first layer (`fetch_image` in the same tool returns it). An import PR that
+left its name `already_recipe` pending evidence (`tslib`, #643) moves to
+`[resolved]` in a later reconciliation PR once that image carries the binary;
+cite the original import PR and merge commit rather than the reconciliation.
 ### X11 resource library imports
 
 The audited `libXres` binary is the main output of source recipe `libXres`;

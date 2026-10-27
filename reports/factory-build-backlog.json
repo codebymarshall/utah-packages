@@ -7,8 +7,8 @@
     },
     "dev-tools": {
       "already_recipe": 1,
-      "pending": 89,
-      "total": 90
+      "pending": 86,
+      "total": 87
     },
     "fonts-i18n": {
       "pending": 24,
@@ -20,10 +20,10 @@
       "total": 10
     },
     "long-tail": {
-      "already_recipe": 12,
+      "already_recipe": 10,
       "manifest_wants": 1,
       "pending": 113,
-      "total": 126
+      "total": 124
     },
     "power": {
       "total": 0
@@ -332,11 +332,6 @@
     },
     {
       "area": "dev-tools",
-      "name": "libchromaprint",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
       "name": "libsss_autofs",
       "state": "pending"
     },
@@ -493,16 +488,6 @@
     {
       "area": "dev-tools",
       "name": "python3-more-itertools",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
-      "name": "python3-pexpect",
-      "state": "pending"
-    },
-    {
-      "area": "dev-tools",
-      "name": "python3-ptyprocess",
       "state": "pending"
     },
     {
@@ -1332,11 +1317,6 @@
     },
     {
       "area": "long-tail",
-      "name": "simdutf",
-      "state": "already_recipe"
-    },
-    {
-      "area": "long-tail",
       "name": "slang",
       "state": "pending"
     },
@@ -1384,11 +1364,6 @@
       "area": "long-tail",
       "name": "tesseract-tessdata-doc",
       "state": "pending"
-    },
-    {
-      "area": "long-tail",
-      "name": "tslib",
-      "state": "already_recipe"
     },
     {
       "area": "long-tail",
@@ -1548,13 +1523,13 @@
   ],
   "issue": "projectbluefin/utah-packages#308",
   "states": {
-    "already_recipe": 27,
+    "already_recipe": 25,
     "manifest_wants": 1,
-    "pending": 271
+    "pending": 268
   },
   "totals": {
-    "backlog": 299,
-    "resolved": 222,
+    "backlog": 294,
+    "resolved": 227,
     "wontfix": 30
   }
 }
