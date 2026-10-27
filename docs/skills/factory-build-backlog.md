@@ -85,6 +85,13 @@ For font and language batches, follow
 A partial waiver PR should reference the batch issue and name the remaining
 outputs so it stays open. Note any in-repo recipe that requires a waived name.
 
+For partial source-family work, distinguish this recipe-import closing record
+from the parent issue's runtime acceptance. Keep the batch issue open until
+all named outputs have publication and permitted-repository dependency
+evidence; use `Refs`, not an auto-closing keyword, in a partial PR's
+description. A `[resolved]` entry alone proves neither publication nor
+installability.
+
 The `Import Rawhide package` workflow does **not** make this move: its pull
 request carries the recipe, lock, `.packit.yaml` and counts, but leaves the
 name in its area. Before merging one, add the `[resolved]` entry (with that
@@ -102,6 +109,15 @@ name to a closing record preserves the digest. The baseline was verified
 against the pinned gist's `nowhere-551.txt`; changing it requires a new audit. The auditor
 itself fails when the catalog totals do not reconcile with the report.
 
+### Reconciling recipes imported before the audit
+
+For a name still marked `already_recipe`, verify the original import PR is
+merged and its commit is on the target branch before moving the name to
+`[resolved]`. Record that existing PR and commit rather than importing the
+same source again. This closes the recipe catalog record only: keep the
+tracking issue open when publication, runtime dependency resolution, or a
+representative command has not been verified. A reconciliation PR must state
+those remaining checks explicitly; `[resolved]` is not installability proof.
 ### Touchscreen library imports
 
 `tslib` builds its SDL2 test utilities with `SDL2-devel`. The factory
@@ -132,6 +148,17 @@ when the summary describes partial progress.
 
 ### Locking sources for a hand import
 
+For GNU recipes such as `bison`, preserve the detached signature in `sources`,
+its dist-git keyring, and the recipe's `%{gpgverify}` invocation. Lock the
+upstream release archive as the primary source and compare both archive and
+signature SHA-512 values with `sources`; `source_pipeline.py` stages the
+additional manifest sources. Check ignored files before staging the import:
+losing the keyring makes `%prep` fail even when the archive lock is valid.
+Bison's runtime `m4 >= 1.4` is supplied by Hummingbird; it does not require a
+second factory recipe. A `[resolved]` move records the recipe import only;
+publication and a permitted-repository runtime transaction still need their
+own evidence.
+
 `bootstrap_upstream_sources.py` accepts `http://` `Source0` URLs that
 `tools/validate.py` then rejects; before committing, swap `http://` for
 `https://` (SourceForge, `download.dymo.com`) and confirm the digest still
@@ -141,11 +168,30 @@ matches. Rewrite a dist-git `sources` file that still carries MD5 lines as
 possibilities" when a branch and a tag share the name: lock
 `archive/refs/tags/v<version>.tar.gz` and set `filename` to the name the spec
 expects. When upstream no longer serves the bytes (a GitHub release with no
-assets, a rolling `openprinting.org` snapshot, a dead FTP host), lock Fedora's
-lookaside URL and list the package in `config/fedora-primary-sources.txt`.
+assets, a rolling `openprinting.org` snapshot, a dead FTP host or pagure
+archive), keep the upstream URL as the primary `url` and put Fedora's lookaside
+URL in `fallback_urls`: `tools/source_pipeline.py` tries the fallbacks after
+the primary fails, and `tools/validate.py` rejects a Fedora primary `url` for
+any name outside the shrink-only `config/fedora-primary-sources.txt` ratchet
+(`fedora-workstation-backgrounds` is locked this way). Lock the lookaside URL
+as primary and add the name to that ratchet only when no upstream URL for the
+archive ever existed, as for `hyperv-daemons`, whose `tools-hv` kernel snapshot
+is published only to Fedora's lookaside.
 A runtime `Requires` that resolves only in Fedora (for example
 `libieee1284.so.3` for `sane-backends`) must be imported in the same PR, since
 the published repository is installed from the factory plus Hummingbird alone.
+
+For `liblouisutdml`, import the source family once: it also builds
+`liblouisutdml-utils`. The utilities require `antiword` and `poppler-utils`;
+check both runtime providers rather than just the library's BuildRequires.
+When an original release host disappears (`antiword`'s `winfield.demon.nl`),
+check the maintained upstream mirror's release-import commit before using a
+lookaside primary. `grobian/antiword` commit
+`3f371a2fd2e8b7ba3c0793381e1a1df0d561f961` contains the unchanged 0.37
+release tree plus only `LICENSE` and `README.md` (compare with the original
+archive). Lock that archive by SHA-512, update `sources`, and set `%setup -n`
+to its commit-based directory; do not reuse the original archive's digest.
+This source-tree comparison is not a package build or runtime closure test.
 
 A Python wheel's runtime closure is not in its `Requires`. `python-pillow`
 links `libraqm.so.0` (hence `libraqm`, imported with it) and its
@@ -171,6 +217,35 @@ upstream merges libraries into one source (`ding-libs` 0.7.0 folds
 libcollection, libbasicobjects, libpath_utils and libref_array into
 `libini_config` through `Obsoletes:`), the retired binary names still leave the
 backlog with the import.
+
+### Python recipe names and dependency evidence
+
+For `python3-six` and `python3-dateutil`, import the source recipes
+`python-six` and `python-dateutil`, not a second recipe named after the binary.
+Their `%pypi_source` archives are upstream releases on
+`files.pythonhosted.org`; compare the downloaded SHA-512 with the dist-git
+`sources` file before registering the lock. If the bootstrap tool cannot
+expand the macro without `rpmspec`, that is not evidence the source is missing.
+Do not replace it with a Fedora-primary URL.
+
+Do not infer dependency edges from upstream Python metadata alone:
+Rawhide's `python-dateutil` recipe carries `remove-six.patch`, which removes
+its dependency on six. Preserve the imported patch set and let the build graph
+read the actual recipe; no manual stage is needed for these two imports.
+Keep their default test suites enabled. A `[resolved]` entry records recipe
+coverage, not successful publication or a working import in the consumer;
+keep those outstanding proofs on the implementation issue until a pinned
+factory build and permitted-repository runtime check establish them.
+### BSD compatibility library closure
+
+Import `libbsd` with `libmd`: the former BuildRequires `libmd-devel`, its
+shared library links to `libmd.so.0`, and `libbsd-devel` also requires
+`libmd-devel` at runtime. Treat `libmd` as a required cross-area dependency
+(the audit places it in `long-tail`), not an optional extra. The build graph
+orders these from the existing BuildRequires; no manual stage is needed.
+Both recipes carry detached signatures in `sources` and a checked-in signing
+key. Preserve their `%{gpgverify}` checks and SHA-512 signature pins when
+locking the release tarballs from `libbsd.freedesktop.org`.
 
 ## Diagnosing drift
 

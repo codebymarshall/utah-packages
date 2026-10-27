@@ -2,6 +2,16 @@
   "schema": 1,
   "packages": [
     {
+      "name": "sshpass",
+      "version": "1.09",
+      "url": "https://downloads.sourceforge.net/sshpass/sshpass-1.09.tar.gz",
+      "filename": "sshpass-1.09.tar.gz",
+      "sha512": "9b4ba83ca4d34364e7c43e29f98493dc3d595d24dc68c2fe3c244600d92a0f8bc0a6a7f8f43d64c0b4d714eb196516f297d904fa66035a76dae89a3726c0f2ff",
+      "fallback_urls": [
+        "https://src.fedoraproject.org/repo/pkgs/rpms/sshpass/sshpass-1.09.tar.gz/sha512/9b4ba83ca4d34364e7c43e29f98493dc3d595d24dc68c2fe3c244600d92a0f8bc0a6a7f8f43d64c0b4d714eb196516f297d904fa66035a76dae89a3726c0f2ff/sshpass-1.09.tar.gz"
+      ]
+    },
+    {
       "name": "ghostscript",
       "version": "10.08.0",
       "url": "https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10080/ghostscript-10.08.0.tar.xz",
@@ -4773,6 +4783,20 @@
       "sha512": "786ddac87e75bb8515ca4afbffdb39e1fad133403d2ffbca5bd615744c9e2bbd6ac2ec4746b86f24b1523aeb3e25c53d798e41b578aa514546a9db0745ac7b3c"
     },
     {
+      "name": "libmd",
+      "version": "1.3.0",
+      "url": "https://libbsd.freedesktop.org/releases/libmd-1.3.0.tar.xz",
+      "filename": "libmd-1.3.0.tar.xz",
+      "sha512": "bc09299855fe21030fd15fcbf3981105b7c2fd1bc84ad9737a54e593236509d2f5cbef97feb7ec59cd520fbb95793f78c627b120b65b48ba4967fce4a1b47d5a"
+    },
+    {
+      "name": "libbsd",
+      "version": "0.12.2",
+      "url": "https://libbsd.freedesktop.org/releases/libbsd-0.12.2.tar.xz",
+      "filename": "libbsd-0.12.2.tar.xz",
+      "sha512": "ce43e4f0486d5f00d4a8119ee863eaaa2f968cae4aa3d622976bb31ad601dfc565afacef7ebade5eba33fff1c329b5296c6387c008d1e1805d878431038f8b21"
+    },
+    {
       "name": "libutempter",
       "version": "1.2.1",
       "url": "https://ftp.altlinux.org/pub/people/ldv/utempter/libutempter-1.2.1.tar.gz",
@@ -4929,6 +4953,20 @@
       "sha512": "4b26fe9492f218b775fb190b76ecf06edaeb656adfe6dcbd24d0a0f86871c3ba917edb88a398eb12dccedaa1605b6f0a0be06b09f9fddd9a46e457b7dd244848"
     },
     {
+      "name": "python-six",
+      "version": "1.17.0",
+      "url": "https://files.pythonhosted.org/packages/source/s/six/six-1.17.0.tar.gz",
+      "filename": "six-1.17.0.tar.gz",
+      "sha512": "fcfa58b03877ac3ac00a4f85b5fea4fecb2a010244451aa95013637a0aa21529f3dcfe25c0a07c72da46da1fa12bc0c16b6c641c40c6ab2133e5b5cbb5a71e4b"
+    },
+    {
+      "name": "python-dateutil",
+      "version": "2.9.0.post0",
+      "url": "https://files.pythonhosted.org/packages/source/p/python-dateutil/python-dateutil-2.9.0.post0.tar.gz",
+      "filename": "python-dateutil-2.9.0.post0.tar.gz",
+      "sha512": "f76522de0ff21547327eaf6966e80a15c57f8f92588d520eabd354a732e5c4b51d9c3ac5effd9eaa6dd451d1bce329a54a3f4c6bf4f1bd08ff06b0305c994e5a"
+    },
+    {
       "name": "libmpeg2",
       "version": "0.5.1",
       "url": "https://src.fedoraproject.org/repo/pkgs/rpms/libmpeg2/libmpeg2-0.5.1.tar.gz/sha512/3648a2b3d7e2056d5adb328acd2fb983a1fa9a05ccb6f9388cc686c819445421811f42e8439418a0491a13080977f074a0d8bf8fa6bc101ff245ddea65a46fbc/libmpeg2-0.5.1.tar.gz",
@@ -4961,6 +4999,86 @@
       "fallback_urls": [
         "https://src.fedoraproject.org/repo/pkgs/rpms/passwdqc/passwdqc-2.0.3.tar.gz/sha512/08a1ee0e7efe0be8af8b253147836c479247a849baf598a1ad573a050ef4b8700fdb725fd887877f82f9207f3654f489f71267cc4051ce8ebf2405125b77b6b9/passwdqc-2.0.3.tar.gz"
       ]
+    },
+    {
+      "name": "LibRaw",
+      "version": "0.22.2",
+      "url": "https://www.libraw.org/data/LibRaw-0.22.2.tar.gz",
+      "filename": "LibRaw-0.22.2.tar.gz",
+      "sha512": "9333bc667c8e68a3572c336d3e2ecda82c5987e7feecb6ceb4e1df7dc7291747ffe66f6d3e01b121946ba4e2b1be95295c030d2754a5ae1cd638cffc8213141a",
+      "fallback_urls": [
+        "https://src.fedoraproject.org/repo/pkgs/rpms/LibRaw/LibRaw-0.22.2.tar.gz/sha512/9333bc667c8e68a3572c336d3e2ecda82c5987e7feecb6ceb4e1df7dc7291747ffe66f6d3e01b121946ba4e2b1be95295c030d2754a5ae1cd638cffc8213141a/LibRaw-0.22.2.tar.gz"
+      ]
+    },
+    {
+      "name": "antiword",
+      "version": "0.37",
+      "url": "https://github.com/grobian/antiword/archive/3f371a2fd2e8b7ba3c0793381e1a1df0d561f961/antiword-0.37.tar.gz",
+      "filename": "antiword-0.37.tar.gz",
+      "sha512": "83be070c3f34c77d5643eb85c5d14651780cd49c5b4c8aeb358b1b0c691215c56b4d2a6960245b18939ff985d0f5f46b395bac0ec5a2a05ddb81b27ff17038ec"
+    },
+    {
+      "name": "liblouisutdml",
+      "version": "2.12.0",
+      "url": "https://github.com/liblouis/liblouisutdml/releases/download/v2.12.0/liblouisutdml-2.12.0.tar.gz",
+      "filename": "liblouisutdml-2.12.0.tar.gz",
+      "sha512": "f4ec1b8c3e8dbb5012f63bf85bd7ba47897c60896f3329daa7a89709002c0fdfb178034ad11024c9cee447afe556542401ed4e97be991b822c46fdbfbcc8ad32"
+    },
+    {
+      "name": "bison",
+      "version": "3.8.2",
+      "url": "https://ftp.gnu.org/gnu/bison/bison-3.8.2.tar.xz",
+      "filename": "bison-3.8.2.tar.xz",
+      "sha512": "d4d23af6671406e97257892f90651b67f2ab95219831372be032190b7156c10a3435d457857e677445df8b2327aacccc15344acbbc3808a6f332a93cce23b444"
+    },
+    {
+      "name": "fwupd-efi",
+      "version": "1.8",
+      "url": "https://github.com/fwupd/fwupd-efi/archive/refs/tags/1.8.tar.gz",
+      "filename": "1.8.tar.gz",
+      "sha512": "bd361eb60397850af025228ea9f4efbf289f8e1c2612f240ae4c5ffee8caea15c31aa0748c06e57b28a7f38b8c2708147a228d8a99077798f4435436f12e092e",
+      "feed": "https://github.com/fwupd/fwupd-efi/archive/"
+    },
+    {
+      "name": "fedora-workstation-backgrounds",
+      "version": "1.6",
+      "url": "https://pagure.io/fedora-design/fedora-workstation-backgrounds/archive/v1.6/fedora-workstation-backgrounds-1.6.tar.gz",
+      "filename": "fedora-workstation-backgrounds-1.6.tar.gz",
+      "sha512": "632d8156ecb34b06211b373e40e336419dfb18c5073ac9a7fcd5552ba7143148e98141d523671f1988137caa5eab9c183562826dad977acacc206f15241bd43d",
+      "fallback_urls": [
+        "https://src.fedoraproject.org/repo/pkgs/rpms/fedora-workstation-backgrounds/fedora-workstation-backgrounds-1.6.tar.gz/sha512/632d8156ecb34b06211b373e40e336419dfb18c5073ac9a7fcd5552ba7143148e98141d523671f1988137caa5eab9c183562826dad977acacc206f15241bd43d/fedora-workstation-backgrounds-1.6.tar.gz"
+      ]
+    },
+    {
+      "name": "gupnp-dlna",
+      "version": "0.12.0",
+      "url": "https://download.gnome.org/sources/gupnp-dlna/0.12/gupnp-dlna-0.12.0.tar.xz",
+      "filename": "gupnp-dlna-0.12.0.tar.xz",
+      "sha512": "a626fe77426b607325bb8cacb6af5c434d451c1aa550272f0cbe59f84103f7ec8d2be5ebc79a9ea4e56b755ad9cadabdcbd059c49b1c0df143ba15a52fcd0ce0",
+      "feed": "https://download.gnome.org/sources/gupnp-dlna/"
+    },
+    {
+      "name": "gst-editing-services",
+      "version": "1.28.8",
+      "url": "https://gstreamer.freedesktop.org/src/gst-editing-services/gst-editing-services-1.28.8.tar.xz",
+      "filename": "gst-editing-services-1.28.8.tar.xz",
+      "sha512": "1cb33e0fd6d2f16dcc8594bc5e1198752dbb6127fa2368aaa4deb0d8abb144d8f6f4b878994e0fbd35790905b9300947c45b68d582189599adace3e132dfca72",
+      "feed": "https://release-monitoring.org/project/230920"
+    },
+    {
+      "name": "freeglut",
+      "version": "3.8.0",
+      "url": "https://downloads.sourceforge.net/freeglut/freeglut-3.8.0.tar.gz",
+      "filename": "freeglut-3.8.0.tar.gz",
+      "sha512": "2726ff978f11e17680fa01aa21c263f5154e9f0185021ec58e89ae006a5d093e062e68c66c709307a709e44823ee7b1f265ae450dd03cae616a2acefdeba7748",
+      "feed": "https://release-monitoring.org/project/846"
+    },
+    {
+      "name": "hyperv-daemons",
+      "version": "6.10",
+      "url": "https://src.fedoraproject.org/repo/pkgs/rpms/hyperv-daemons/tools-hv-6ba59ff42279.tar.gz/sha512/215525e937522ef8f019e9f43dd8a057c116eb6e42d2097d81c24f4c6730c3c461df93a520f09761def9ea1866ee270537629430ec177088bbc5397e82e3ef93/tools-hv-6ba59ff42279.tar.gz",
+      "filename": "tools-hv-6ba59ff42279.tar.gz",
+      "sha512": "215525e937522ef8f019e9f43dd8a057c116eb6e42d2097d81c24f4c6730c3c461df93a520f09761def9ea1866ee270537629430ec177088bbc5397e82e3ef93"
     }
   ]
 }

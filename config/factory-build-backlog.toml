@@ -41,7 +41,6 @@ packages = [
     "ImageMagick",
     "ImageMagick-libs",
     "LCEVCdec",
-    "LibRaw",
     "davs2-libs",
     "ffmpeg",
     "ffmpeg-libs",
@@ -108,8 +107,6 @@ packages = [
 # projectbluefin/utah#390 - 32 names
 consumer_issue = "projectbluefin/utah#390"
 packages = [
-    "liblouisutdml",
-    "liblouisutdml-utils",
 ]
 
 [areas.gnome-apps]
@@ -142,7 +139,6 @@ packages = [
     "adcli",
     "adcli-selinux",
     "bcache-tools",
-    "bison",
     "cryfs",
     "davfs2",
     "distribution-gpg-keys",
@@ -161,7 +157,6 @@ packages = [
     "kernel-tools",
     "kernel-tools-libs",
     "leptonica",
-    "libbsd",
     "libcaca",
     "libchromaprint",
     "libsss_autofs",
@@ -172,7 +167,6 @@ packages = [
     "lsb_release",
     "nilfs-utils",
     "ntfs-3g-system-compression",
-    "nvtop",
     "oddjob",
     "oddjob-mkhomedir",
     "open-vm-tools",
@@ -181,7 +175,6 @@ packages = [
     "python3-boto3",
     "python3-botocore",
     "python3-click",
-    "python3-dateutil",
     "python3-dns",
     "python3-email-validator",
     "python3-enchant",
@@ -208,7 +201,6 @@ packages = [
     "python3-s3transfer",
     "python3-secretstorage",
     "python3-shtab",
-    "python3-six",
     "qemu-guest-agent",
     "qemu-user-static-aarch64",
     "rclone",
@@ -218,7 +210,6 @@ packages = [
     "rpm-ostree-libs",
     "spice-vdagent",
     "spice-webdavd",
-    "sshpass",
     "sssd-client",
     "sssd-common",
     "sssd-kcm",
@@ -300,7 +291,6 @@ packages = [
     "NetworkManager-ssh-selinux",
     "OpenCL-ICD-Loader",
     "PackageKit-glib",
-    "antiword",
     "appstream-data",
     "b43-fwcutter",
     "b43-openfwwf",
@@ -314,20 +304,10 @@ packages = [
     "evolution-ews-langpacks",
     "f44-backgrounds-base",
     "f44-backgrounds-gnome",
-    "fedora-workstation-backgrounds",
-    "freeglut",
-    "fwupd-efi",
-    "gst-editing-services",
     "gst-thumbnailers",
     "gupnp-av",
-    "gupnp-dlna",
     "gvfs-afp",
     "gvfs-archive",
-    "hyperv-daemons",
-    "hyperv-daemons-license",
-    "hypervfcopyd",
-    "hypervkvpd",
-    "hypervvssd",
     "initscripts-service",
     "intel-vaapi-driver",
     "ipset",
@@ -348,7 +328,6 @@ packages = [
     "libev",
     "libijs",
     "liblqr-1",
-    "libmd",
     "libmspack",
     "libnet",
     "libnfsidmap",
@@ -442,6 +421,33 @@ packages = [
 # Packages that left the backlog because a recipe was imported.
 # Each entry: package name and the commit that closed the gap.
 packages = [
+    # Existing GPU monitor recipe; publication/runtime proof remains in #488.
+    { name = "nvtop", commit = "e19a229", pr = 410 },
+    # Long-tail batch (projectbluefin/utah-packages#607, part of #500).
+    # Six source packages imported from Fedora rawhide dist-git, each now
+    # source-locked in config/upstream-sources.json.
+    { name = "fedora-workstation-backgrounds", pr = 607 },
+    { name = "freeglut", pr = 607 },
+    { name = "fwupd-efi", pr = 607 },
+    { name = "gst-editing-services", pr = 607 },
+    { name = "gupnp-dlna", pr = 607 },
+    { name = "hyperv-daemons", pr = 607 },
+    # hyperv-daemons-license, hypervfcopyd, hypervkvpd and hypervvssd are
+    # subpackages built from hyperv-daemons.spec. hypervfcopyd sits under
+    # %ifarch i686 x86_64, which the auditor treats as undecidable, so all
+    # four close here explicitly.
+    { name = "hyperv-daemons-license", pr = 607 },
+    { name = "hypervfcopyd", pr = 607 },
+    { name = "hypervkvpd", pr = 607 },
+    { name = "hypervvssd", pr = 607 },
+    # Recipe coverage only; build/publication/runtime proof stays on #489.
+    { name = "python3-dateutil", pr = 613 },
+    { name = "python3-six", pr = 613 },
+    # BSD compatibility library and its digest-library dependency (#487).
+    # Recipe import only; build/publication and Utah consumption remain separate proof.
+    { name = "libbsd", pr = 614 },
+    { name = "libmd", pr = 614 },
+    { name = "sshpass", pr = 611 }, # Recipe import; publication/installability tracked in #490.
     # Password-quality source family: passwdqc builds all three (projectbluefin/utah-packages#644, #505).
     { name = "pam_passwdqc", pr = 644 },
     { name = "passwdqc", pr = 644 },
@@ -622,6 +628,10 @@ packages = [
     { name = "mpage", pr = 586 },
     { name = "printer-driver-brlaser", pr = 586 },
     { name = "ptouch-driver", pr = 586 },
+    # Braille source family and its Word conversion runtime dependency (#480).
+    { name = "liblouisutdml", pr = 616 },
+    { name = "liblouisutdml-utils", pr = 616 },
+    { name = "antiword", pr = 616 },
     { name = "sane-airscan", pr = 586 },
     { name = "sane-backends", pr = 586 },
     { name = "sane-backends-drivers-cameras", pr = 586 },
@@ -684,6 +694,11 @@ packages = [
     { name = "urw-base35-p052-fonts", pr = 631 },
     { name = "urw-base35-standard-symbols-ps-fonts", pr = 631 },
     { name = "urw-base35-z003-fonts", pr = 631 },
+    # bison.spec produces bison plus bison-devel/runtime; recipe closure for #485,
+    # not a claim of publication or runtime installation.
+    { name = "bison", pr = 615 },
+    # Recipe coverage only; hosted build/publication/runtime proof remains in #474.
+    { name = "LibRaw", pr = 618 },
 ]
 
 [wontfix]
