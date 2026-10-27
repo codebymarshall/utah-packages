@@ -166,6 +166,17 @@ same source again. This closes the recipe catalog record only: keep the
 tracking issue open when publication, runtime dependency resolution, or a
 representative command has not been verified. A reconciliation PR must state
 those remaining checks explicitly; `[resolved]` is not installability proof.
+### S-Lang library imports
+
+The `slang` source produces the audited `slang` library and a separate
+`slang-slsh` interpreter. Its Fedora recipe enables Oniguruma conditionally
+on the target's `%{?fedora}` macro; check the actual pinned buildroot and
+resulting RPM dependencies rather than assuming the conditional is on or off.
+Keep the upstream `make check` and the imported SIGHUP test patch. After a
+hosted build and publication, resolve the binary dependencies against only the
+factory and Hummingbird and exercise the library through `slang-slsh`; a
+source lock and recipe alone do not establish runtime parity.
+
 ### Touchscreen library imports
 
 `tslib` builds its SDL2 test utilities with `SDL2-devel`. The factory

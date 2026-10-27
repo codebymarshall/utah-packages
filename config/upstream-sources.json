@@ -5200,6 +5200,13 @@
       "fallback_urls": [
         "https://src.fedoraproject.org/repo/pkgs/rpms/libudfread/libudfread-1.2.0.tar.bz2/sha512/53df39c207cadd742b4d4f78fd14159a6e4f45c97c9a7b97a39778fab4fdb5b0c087ebba04d27c28b8078681b82c3e903a4394f0d381cdadf23d2fd24956261f/libudfread-1.2.0.tar.bz2"
       ]
+    },
+    {
+      "name": "slang",
+      "version": "2.3.3",
+      "url": "https://www.jedsoft.org/releases/slang/slang-2.3.3.tar.bz2",
+      "filename": "slang-2.3.3.tar.bz2",
+      "sha512": "f882f09e3fcd53427de0f233c9fc3ab15497f2323007be9a084696c8cf810ffe2726cd003149e757df26198b390b9f8c1ff411dc6473513457bd0f94722f8490"
     }
   ]
 }
