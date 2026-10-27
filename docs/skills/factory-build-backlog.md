@@ -59,7 +59,10 @@ GitHub closing keywords for a PR that satisfies the entire batch issue's
 close condition, including required build and runtime evidence or linked
 blocking decisions for every named output. Before pushing a review fix,
 check the entire PR description for closing keywords: an automatically added
-footer can contradict an earlier partial-progress statement.
+footer can contradict an earlier partial-progress statement. After editing the
+body, read it back with `gh pr view <pr> --json body --jq .body` and verify
+the final footer too; local prose alone does not establish that the live PR
+will keep the batch open.
 
 Two edits — never one, never none:
 
