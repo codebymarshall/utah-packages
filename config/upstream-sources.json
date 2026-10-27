@@ -2,6 +2,16 @@
   "schema": 1,
   "packages": [
     {
+      "name": "sshpass",
+      "version": "1.09",
+      "url": "https://downloads.sourceforge.net/sshpass/sshpass-1.09.tar.gz",
+      "filename": "sshpass-1.09.tar.gz",
+      "sha512": "9b4ba83ca4d34364e7c43e29f98493dc3d595d24dc68c2fe3c244600d92a0f8bc0a6a7f8f43d64c0b4d714eb196516f297d904fa66035a76dae89a3726c0f2ff",
+      "fallback_urls": [
+        "https://src.fedoraproject.org/repo/pkgs/rpms/sshpass/sshpass-1.09.tar.gz/sha512/9b4ba83ca4d34364e7c43e29f98493dc3d595d24dc68c2fe3c244600d92a0f8bc0a6a7f8f43d64c0b4d714eb196516f297d904fa66035a76dae89a3726c0f2ff/sshpass-1.09.tar.gz"
+      ]
+    },
+    {
       "name": "ghostscript",
       "version": "10.08.0",
       "url": "https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10080/ghostscript-10.08.0.tar.xz",
@@ -4773,6 +4783,20 @@
       "sha512": "786ddac87e75bb8515ca4afbffdb39e1fad133403d2ffbca5bd615744c9e2bbd6ac2ec4746b86f24b1523aeb3e25c53d798e41b578aa514546a9db0745ac7b3c"
     },
     {
+      "name": "libmd",
+      "version": "1.3.0",
+      "url": "https://libbsd.freedesktop.org/releases/libmd-1.3.0.tar.xz",
+      "filename": "libmd-1.3.0.tar.xz",
+      "sha512": "bc09299855fe21030fd15fcbf3981105b7c2fd1bc84ad9737a54e593236509d2f5cbef97feb7ec59cd520fbb95793f78c627b120b65b48ba4967fce4a1b47d5a"
+    },
+    {
+      "name": "libbsd",
+      "version": "0.12.2",
+      "url": "https://libbsd.freedesktop.org/releases/libbsd-0.12.2.tar.xz",
+      "filename": "libbsd-0.12.2.tar.xz",
+      "sha512": "ce43e4f0486d5f00d4a8119ee863eaaa2f968cae4aa3d622976bb31ad601dfc565afacef7ebade5eba33fff1c329b5296c6387c008d1e1805d878431038f8b21"
+    },
+    {
       "name": "libutempter",
       "version": "1.2.1",
       "url": "https://ftp.altlinux.org/pub/people/ldv/utempter/libutempter-1.2.1.tar.gz",
@@ -4929,6 +4953,20 @@
       "sha512": "4b26fe9492f218b775fb190b76ecf06edaeb656adfe6dcbd24d0a0f86871c3ba917edb88a398eb12dccedaa1605b6f0a0be06b09f9fddd9a46e457b7dd244848"
     },
     {
+      "name": "python-six",
+      "version": "1.17.0",
+      "url": "https://files.pythonhosted.org/packages/source/s/six/six-1.17.0.tar.gz",
+      "filename": "six-1.17.0.tar.gz",
+      "sha512": "fcfa58b03877ac3ac00a4f85b5fea4fecb2a010244451aa95013637a0aa21529f3dcfe25c0a07c72da46da1fa12bc0c16b6c641c40c6ab2133e5b5cbb5a71e4b"
+    },
+    {
+      "name": "python-dateutil",
+      "version": "2.9.0.post0",
+      "url": "https://files.pythonhosted.org/packages/source/p/python-dateutil/python-dateutil-2.9.0.post0.tar.gz",
+      "filename": "python-dateutil-2.9.0.post0.tar.gz",
+      "sha512": "f76522de0ff21547327eaf6966e80a15c57f8f92588d520eabd354a732e5c4b51d9c3ac5effd9eaa6dd451d1bce329a54a3f4c6bf4f1bd08ff06b0305c994e5a"
+    },
+    {
       "name": "libmpeg2",
       "version": "0.5.1",
       "url": "https://src.fedoraproject.org/repo/pkgs/rpms/libmpeg2/libmpeg2-0.5.1.tar.gz/sha512/3648a2b3d7e2056d5adb328acd2fb983a1fa9a05ccb6f9388cc686c819445421811f42e8439418a0491a13080977f074a0d8bf8fa6bc101ff245ddea65a46fbc/libmpeg2-0.5.1.tar.gz",
@@ -4943,6 +4981,203 @@
       "sha512": "71fb27baadf5abc4ff624cdede02038681acd5fffdc728a5b2e7808713b80cb2f2174f90a1862e69d390c4434c49d5167ab095100032fa3ba80b586eb8ae51d1",
       "fallback_urls": [
         "https://src.fedoraproject.org/repo/pkgs/rpms/urw-base35-fonts/urw-base35-fonts-20200910.tar.gz/sha512/71fb27baadf5abc4ff624cdede02038681acd5fffdc728a5b2e7808713b80cb2f2174f90a1862e69d390c4434c49d5167ab095100032fa3ba80b586eb8ae51d1/urw-base35-fonts-20200910.tar.gz"
+      ]
+    },
+    {
+      "name": "tslib",
+      "version": "1.24",
+      "url": "https://github.com/kergoth/tslib/releases/download/1.24/tslib-1.24.tar.bz2",
+      "filename": "tslib-1.24.tar.bz2",
+      "sha512": "4d271a5f3e7d5e70daf7581f1c6417b77effa3d84ac34ce8d74acd9557407ffe7a293f28a4239c8a750e05f21dd04616d91361e2d049ecae0d1b7b0a330cdb98"
+    },
+    {
+      "name": "passwdqc",
+      "version": "2.0.3",
+      "url": "https://www.openwall.com/passwdqc/passwdqc-2.0.3.tar.gz",
+      "filename": "passwdqc-2.0.3.tar.gz",
+      "sha512": "08a1ee0e7efe0be8af8b253147836c479247a849baf598a1ad573a050ef4b8700fdb725fd887877f82f9207f3654f489f71267cc4051ce8ebf2405125b77b6b9",
+      "fallback_urls": [
+        "https://src.fedoraproject.org/repo/pkgs/rpms/passwdqc/passwdqc-2.0.3.tar.gz/sha512/08a1ee0e7efe0be8af8b253147836c479247a849baf598a1ad573a050ef4b8700fdb725fd887877f82f9207f3654f489f71267cc4051ce8ebf2405125b77b6b9/passwdqc-2.0.3.tar.gz"
+      ]
+    },
+    {
+      "name": "LibRaw",
+      "version": "0.22.2",
+      "url": "https://www.libraw.org/data/LibRaw-0.22.2.tar.gz",
+      "filename": "LibRaw-0.22.2.tar.gz",
+      "sha512": "9333bc667c8e68a3572c336d3e2ecda82c5987e7feecb6ceb4e1df7dc7291747ffe66f6d3e01b121946ba4e2b1be95295c030d2754a5ae1cd638cffc8213141a",
+      "fallback_urls": [
+        "https://src.fedoraproject.org/repo/pkgs/rpms/LibRaw/LibRaw-0.22.2.tar.gz/sha512/9333bc667c8e68a3572c336d3e2ecda82c5987e7feecb6ceb4e1df7dc7291747ffe66f6d3e01b121946ba4e2b1be95295c030d2754a5ae1cd638cffc8213141a/LibRaw-0.22.2.tar.gz"
+      ]
+    },
+    {
+      "name": "antiword",
+      "version": "0.37",
+      "url": "https://github.com/grobian/antiword/archive/3f371a2fd2e8b7ba3c0793381e1a1df0d561f961/antiword-0.37.tar.gz",
+      "filename": "antiword-0.37.tar.gz",
+      "sha512": "83be070c3f34c77d5643eb85c5d14651780cd49c5b4c8aeb358b1b0c691215c56b4d2a6960245b18939ff985d0f5f46b395bac0ec5a2a05ddb81b27ff17038ec"
+    },
+    {
+      "name": "liblouisutdml",
+      "version": "2.12.0",
+      "url": "https://github.com/liblouis/liblouisutdml/releases/download/v2.12.0/liblouisutdml-2.12.0.tar.gz",
+      "filename": "liblouisutdml-2.12.0.tar.gz",
+      "sha512": "f4ec1b8c3e8dbb5012f63bf85bd7ba47897c60896f3329daa7a89709002c0fdfb178034ad11024c9cee447afe556542401ed4e97be991b822c46fdbfbcc8ad32"
+    },
+    {
+      "name": "bison",
+      "version": "3.8.2",
+      "url": "https://ftp.gnu.org/gnu/bison/bison-3.8.2.tar.xz",
+      "filename": "bison-3.8.2.tar.xz",
+      "sha512": "d4d23af6671406e97257892f90651b67f2ab95219831372be032190b7156c10a3435d457857e677445df8b2327aacccc15344acbbc3808a6f332a93cce23b444"
+    },
+    {
+      "name": "fwupd-efi",
+      "version": "1.8",
+      "url": "https://github.com/fwupd/fwupd-efi/archive/refs/tags/1.8.tar.gz",
+      "filename": "1.8.tar.gz",
+      "sha512": "bd361eb60397850af025228ea9f4efbf289f8e1c2612f240ae4c5ffee8caea15c31aa0748c06e57b28a7f38b8c2708147a228d8a99077798f4435436f12e092e",
+      "feed": "https://github.com/fwupd/fwupd-efi/archive/"
+    },
+    {
+      "name": "fedora-workstation-backgrounds",
+      "version": "1.6",
+      "url": "https://pagure.io/fedora-design/fedora-workstation-backgrounds/archive/v1.6/fedora-workstation-backgrounds-1.6.tar.gz",
+      "filename": "fedora-workstation-backgrounds-1.6.tar.gz",
+      "sha512": "632d8156ecb34b06211b373e40e336419dfb18c5073ac9a7fcd5552ba7143148e98141d523671f1988137caa5eab9c183562826dad977acacc206f15241bd43d",
+      "fallback_urls": [
+        "https://src.fedoraproject.org/repo/pkgs/rpms/fedora-workstation-backgrounds/fedora-workstation-backgrounds-1.6.tar.gz/sha512/632d8156ecb34b06211b373e40e336419dfb18c5073ac9a7fcd5552ba7143148e98141d523671f1988137caa5eab9c183562826dad977acacc206f15241bd43d/fedora-workstation-backgrounds-1.6.tar.gz"
+      ]
+    },
+    {
+      "name": "gupnp-dlna",
+      "version": "0.12.0",
+      "url": "https://download.gnome.org/sources/gupnp-dlna/0.12/gupnp-dlna-0.12.0.tar.xz",
+      "filename": "gupnp-dlna-0.12.0.tar.xz",
+      "sha512": "a626fe77426b607325bb8cacb6af5c434d451c1aa550272f0cbe59f84103f7ec8d2be5ebc79a9ea4e56b755ad9cadabdcbd059c49b1c0df143ba15a52fcd0ce0",
+      "feed": "https://download.gnome.org/sources/gupnp-dlna/"
+    },
+    {
+      "name": "gst-editing-services",
+      "version": "1.28.8",
+      "url": "https://gstreamer.freedesktop.org/src/gst-editing-services/gst-editing-services-1.28.8.tar.xz",
+      "filename": "gst-editing-services-1.28.8.tar.xz",
+      "sha512": "1cb33e0fd6d2f16dcc8594bc5e1198752dbb6127fa2368aaa4deb0d8abb144d8f6f4b878994e0fbd35790905b9300947c45b68d582189599adace3e132dfca72",
+      "feed": "https://release-monitoring.org/project/230920"
+    },
+    {
+      "name": "freeglut",
+      "version": "3.8.0",
+      "url": "https://downloads.sourceforge.net/freeglut/freeglut-3.8.0.tar.gz",
+      "filename": "freeglut-3.8.0.tar.gz",
+      "sha512": "2726ff978f11e17680fa01aa21c263f5154e9f0185021ec58e89ae006a5d093e062e68c66c709307a709e44823ee7b1f265ae450dd03cae616a2acefdeba7748",
+      "feed": "https://release-monitoring.org/project/846"
+    },
+    {
+      "name": "hyperv-daemons",
+      "version": "6.10",
+      "url": "https://src.fedoraproject.org/repo/pkgs/rpms/hyperv-daemons/tools-hv-6ba59ff42279.tar.gz/sha512/215525e937522ef8f019e9f43dd8a057c116eb6e42d2097d81c24f4c6730c3c461df93a520f09761def9ea1866ee270537629430ec177088bbc5397e82e3ef93/tools-hv-6ba59ff42279.tar.gz",
+      "filename": "tools-hv-6ba59ff42279.tar.gz",
+      "sha512": "215525e937522ef8f019e9f43dd8a057c116eb6e42d2097d81c24f4c6730c3c461df93a520f09761def9ea1866ee270537629430ec177088bbc5397e82e3ef93"
+    },
+    {
+      "name": "libyubikey",
+      "version": "1.13",
+      "url": "https://opensource.yubico.com/yubico-c/releases/libyubikey-1.13.tar.gz",
+      "filename": "libyubikey-1.13.tar.gz",
+      "sha512": "28f45cb9817c30a70d168ae507d3f8014051058d730eed92b31d92e96784138dea291bda4275511c5f92a6427cb4249d76c802b8abb867cec50e62fb770950f2",
+      "fallback_urls": [
+        "https://developers.yubico.com/yubico-c/Releases/libyubikey-1.13.tar.gz",
+        "https://src.fedoraproject.org/repo/pkgs/rpms/libyubikey/libyubikey-1.13.tar.gz/md5/6e84fc1914ab5b609319945c18d45835/libyubikey-1.13.tar.gz"
+      ]
+    },
+    {
+      "name": "ykclient",
+      "version": "2.15",
+      "url": "https://opensource.yubico.com/yubico-c-client/releases/ykclient-2.15.tar.gz",
+      "filename": "ykclient-2.15.tar.gz",
+      "sha512": "a6e00309330225c681702616aa9f5d7e042f33a22ebe7719c2d71276f1a660ed0dc180d7f50c24b1c65d7bba6e2f2285d03037d504e926ac75506c24e6826279",
+      "fallback_urls": [
+        "https://developers.yubico.com/yubico-c-client/Releases/ykclient-2.15.tar.gz",
+        "https://src.fedoraproject.org/repo/pkgs/rpms/ykclient/ykclient-2.15.tar.gz/md5/d7da4d4acc1461af06346e194aa4960b/ykclient-2.15.tar.gz"
+      ]
+    },
+    {
+      "name": "ykpers",
+      "version": "1.20.0",
+      "url": "https://opensource.yubico.com/yubikey-personalization/releases/ykpers-1.20.0.tar.gz",
+      "filename": "ykpers-1.20.0.tar.gz",
+      "sha512": "96edc7225bbd71ca255d3915321d4a613603c321c8502a5b97f23598f1439b231fcfc323f4f3737293da59efae2837370a0b64fdbd9465f0e2c05822d604df9f",
+      "fallback_urls": [
+        "https://developers.yubico.com/yubikey-personalization/Releases/ykpers-1.20.0.tar.gz",
+        "https://src.fedoraproject.org/repo/pkgs/rpms/ykpers/ykpers-1.20.0.tar.gz/sha512/96edc7225bbd71ca255d3915321d4a613603c321c8502a5b97f23598f1439b231fcfc323f4f3737293da59efae2837370a0b64fdbd9465f0e2c05822d604df9f/ykpers-1.20.0.tar.gz"
+      ]
+    },
+    {
+      "name": "pkcs11-provider",
+      "version": "1.3.0",
+      "url": "https://github.com/latchset/pkcs11-provider/releases/download/v1.3.0/pkcs11-provider-1.3.0.tar.xz",
+      "filename": "pkcs11-provider-1.3.0.tar.xz",
+      "sha512": "5a2af2ab09cf8088ea05b07f6feed90b9df57ec6201a64f9c06cde447d3f9faf532a07094b5f62617163374bb03f974d62b11e27b48ba2a83e4459339d32b157",
+      "fallback_urls": [
+        "https://src.fedoraproject.org/repo/pkgs/rpms/pkcs11-provider/pkcs11-provider-1.3.0.tar.xz/sha512/5a2af2ab09cf8088ea05b07f6feed90b9df57ec6201a64f9c06cde447d3f9faf532a07094b5f62617163374bb03f974d62b11e27b48ba2a83e4459339d32b157/pkcs11-provider-1.3.0.tar.xz"
+      ]
+    },
+    {
+      "name": "compsize",
+      "version": "1.5^git20250123.d79eacf",
+      "url": "https://github.com/kilobyte/compsize/archive/d79eacf77abe3b799387bb8a4e07a18f1f1031e8/compsize-d79eacf.tar.gz",
+      "filename": "compsize-d79eacf.tar.gz",
+      "sha512": "d6059a77feea45b9bb145cdd5edb4622e5ac261fe2e1ebdc2ad3bbfe36b663f689b6f458f1eae3e88523a9277e8cde0d8ec00bd02a1fafb6360f0d5e68dccede",
+      "fallback_urls": [
+        "https://src.fedoraproject.org/repo/pkgs/rpms/compsize/compsize-d79eacf.tar.gz/sha512/d6059a77feea45b9bb145cdd5edb4622e5ac261fe2e1ebdc2ad3bbfe36b663f689b6f458f1eae3e88523a9277e8cde0d8ec00bd02a1fafb6360f0d5e68dccede/compsize-d79eacf.tar.gz"
+      ]
+    },
+    {
+      "name": "flex",
+      "version": "2.6.4",
+      "url": "https://github.com/westes/flex/releases/download/v2.6.4/flex-2.6.4.tar.gz",
+      "filename": "flex-2.6.4.tar.gz",
+      "sha512": "e9785f3d620a204b7d20222888917dc065c2036cae28667065bf7862dfa1b25235095a12fd04efdbd09bfd17d3452e6b9ef953a8c1137862ff671c97132a082e",
+      "fallback_urls": [
+        "https://src.fedoraproject.org/repo/pkgs/rpms/flex/flex-2.6.4.tar.gz/sha512/e9785f3d620a204b7d20222888917dc065c2036cae28667065bf7862dfa1b25235095a12fd04efdbd09bfd17d3452e6b9ef953a8c1137862ff671c97132a082e/flex-2.6.4.tar.gz"
+      ]
+    },
+    {
+      "name": "libXres",
+      "version": "1.2.2",
+      "url": "https://www.x.org/pub/individual/lib/libXres-1.2.2.tar.xz",
+      "filename": "libXres-1.2.2.tar.xz",
+      "sha512": "897f2d426ea6f41169a5a52c356d1a1cb2ffb9144ae41b9fedd06455c3d81042930fe55be269ce4b8545ee65fcfe168101192a599053d810e8810f627c94f810",
+      "fallback_urls": [
+        "https://src.fedoraproject.org/repo/pkgs/rpms/libXres/libXres-1.2.2.tar.xz/sha512/897f2d426ea6f41169a5a52c356d1a1cb2ffb9144ae41b9fedd06455c3d81042930fe55be269ce4b8545ee65fcfe168101192a599053d810e8810f627c94f810/libXres-1.2.2.tar.xz"
+      ]
+    },
+    {
+      "name": "glow",
+      "version": "3.0.0",
+      "url": "https://github.com/charmbracelet/glow/archive/v3.0.0/glow-3.0.0.tar.gz",
+      "filename": "glow-3.0.0.tar.gz",
+      "sha512": "474ad34683aaf986213e85204fe9767d24c22d1ee4ea24339a4b7caca4a5ce2f2e93a0ef4b9b47add9e7dccccae21edbfb64f31b15b3eefdb131ff3e2530262a"
+    },
+    {
+      "name": "libbluray",
+      "version": "1.4.0",
+      "url": "https://download.videolan.org/pub/videolan/libbluray/1.4.0/libbluray-1.4.0.tar.xz",
+      "filename": "libbluray-1.4.0.tar.xz",
+      "sha512": "7284169b32624e5ca4fd71b260a4cc2921efafb1f63143a562568be45e373bfcbfeac63895d5659ccdcb11d7dbd0236cc46ccb15c12eff855703010e46991f27",
+      "fallback_urls": [
+        "https://src.fedoraproject.org/repo/pkgs/rpms/libbluray/libbluray-1.4.0.tar.xz/sha512/7284169b32624e5ca4fd71b260a4cc2921efafb1f63143a562568be45e373bfcbfeac63895d5659ccdcb11d7dbd0236cc46ccb15c12eff855703010e46991f27/libbluray-1.4.0.tar.xz"
+      ]
+    },
+    {
+      "name": "libudfread",
+      "version": "1.2.0",
+      "url": "https://code.videolan.org/videolan/libudfread/-/archive/1.2.0/libudfread-1.2.0.tar.bz2",
+      "filename": "libudfread-1.2.0.tar.bz2",
+      "sha512": "53df39c207cadd742b4d4f78fd14159a6e4f45c97c9a7b97a39778fab4fdb5b0c087ebba04d27c28b8078681b82c3e903a4394f0d381cdadf23d2fd24956261f",
+      "fallback_urls": [
+        "https://src.fedoraproject.org/repo/pkgs/rpms/libudfread/libudfread-1.2.0.tar.bz2/sha512/53df39c207cadd742b4d4f78fd14159a6e4f45c97c9a7b97a39778fab4fdb5b0c087ebba04d27c28b8078681b82c3e903a4394f0d381cdadf23d2fd24956261f/libudfread-1.2.0.tar.bz2"
       ]
     }
   ]
