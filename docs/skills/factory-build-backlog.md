@@ -73,6 +73,8 @@ Two edits — never one, never none:
     exist yet at PR-open time, and do not let a rebase or squash-merge
     invalidate it. The `pr` field links the entry to its closing PR for
     cross-referencing.
+    Once the import PR has a number, populate `pr` before requesting review;
+    `--check` validates names and report drift, not this provenance field.
   - `[wontfix].packages` (`{ name = "<n>", reason = "..." }`) — Utah decided
     not to carry it, with a link to the decision issue. `reason` is also
     informational and not validated.
