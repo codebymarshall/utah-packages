@@ -194,6 +194,13 @@ when the summary describes partial progress.
 
 ### Locking sources for a hand import
 
+For Linux-only library imports, inspect optional Windows cross-build bconds
+before locking the build root. `libdeflate` enables MinGW by default in
+Rawhide; disable its `mingw` bcond locally to keep the native library, tools
+and upstream CTest suite without adding Windows cross-toolchain dependencies.
+Its `mingw_utils` bcond only controls Windows tools, so disabling that alone
+does not remove the cross-build. Keep the imported provenance unchanged.
+
 For GNU recipes such as `bison`, preserve the detached signature in `sources`,
 its dist-git keyring, and the recipe's `%{gpgverify}` invocation. Lock the
 upstream release archive as the primary source and compare both archive and
