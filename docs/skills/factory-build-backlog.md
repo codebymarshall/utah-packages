@@ -59,7 +59,11 @@ GitHub closing keywords for a PR that satisfies the entire batch issue's
 close condition, including required build and runtime evidence or linked
 blocking decisions for every named output. Before pushing a review fix,
 check the entire PR description for closing keywords: an automatically added
-footer can contradict an earlier partial-progress statement.
+footer can contradict an earlier partial-progress statement. After editing the body,
+read it back with `gh pr view <pr> --json body --jq .body` and verify the
+saved description, including any generated footer. A branch push alone
+does not correct the PR description. Once the PR number is known, fill in
+the recipe record's `pr` field so reviewers can trace the partial import.
 
 Two edits — never one, never none:
 
