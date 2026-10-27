@@ -2,8 +2,8 @@
   "areas": {
     "codecs-media": {
       "already_recipe": 10,
-      "pending": 25,
-      "total": 35
+      "pending": 24,
+      "total": 34
     },
     "dev-tools": {
       "already_recipe": 1,
@@ -168,11 +168,6 @@
     {
       "area": "codecs-media",
       "name": "libraw1394",
-      "state": "pending"
-    },
-    {
-      "area": "codecs-media",
-      "name": "libshaderc",
       "state": "pending"
     },
     {
@@ -1525,11 +1520,11 @@
   "states": {
     "already_recipe": 25,
     "manifest_wants": 1,
-    "pending": 268
+    "pending": 267
   },
   "totals": {
-    "backlog": 296,
-    "resolved": 225,
+    "backlog": 293,
+    "resolved": 228,
     "wontfix": 30
   }
 }
