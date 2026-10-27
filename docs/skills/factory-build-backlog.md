@@ -423,7 +423,8 @@ verify with `--check`; choosing either side can discard another import’s state
 `bash-color-prompt` enables its Bats tests by default. Import `bats` and
 GNU `parallel` together when neither supplier publishes them: Bats requires
 Parallel at build time and runtime, even though the prompt payload itself is
-shell code. Keep the tests enabled. GNU Parallel's detached signature is an
-additional locked source; its signing key and patch come from the pinned
-dist-git recipe. A recipe import leaves the prompt in `already_recipe` until
+shell code. Keep the tests enabled. GNU Parallel's detached signature is
+locked in `packages/parallel/sources` and fetched through the lookaside path
+with the tarball; its signing key and patch come from the pinned dist-git
+recipe. A recipe import leaves the prompt in `already_recipe` until
 hosted builds and installation evidence establish the runtime result.

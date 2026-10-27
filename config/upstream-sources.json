@@ -5199,14 +5199,7 @@
       "version": "20260922",
       "url": "https://ftp.gnu.org/gnu/parallel/parallel-20260922.tar.bz2",
       "filename": "parallel-20260922.tar.bz2",
-      "sha512": "ae7bcead31b3a068900c851fc48c0239cd39d7a8310ac7cbd885ab41bee4ff6e5786bcbfeafb31bb6f445ba4142a151a464f8f9fcfbd889909e503ef18b5ee56",
-      "additional_sources": [
-        {
-          "url": "https://ftp.gnu.org/gnu/parallel/parallel-20260922.tar.bz2.sig",
-          "filename": "parallel-20260922.tar.bz2.sig",
-          "sha512": "ab8458003f417088908f974c770a03f6dac48d60f41a9c9ac8024f21abab5305ae88f2c458cc0bae584540435769637319d1991a1ae9c63ac5b768494370466f"
-        }
-      ]
+      "sha512": "ae7bcead31b3a068900c851fc48c0239cd39d7a8310ac7cbd885ab41bee4ff6e5786bcbfeafb31bb6f445ba4142a151a464f8f9fcfbd889909e503ef18b5ee56"
     }
   ]
 }
