@@ -7,6 +7,10 @@
 # points at the files this package installs, so the logo is whatever artwork
 # commit is pinned below (projectbluefin/utah-packages#629).
 #
+# Out of scope here: the os-release LOGO icon (pixmaps/fedora-logo-icon.png)
+# and /usr/share/ublue-os/bluefin-logos/*.png. About reads neither (only the
+# two meson paths above), so they stay with Utah's image build.
+#
 # artwork publishes no release, and its archive is every wallpaper for three
 # small files, so tools/generated_sources.py fetches each file at the commit,
 # checks its SHA-512, and packs them into Source0. To move the pin: change
