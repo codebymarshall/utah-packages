@@ -6031,6 +6031,16 @@
         "input": "https://raw.githubusercontent.com/projectbluefin/artwork/9ab493bf1fb3ae41594b6bb0a2c5f2350d81de01/LICENSE, https://raw.githubusercontent.com/projectbluefin/artwork/9ab493bf1fb3ae41594b6bb0a2c5f2350d81de01/assets/vector/logos/bluefin/bluefin-logo-dark.svg, https://raw.githubusercontent.com/projectbluefin/artwork/9ab493bf1fb3ae41594b6bb0a2c5f2350d81de01/assets/vector/logos/bluefin/bluefin-logo-light.svg (each sha512-pinned)",
         "method": "fetch each file from projectbluefin/artwork at 9ab493bf1fb3ae41594b6bb0a2c5f2350d81de01 and pack them flat and deterministically as bluefin-artwork-logos-9ab493b.tar.xz"
       }
+    },
+    {
+      "name": "strace",
+      "version": "7.3",
+      "url": "https://strace.io/files/7.3/strace-7.3.tar.xz",
+      "filename": "strace-7.3.tar.xz",
+      "sha512": "177f6de73ba731cba4e71ea8407e663d8f96a4bd59b6aeba4db9b57c55b438d4b764b5f694ec4011e867ba70c55f75cecf6747b0afd0311aa4f23fc51a5351f6",
+      "fallback_urls": [
+        "https://src.fedoraproject.org/repo/pkgs/rpms/strace/strace-7.3.tar.xz/sha512/177f6de73ba731cba4e71ea8407e663d8f96a4bd59b6aeba4db9b57c55b438d4b764b5f694ec4011e867ba70c55f75cecf6747b0afd0311aa4f23fc51a5351f6/strace-7.3.tar.xz"
+      ]
     }
   ]
 }
